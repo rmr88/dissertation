@@ -1,0 +1,34 @@
+package tests;
+
+import java.io.File;
+
+import tasks.RunShell;
+
+public class ShellLaunch
+{
+	public static void main(String args[])
+	{
+		String command = "rsync -avz --delete govtrack.us::govtrackdata/us/#/@/ #/@";
+		String dir = "C:\\Users\\Robbie\\Documents\\dissertation\\Data\\GovTrack";
+		
+		for (int cong = 93; cong <= 113; cong++)
+		{
+			if (!(new File(dir + "\\" + Integer.toString(cong)).exists()))
+				new File(dir + "\\" + Integer.toString(cong)).mkdirs();
+			
+			RunShell shell = new RunShell(command.replaceAll("#", Integer.toString(cong))
+					.replaceAll("@", "bills"), dir);
+			System.out.println(shell.getCmd());
+			System.out.println(shell.run());
+			//may need to close or destroy the shell object in order to use it again, or make a new instance
+			
+			shell = new RunShell(command.replaceAll("#", Integer.toString(cong))
+					.replaceAll("@", "rolls"), dir);
+			System.out.println(shell.getCmd());
+			System.out.println(shell.run());
+			
+			System.out.println(cong + " read to disk.");
+		}
+	}
+
+}

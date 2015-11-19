@@ -1,0 +1,13 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="5">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="70992" startPos="18398" endPos="18398" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Users\Robbie\Documents\dissertation\seminar_908_909\assignment1_2\intro.md" backupFilePath="" originalFileLastModifTimestamp="1447179075" />
+            <File firstVisibleLine="24" xOffset="0" scrollWidth="70992" startPos="14695" endPos="14695" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Users\Robbie\Documents\dissertation\seminar_908_909\assignment1_2\partiesChapter.md" backupFilePath="" originalFileLastModifTimestamp="1447859791" />
+            <File firstVisibleLine="46" xOffset="0" scrollWidth="70992" startPos="21656" endPos="21656" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Users\Robbie\Documents\dissertation\seminar_908_909\assignment1_2\issuePublicsChapter.md" backupFilePath="" originalFileLastModifTimestamp="1447863229" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="70992" startPos="31" endPos="31" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Users\Robbie\Documents\dissertation\seminar_908_909\assignment1_2\pubOpChapter.md" backupFilePath="" originalFileLastModifTimestamp="1447860282" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="70992" startPos="117" endPos="103" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Users\Robbie\Documents\dissertation\seminar_908_909\assignment1_2\conclusion.md" backupFilePath="" originalFileLastModifTimestamp="1447860259" />
+            <File firstVisibleLine="14" xOffset="0" scrollWidth="70992" startPos="2781" endPos="2781" selMode="0" lang="Normal Text" encoding="-1" filename="C:\Users\Robbie\Documents\dissertation\seminar_908_909\assignment1_2\dataAppendix.md" backupFilePath="" originalFileLastModifTimestamp="1447863345" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

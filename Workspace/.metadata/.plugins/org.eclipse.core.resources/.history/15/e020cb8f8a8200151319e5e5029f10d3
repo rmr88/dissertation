@@ -1,0 +1,14 @@
+package tests;
+
+import tasks.RunShell;
+
+public class ShellLaunch
+{
+	public static void main(String args[])
+	{
+		String command = "rsync -avz --delete govtrack.us::govtrackdata/us/109/bills/ 109";
+		RunShell shell = new RunShell(command, "C:\\Users\\Robbie\\Documents\\dissertation\\Data\\GovTrack");
+		System.out.println(shell.run());
+	}
+
+}

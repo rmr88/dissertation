@@ -1,0 +1,47 @@
+package tasks;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class RunShell
+{
+	private String cmd;
+	private String dir;
+	
+	public RunShell(String command)
+	{
+		this.cmd = command;
+		this.dir = System.getProperty("user.dir");
+	}
+	
+	public RunShell(String command, String directory)
+	{
+		this.cmd = "cmd.exe " + command;
+		this.dir = directory;
+	}
+	
+	public String run()
+	{
+		StringBuffer sb = new StringBuffer();
+		Process p;
+		String[] envp = { "PATH=$PATH:/android-sdk-linux_x86/platform-tools" };
+		try
+		{
+			p = Runtime.getRuntime().exec(this.cmd, envp, new File(this.dir));
+			p.waitFor();
+			
+			BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			String line = "";
+			while ((line = br.readLine()) != null)
+				sb.append(line + "\r\n");
+		}
+		catch (IOException | InterruptedException e)
+		{
+			e.printStackTrace();
+		}
+		
+		return sb.toString();
+	}
+}
