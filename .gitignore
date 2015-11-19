@@ -48,7 +48,7 @@ Literature/
 Figs/
 
 # Files in main dir
-.zip
-.docx
-.xlsx
-.pptx
+*.zip
+*.docx
+*.xlsx
+*.pptx
