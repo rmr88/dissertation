@@ -12,7 +12,7 @@ It is also necessary, for some of my analyses, to identify the policy issues/ to
 
 At some points in the study, it will be useful to have data on state legislators. One readily available data source for state legislator ideology is Boris Shor and Nolan McCarty's American Legislatures Project, which uses roll call voting and a recurring survey of state legislators to obtain scaled ideal point estimates for all state legislators on a single scale. The data are described in more detail in @Shor2010, and are available online from http://americanlegislatures.com/.
 
-**[Other data on state legislators will be described here as necessary.]**
+*[Other data on state legislators can be described here as necessary.]*
 
 ## Public Opinion
 

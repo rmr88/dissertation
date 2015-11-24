@@ -62,6 +62,18 @@ public class InFile
 		return row;
 	}
 	
+	public String[] readRowLite(String delim) throws IOException
+	{
+		String[] row = null;
+		try
+		{
+			row = this.reader.readLine().split(delim);
+		}
+		catch (NullPointerException e) {}
+		
+		return row;
+	}
+	
 	public boolean isReady() throws IOException
 	{
 		return this.reader.ready();

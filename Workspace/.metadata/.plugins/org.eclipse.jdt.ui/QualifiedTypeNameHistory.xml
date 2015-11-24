@@ -13,10 +13,6 @@
 <fullyQualifiedTypeName name="java.nio.channels.ReadableByteChannel"/>
 <fullyQualifiedTypeName name="utilities.WebFile"/>
 <fullyQualifiedTypeName name="tasks.VoteViewDownload"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="javax.swing.filechooser.FileFilter"/>
-<fullyQualifiedTypeName name="utilities.InFile"/>
-<fullyQualifiedTypeName name="utilities.OutFile"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
 <fullyQualifiedTypeName name="javax.swing.SwingUtilities"/>
 <fullyQualifiedTypeName name="java.awt.Container"/>
@@ -29,8 +25,6 @@
 <fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="utilities.Cosponsor"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
@@ -38,4 +32,11 @@
 <fullyQualifiedTypeName name="org.apache.commons.exec.CommandLine"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="javax.swing.filechooser.FileFilter"/>
+<fullyQualifiedTypeName name="java.io.FilenameFilter"/>
+<fullyQualifiedTypeName name="utilities.InFile"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="utilities.OutFile"/>
 </qualifiedTypeNameHistroy>

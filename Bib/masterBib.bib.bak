@@ -23,6 +23,23 @@
   Url                      = {http://journals.cambridge.org/article_S0022381608080493}
 }
 
+@Article{Achen1978,
+  Title                    = {Measuring Representation},
+  Author                   = {Christopher H. Achen},
+  Journal                  = {American Journal of Political Science},
+  Year                     = {1978},
+  Number                   = {3},
+  Pages                    = {475-510},
+  Volume                   = {22},
+
+  Abstract                 = {The statistical study of representation has depended largely on correlational measures, which have little substantive content and can be misleading in their implications. In their place, three measures of representativeness are offered, reflecting the liberal democratic concepts of citizen equality, neutrality toward alternatives, and popular sovereignty. These measures are applied to the Miller-Stokes data on American Congressmen. The findings revise Miller and Stokes' conclusions in two respects: (1) winners are less representative than losers on two of the three measures, and (2) all issue dimensions are approximately equally well represented, with civil rights views having no special advantage.},
+  ISSN                     = {00925853, 15405907},
+  Owner                    = {Robbie},
+  Publisher                = {Midwest Political Science Association},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://www.jstor.org/stable/2110458}
+}
+
 @Article{Adams2008,
   Title                    = {Candidate and Party Strategies in Two-Stage Elections Beginning with a Primary},
   Author                   = {Adams, James and Merrill, Samuel},
@@ -104,6 +121,24 @@
   Owner                    = {Robbie},
   Timestamp                = {2015.10.22},
   Url                      = {http://faculty.mwsu.edu/politicalscience/jeremy.duff/Research%20Papers/aldrichandrohde.pdf}
+}
+
+@Article{Aleman2009,
+  Title                    = {Comparing Cosponsorship and Roll-Call Ideal Points},
+  Author                   = {Alemán, Eduardo and Calvo, Ernesto and Jones, Mark P. and Kaplan, Noah},
+  Journal                  = {Legislative Studies Quarterly},
+  Year                     = {2009},
+  Number                   = {1},
+  Pages                    = {87--116},
+  Volume                   = {34},
+
+  Abstract                 = {We use bill cosponsorship and roll-call vote data to compare legislators' revealed preferences in the U.S. House of Representatives and the Argentine Chamber of Deputies. We estimate ideal points from bill cosponsorship data using principal-component analysis on an agreement matrix that included information on all bills introduced in the U.S. House (1973–2000) and Argentine Chamber (1983–2002). The ideal-point estimates of legislators' revealed preferences based on cosponsorship data strongly correlate with similar estimates derived from roll-call vote data. Also, cosponsorship activity in the U.S. House has lower dimensionality than cosponsorship has in the Argentine Chamber. We explain this lower discrimination as a function of individual- and district-level factors in both countries.},
+  Doi                      = {10.3162/036298009787500358},
+  ISSN                     = {1939-9162},
+  Owner                    = {Robbie},
+  Publisher                = {Blackwell Publishing Ltd},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://dx.doi.org/10.3162/036298009787500358}
 }
 
 @Article{Ansolabehere2001,
@@ -438,6 +473,44 @@ does not move as abruptly as that of the House.},
   Url                      = {http://pan.oxfordjournals.org/content/17/3/261.abstract}
 }
 
+@Article{Carrubba2008,
+  Title                    = {Legislative Voting Behavior, Seen and Unseen: A Theory of Roll-Call Vote Selection},
+  Author                   = {Carrubba, Clifford and Gabel, Matthew and Hug, Simon},
+  Journal                  = {Legislative Studies Quarterly},
+  Year                     = {2008},
+  Number                   = {4},
+  Pages                    = {543--572},
+  Volume                   = {33},
+
+  Abstract                 = {The empirical study of legislative behavior largely relies on roll-call vote analysis, but roll-call votes in many legislatures represent only a sample of legislative votes. We have good reasons to believe this sample is particularly poor for inferring party effects on legislative behavior. The selection of votes for roll call may be endogenous to exactly the characteristics of voting behavior (for instance, party cohesion) that we want to study. We must understand the roll-call vote institution and account for its selection effects before we can draw inferences about legislative behavior from roll-call results. This article develops a game-theoretic model of roll-call vote requests predicated on party leaders requesting votes to enforce party discipline. The model offers general and testable predictions about the selection process and how it affects observed and unobserved legislative voting behavior, particularly party cohesion.},
+  Doi                      = {10.3162/036298008786403079},
+  ISSN                     = {1939-9162},
+  Owner                    = {Robbie},
+  Publisher                = {Blackwell Publishing Ltd},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://dx.doi.org/10.3162/036298008786403079}
+}
+
+@Article{Carrubba2006,
+  Title                    = {Off the Record: Unrecorded Legislative Votes, Selection Bias and Roll-Call Vote Analysis},
+  Author                   = {Carrubba, Clifford and Gabel, Matthew and Murrah, Lacey and Clough, Ryan and Montgomery, Elizabeth and Schambach, Rebecca},
+  Journal                  = {British Journal of Political Science},
+  Year                     = {2006},
+
+  Month                    = {10},
+  Pages                    = {691--704},
+  Volume                   = {36},
+
+  Abstract                 = { ABSTRACT Scholars often use roll-call votes to study legislative behaviour. However, many legislatures only conclude a minority of decisions by roll call. Thus, if these votes are not a random sample of the universe of votes cast, scholars may be drawing misleading inferences. In fact, theories over why roll-call votes are requested would predict selection bias based on exactly the characteristics of legislative voting that scholars have most heavily studied. This article demonstrates the character and severity of this sampling problem empirically by examining European Parliament vote data for a whole year. Given that many legislatures decided only a fraction of their legislation by roll call, these findings have potentially important implications for the general study of legislative behaviour. },
+  Doi                      = {10.1017/S0007123406000366},
+  ISSN                     = {1469-2112},
+  Issue                    = {04},
+  Numpages                 = {14},
+  Owner                    = {Robbie},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://journals.cambridge.org/article_S0007123406000366}
+}
+
 @Article{Chappell1986,
   Title                    = {Policy Motivation and Party Differences in a Dynamic Spatial Model of Party Competition},
   Author                   = {Chappell,Henry W. Jr. and Keech,William R.},
@@ -646,6 +719,23 @@ BRIGITTE MAHEUX},
   Url                      = {http://journals.cambridge.org/article_S0003055400082320}
 }
 
+@Article{Crespin2010,
+  Title                    = {Serving Two Masters: Redistricting and Voting in the U.S. House of Representatives},
+  Author                   = {Crespin, Michael H.},
+  Journal                  = {Political Research Quarterly},
+  Year                     = {2010},
+  Number                   = {4},
+  Pages                    = {850-859},
+  Volume                   = {63},
+
+  Abstract                 = {This article explores the consequences for representation after a redistricting by reexamining the finding that members of Congress will alter their voting behavior to fit their new district. Specifically, it applies partisan theories of congressional organization to test if members are changing their behavior on all or just some votes. The results indicate that representatives adjust their roll call behavior to fit their new districts on votes that are visible to their constituents. However, when it comes to votes that are important to the party for controlling the agenda (i.e., procedural votes), members do not respond to changes in the district.},
+  Doi                      = {10.1177/1065912909338465},
+  Eprint                   = {http://prq.sagepub.com/content/63/4/850.full.pdf+html},
+  Owner                    = {Robbie},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://prq.sagepub.com/content/63/4/850.abstract}
+}
+
 @InCollection{Dalton1993,
   Title                    = {The not so simple act of voting},
   Author                   = {Russell J. Dalton and Martin P. Wattenberg},
@@ -691,6 +781,24 @@ BRIGITTE MAHEUX},
   Timestamp                = {2015.07.30}
 }
 
+@Article{Desposato2011,
+  Title                    = {Using Cosponsorship to Estimate Ideal Points},
+  Author                   = {Desposato, Scott W. and Kearney, Matthew C. and Crisp, Brian F.},
+  Journal                  = {Legislative Studies Quarterly},
+  Year                     = {2011},
+  Number                   = {4},
+  Pages                    = {531--565},
+  Volume                   = {36},
+
+  Abstract                 = {Ideal point estimates based on roll-call vote results have provided leverage for a variety of theory testing efforts. Recently, scholars have suggested using cosponsorship data as a proxy for roll-call votes. Conceptually similar to roll-call votes, cosponsorship data are appealing for a variety of reasons. However, the data-generating process for cosponsorship is untheorized and little studied. We examine the properties of ideal point estimates from cosponsorship data. We find that the ability to estimate ideal points from cosponsorship data is contingent on the underlying data-generating process; reliance on such measures requires strong and often unrealistic assumptions.},
+  Doi                      = {10.1111/j.1939-9162.2011.00026.x},
+  ISSN                     = {1939-9162},
+  Owner                    = {Robbie},
+  Publisher                = {Blackwell Publishing Inc},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://dx.doi.org/10.1111/j.1939-9162.2011.00026.x}
+}
+
 @Article{Downs1972,
   Title                    = {Up and down with ecology- The `issue-attention cycle'},
   Author                   = {Downs, Anthony},
@@ -724,6 +832,36 @@ BRIGITTE MAHEUX},
 
   Owner                    = {Robbie},
   Timestamp                = {2015.11.05}
+}
+
+@Article{Ensley2009,
+  Title                    = {District Complexity as an Advantage in Congressional Elections},
+  Author                   = {Ensley, Michael J. and Tofias, Michael W. and De Marchi, Scott},
+  Journal                  = {American Journal of Political Science},
+  Year                     = {2009},
+  Number                   = {4},
+  Pages                    = {990--1005},
+  Volume                   = {53},
+
+  Abstract                 = {Scholars of congressional elections have argued that an increase in constituent diversity increases the level of electoral competition. Following models of boundedly rational candidates, we argue that there is strong reason to believe that the opposite is true. As the complexity of the electoral landscape increases, challengers will have a more difficult time locating an optimal platform when facing an experienced incumbent. Using data from the 2000 National Annenberg Election Study, we construct a novel measure of district complexity for U.S. House districts and test whether the entry of quality challengers and the incumbent's share of the two-party vote are affected by the complexity of the electoral landscape. We find strong support for the hypothesis that complexity benefits incumbents for both indicators of electoral competition, which stands in contrast to most of the existing literature on diversity and incumbent performance.},
+  Doi                      = {10.1111/j.1540-5907.2009.00412.x},
+  ISSN                     = {1540-5907},
+  Owner                    = {Robbie},
+  Publisher                = {Blackwell Publishing Inc},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://dx.doi.org/10.1111/j.1540-5907.2009.00412.x}
+}
+
+@Conference{Ensley2013,
+  Title                    = {Are these boots made for walking? Ideological change among {U.S.} {H}ouse members},
+  Author                   = {Ensley, Michael J. and Tofias, Michael W. and de Marchi, Scott},
+  Booktitle                = {The state of the parties: 2012 and beyond},
+  Year                     = {2013},
+  Month                    = {Nov},
+  Organization             = {Ray Bliss Institute of Applied Politics, University of Akron},
+
+  Owner                    = {Robbie},
+  Timestamp                = {2015.11.23}
 }
 
 @Book{Epstein1986,
@@ -1635,6 +1773,27 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Url                      = {http://www.jstor.org/stable/194249}
 }
 
+@Article{Krehbiel1993,
+  Title                    = {Where's the Party?},
+  Author                   = {Krehbiel, Keith},
+  Journal                  = {British Journal of Political Science},
+  Year                     = {1993},
+  Number                   = {2},
+  Pages                    = {pp. 235-266},
+  Volume                   = {23},
+
+  Abstract                 = {Political parties are prominent in legislative politics and legislative research. Using data from the 99th Congress, this article assesses the degree to which significant party behaviour - defined and operationalized as behaviour that is independent of preferences - occurs in two key stages of legislative organization: the formation of standing committees and the appointment of conferees. Four hypotheses are developed and tested. When controlling for preferences and other hypothesized effects, positive and significant party effects are rare. A discussion addresses some criticisms of this unorthodox approach and attempts to reconcile some differences between these and previous findings.},
+  Copyright                = {Copyright 1993 Cambridge University Press},
+  ISSN                     = {00071234},
+  Jstor_articletype        = {research-article},
+  Jstor_formatteddate      = {Apr., 1993},
+  Language                 = {English},
+  Owner                    = {Robbie},
+  Publisher                = {Cambridge University Press},
+  Timestamp                = {2015.04.13},
+  Url                      = {http://www.jstor.org/stable/194249}
+}
+
 @Article{Krosnick1990,
   Title                    = {Government policy and citizen passion: A study of issue publics in contemporary {A}merica},
   Author                   = {Krosnick, JonA.},
@@ -1756,7 +1915,7 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
 
 @Article{Langbein1993,
   Title                    = {PACs, lobbies and political conflict: The case of gun control},
-  Author                   = {Langbein, Laura I},
+  Author                   = {Langbein, Laura I.},
   Journal                  = {Public Choice},
   Year                     = {1993},
   Number                   = {3},
@@ -1808,7 +1967,42 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Type                     = {Journal Article}
 }
 
-@Article{Lax2009,
+@Article{Rothenberg2000,
+  Title                    = {Severing the Electoral Connection: Shirking in the Contemporary Congress},
+  Author                   = {Lawrence S. Rothenberg, Mitchell S. Sanders},
+  Journal                  = {American Journal of Political Science},
+  Year                     = {2000},
+  Number                   = {2},
+  Pages                    = {316-325},
+  Volume                   = {44},
+
+  Abstract                 = {Studies of representation focusing on legislative shirking tend to offer an interesting tension: when the opportunity presents itself, it seems that exiting members do not change their voting behavior (ideological shirking) but do reduce their effort level by voting less (participatory shirking). Our analysis avoids the pitfalls of prior studies by defining a simple, quasi-experimental, research design contrasting those certain that they are seeking reelection with those sure that they are departing the House for the 102nd, 103rd, and 104th Congresses (1991-1996). We measure changes in ideology and participation using all roll-call votes in the last six months of election years, controlling for possible member selection effects and short-term influences, and show that legislators are disposed toward ideological and participatory shirking while selection effects are unimportant. Thus, we reconcile results seemingly at odds and suggest that policies affecting member turnover, such as term limits, can interfere with representation.},
+  ISSN                     = {00925853, 15405907},
+  Owner                    = {Robbie},
+  Publisher                = {Midwest Political Science Association},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://www.jstor.org/stable/2669313}
+}
+
+@Article{Lax2009a,
+  Title                    = {How Should We Estimate Public Opinion in The States?},
+  Author                   = {Lax, Jeffrey R. and Phillips, Justin H.},
+  Journal                  = {American Journal of Political Science},
+  Year                     = {2009},
+  Number                   = {1},
+  Pages                    = {107--121},
+  Volume                   = {53},
+
+  Abstract                 = {We compare two approaches for estimating state-level public opinion: disaggregation by state of national surveys and a simulation approach using multilevel modeling of individual opinion and poststratification by population share. We present the first systematic assessment of the predictive accuracy of each and give practical advice about when and how each method should be used. To do so, we use an original data set of over 100 surveys on gay rights issues as well as 1988 presidential election data. Under optimal conditions, both methods work well, but multilevel modeling performs better generally. Compared to baseline opinion measures, it yields smaller errors, higher correlations, and more reliable estimates. Multilevel modeling is clearly superior when samples are smaller—indeed, one can accurately estimate state opinion using only a single large national survey. This greatly expands the scope of issues for which researchers can study subnational opinion directly or as an influence on policymaking.},
+  Doi                      = {10.1111/j.1540-5907.2008.00360.x},
+  ISSN                     = {1540-5907},
+  Owner                    = {Robbie},
+  Publisher                = {Blackwell Publishing Inc},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://dx.doi.org/10.1111/j.1540-5907.2008.00360.x}
+}
+
+@Article{Lax2009b,
   Title                    = {Gay Rights in the States: Public Opinion and Policy Responsiveness},
   Author                   = {Lax, Jeffrey R. and Phillips, Justin H.},
   Journal                  = {American Political Science Review},
@@ -1828,7 +2022,7 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Url                      = {http://journals.cambridge.org/article_S0003055409990050}
 }
 
-@Article{Levendusky2009,
+@Article{Levendusky2009a,
   Title                    = {The Microfoundations of Mass Polarization},
   Author                   = {Levendusky, Matthew S.},
   Journal                  = {Political Analysis},
@@ -1845,7 +2039,7 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Url                      = {http://pan.oxfordjournals.org/content/17/2/162.abstract}
 }
 
-@Book{Levendusky2009,
+@Book{Levendusky2009b,
   Title                    = {The partisan sort: How liberals became {D}emocrats and conservatives {R}epublicans},
   Author                   = {Levendusky, Matthew S.},
   Publisher                = {Chicago: University of Chicago Press},
@@ -2362,6 +2556,21 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Timestamp                = {2015.10.19}
 }
 
+@Article{Roberts2007,
+  Title                    = {The statistical analysis of roll-call data: A cautionary tale},
+  Author                   = {Roberts, Jason M.},
+  Journal                  = {Legislative Studies Quarterly},
+  Year                     = {2007},
+
+  Month                    = {Aug},
+  Number                   = {3},
+  Pages                    = {341-360},
+  Volume                   = {32},
+
+  Owner                    = {Robbie},
+  Timestamp                = {2015.11.23}
+}
+
 @Article{Roberts2003,
   Title                    = {Procedural Contexts, Party Strategy, and Conditional Party Voting in the U.S. House of Representatives, 1971â€“2000},
   Author                   = {Roberts, Jason M. and Smith, Steven S.},
@@ -2778,6 +2987,26 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Url                      = {http://cps.sagepub.com/content/29/5/499.abstract}
 }
 
+@Article{Stratmann2000,
+  Title                    = {Congressional Voting over Legislative Careers: Shifting Positions and Changing Constraints},
+  Author                   = {Stratmann,Thomas},
+  Journal                  = {American Political Science Review},
+  Year                     = {2000},
+
+  Month                    = {9},
+  Pages                    = {665--676},
+  Volume                   = {94},
+
+  Abstract                 = { ABSTRACT The proposed model predicts that voting behavior of legislators is more variable early in their career and that junior members are more likely to vote with their party than senior members. The results from the analysis of voting patterns in the House of Representatives and the Senate are consistent with the hypotheses: Party line voting and variability of voting decisions decline with increasing seniority. Changes in voting behavior are also induced by redistricting. The empirical results show that legislators subject to redistricting change their voting behavior to accord better with altered constituency preferences. },
+  Doi                      = {10.2307/2585838},
+  ISSN                     = {1537-5943},
+  Issue                    = {03},
+  Numpages                 = {12},
+  Owner                    = {Robbie},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://journals.cambridge.org/article_S0003055400222132}
+}
+
 @Article{Sudit1988,
   Title                    = {Ideology or Self-Interest? Medical Students' Attitudes Toward National Health Insurance},
   Author                   = {Sudit, Myriam},
@@ -2813,6 +3042,26 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Timestamp                = {2015.01.08},
   Type                     = {Journal Article},
   Url                      = {http://www.unc.edu/~fbaum/teaching/articles/AJPS-2006-Taber.pdf}
+}
+
+@Article{Talbert2002,
+  Title                    = {Setting the Legislative Agenda: The Dimensional Structure of Bill Cosponsoring and Floor Voting},
+  Author                   = {Talbert, Jeffery C. and Potoski, Matthew},
+  Journal                  = {The Journal of Politics},
+  Year                     = {2002},
+
+  Month                    = {8},
+  Pages                    = {864--891},
+  Volume                   = {64},
+
+  Abstract                 = { ABSTRACT The shape of the legislative agenda varies through the legislative process. At the policy debate stage, where legislative proposals are introduced, packaged, and debated, members' bill cosponsoring patterns reveal a multidimensional agenda. At the decision stage on the legislative floor, members' voting patterns reveal a low-dimensional agenda. This article compares the dimensional structures of legislators' bill cosponsoring and floor voting activities during the 103rd and 104th Congresses. The analyses show that bill cosponsoring contains at least three and as many as five distinct dimensions, suggesting that pre-floor legislative activities play an important role in structuring the lines of conflict for floor decisions. },
+  Doi                      = {10.1111/0022-3816.00150},
+  ISSN                     = {1468-2508},
+  Issue                    = {03},
+  Numpages                 = {28},
+  Owner                    = {Robbie},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://journals.cambridge.org/article_S0022381600001547}
 }
 
 @Article{Tesler2012,
