@@ -442,6 +442,24 @@ does not move as abruptly as that of the House.},
   Url                      = {http://journals.cambridge.org/article_S0003055402004276}
 }
 
+@Article{CanesWrone2011,
+  Title                    = {Issue Accountability and the Mass Public},
+  Author                   = {Canes-Wrone, Brandice and Minozzi, William and Reveley, Jessica Bonney},
+  Journal                  = {Legislative Studies Quarterly},
+  Year                     = {2011},
+  Number                   = {1},
+  Pages                    = {5--35},
+  Volume                   = {36},
+
+  Abstract                 = {Under what conditions, if any, does the mass electorate hold congressional members accountable for their records on specific issues? We examine this question on the issue of crime, for which salience has varied substantially and opinion has favored Republicans, and the environment, for which salience has not varied much and voters have favored Democrats. Because different parametric specifications produce divergent findings, we utilize matching analysis in addition to ordinary least squares. The tests suggest that issue accountability exists even controlling for a member's overall record. However, such accountability depends crucially on issue salience and a member's partisan affiliation.},
+  Doi                      = {10.1111/j.1939-9162.2010.00002.x},
+  ISSN                     = {1939-9162},
+  Owner                    = {Robbie},
+  Publisher                = {Blackwell Publishing Inc},
+  Timestamp                = {2015.05.01},
+  Url                      = {http://dx.doi.org/10.1111/j.1939-9162.2010.00002.x}
+}
+
 @Electronic{Carroll2015,
   Title                    = {Common Space DW-NOMINATE Scores with Bootstrapped Standard Errors (Joint House and Senate Scaling)},
   Author                   = {Carroll, Royce and Lewis, Jeff and Lo, James and McCarty, Nolan and Poole, Keith and Rosenthal, Howard},
@@ -1773,27 +1791,6 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Url                      = {http://www.jstor.org/stable/194249}
 }
 
-@Article{Krehbiel1993,
-  Title                    = {Where's the Party?},
-  Author                   = {Krehbiel, Keith},
-  Journal                  = {British Journal of Political Science},
-  Year                     = {1993},
-  Number                   = {2},
-  Pages                    = {pp. 235-266},
-  Volume                   = {23},
-
-  Abstract                 = {Political parties are prominent in legislative politics and legislative research. Using data from the 99th Congress, this article assesses the degree to which significant party behaviour - defined and operationalized as behaviour that is independent of preferences - occurs in two key stages of legislative organization: the formation of standing committees and the appointment of conferees. Four hypotheses are developed and tested. When controlling for preferences and other hypothesized effects, positive and significant party effects are rare. A discussion addresses some criticisms of this unorthodox approach and attempts to reconcile some differences between these and previous findings.},
-  Copyright                = {Copyright 1993 Cambridge University Press},
-  ISSN                     = {00071234},
-  Jstor_articletype        = {research-article},
-  Jstor_formatteddate      = {Apr., 1993},
-  Language                 = {English},
-  Owner                    = {Robbie},
-  Publisher                = {Cambridge University Press},
-  Timestamp                = {2015.04.13},
-  Url                      = {http://www.jstor.org/stable/194249}
-}
-
 @Article{Krosnick1990,
   Title                    = {Government policy and citizen passion: A study of issue publics in contemporary {A}merica},
   Author                   = {Krosnick, JonA.},
@@ -1965,23 +1962,6 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Owner                    = {Robbie},
   Timestamp                = {2015.01.08},
   Type                     = {Journal Article}
-}
-
-@Article{Rothenberg2000,
-  Title                    = {Severing the Electoral Connection: Shirking in the Contemporary Congress},
-  Author                   = {Lawrence S. Rothenberg, Mitchell S. Sanders},
-  Journal                  = {American Journal of Political Science},
-  Year                     = {2000},
-  Number                   = {2},
-  Pages                    = {316-325},
-  Volume                   = {44},
-
-  Abstract                 = {Studies of representation focusing on legislative shirking tend to offer an interesting tension: when the opportunity presents itself, it seems that exiting members do not change their voting behavior (ideological shirking) but do reduce their effort level by voting less (participatory shirking). Our analysis avoids the pitfalls of prior studies by defining a simple, quasi-experimental, research design contrasting those certain that they are seeking reelection with those sure that they are departing the House for the 102nd, 103rd, and 104th Congresses (1991-1996). We measure changes in ideology and participation using all roll-call votes in the last six months of election years, controlling for possible member selection effects and short-term influences, and show that legislators are disposed toward ideological and participatory shirking while selection effects are unimportant. Thus, we reconcile results seemingly at odds and suggest that policies affecting member turnover, such as term limits, can interfere with representation.},
-  ISSN                     = {00925853, 15405907},
-  Owner                    = {Robbie},
-  Publisher                = {Midwest Political Science Association},
-  Timestamp                = {2015.11.23},
-  Url                      = {http://www.jstor.org/stable/2669313}
 }
 
 @Article{Lax2009a,
@@ -2445,6 +2425,23 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Url                      = {http://spa.sagepub.com/content/13/3/306.abstract}
 }
 
+@Article{Park2004,
+  Title                    = {Bayesian Multilevel Estimation with Poststratification: State-Level Estimates from National Polls},
+  Author                   = {Park, David K. and Gelman, Andrew and Bafumi, Joseph},
+  Journal                  = {Political Analysis},
+  Year                     = {2004},
+  Number                   = {4},
+  Pages                    = {375-385},
+  Volume                   = {12},
+
+  Abstract                 = {We fit a multilevel logistic regression model for the mean of a binary response variable conditional on poststratification cells. This approach combines the modeling approach often used in small-area estimation with the population information used in poststratification (see Gelman and Little 1997, Survey Methodology 23:127–135). To validate the method, we apply it to U.S. preelection polls for 1988 and 1992, poststratified by state, region, and the usual demographic variables. We evaluate the model by comparing it to state-level election outcomes. The multilevel model outperforms more commonly used models in political science. We envision the most important usage of this method to be not forecasting elections but estimating public opinion on a variety of issues at the state level.},
+  Doi                      = {10.1093/pan/mph024},
+  Eprint                   = {http://pan.oxfordjournals.org/content/12/4/375.full.pdf+html},
+  Owner                    = {Robbie},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://pan.oxfordjournals.org/content/12/4/375.abstract}
+}
+
 @Article{Patterson1983,
   Title                    = {Getting Out the Vote: Participation in Gubernatorial Elections},
   Author                   = {Patterson, Samuel C. and Caldeira, Gregory A.},
@@ -2648,6 +2645,23 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Posted-at                = {2005-03-01 04:45:58},
   Priority                 = {0},
   Timestamp                = {2015.10.28}
+}
+
+@Article{Rothenberg2000,
+  Title                    = {Severing the Electoral Connection: Shirking in the Contemporary Congress},
+  Author                   = {Lawrence S. Rothenberg and Mitchell S. Sanders},
+  Journal                  = {American Journal of Political Science},
+  Year                     = {2000},
+  Number                   = {2},
+  Pages                    = {316-325},
+  Volume                   = {44},
+
+  Abstract                 = {Studies of representation focusing on legislative shirking tend to offer an interesting tension: when the opportunity presents itself, it seems that exiting members do not change their voting behavior (ideological shirking) but do reduce their effort level by voting less (participatory shirking). Our analysis avoids the pitfalls of prior studies by defining a simple, quasi-experimental, research design contrasting those certain that they are seeking reelection with those sure that they are departing the House for the 102nd, 103rd, and 104th Congresses (1991-1996). We measure changes in ideology and participation using all roll-call votes in the last six months of election years, controlling for possible member selection effects and short-term influences, and show that legislators are disposed toward ideological and participatory shirking while selection effects are unimportant. Thus, we reconcile results seemingly at odds and suggest that policies affecting member turnover, such as term limits, can interfere with representation.},
+  ISSN                     = {00925853, 15405907},
+  Owner                    = {Robbie},
+  Publisher                = {Midwest Political Science Association},
+  Timestamp                = {2015.11.23},
+  Url                      = {http://www.jstor.org/stable/2669313}
 }
 
 @Article{Rothman1985,

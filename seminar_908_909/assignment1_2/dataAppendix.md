@@ -16,42 +16,28 @@ At some points in the study, it will be useful to have data on state legislators
 
 ## Public Opinion
 
-Measures of public opinion will also be obtained from a few different sources. Large-scale surveys provide actual public opinion data that is representative of voters at the state level, which is useful for analyses of representation by Senators. I plan to use two such surveys. The Cooperative Congressional Election Study (CCES) is an Internet-based survey that began in 2006 and was conducted annually until 2012. The Annenberg National Election Surveys (NAES) began in 2000, and has been fielded every four years since then.
-
-- Use IPs from Catalist
-- could supplement with some survey data (CCES and/ or Annenberg) on major bills
-- also, presidential vote share
-- perhaps not relevant/ feasible for this paper, but has anyone ever used state-level elections to measure ideology in some sort of composite, factor analysis with pres. vote? (many issues with comparing state parties across states)
+Measures of public opinion will also be obtained from a few different sources. Large-scale surveys provide actual public opinion data that is representative of voters at the state level, which is useful for analyses of representation by Senators. I plan to use two such surveys. The Cooperative Congressional Election Study (CCES) is an Internet-based survey that began in 2006 and was conducted annually until 2012. The Annenberg National Election Surveys (NAES) was fielded in 2000, 2004, and 2008. I will be looking through the codebooks for specific items that will be useful in my project. In addition to survye data, I also plan to use the big-data based ideal point estimates from @Xing2014.
 
 ## Election Returns
 
-- FEC
-- Any other sources, specifically by district?
-- State-level data?
+For analyses involving presidential vote share and party competition in a state or district, I will need election returns. For district-level measures, I will need to use either available precinct- or county-level reports aggregated up to congressional districts. To aggregate county-level returns, I will follow the methodology used in @Ansolabehere2001 for combining county election results into districts. My initial source of precinct-level data for most elections over the last fifteen years is the "Precinct-Level Election Data" project of Steven Ansolabehere, Maxwell Palmer, and Amanda Lee, available at http://hdl.handle.net/1902.1/21919. State-level returns are easily obtained from the FEC and other official and academic sources. Precinct- and county-level data are both easily aggregated to the state level. In any cases where I need state-level data for which I do not have precinct data, I will pick a source that is most convenient for my purposes.
 
 ## Issue Publics
 
-- doctors (geo-coded CMS PUF practice data)
-- uninsured (Catalist)
-- Medicare/ Medicaid enrollees (Catalist has Medicare; could check CMS; also, could use Census age/ income profiles as proxies, or the Census SAE data)
-	-could even use amount of Medicare/ Medicaid funding going to state (district?)
-- hospitals in the district (could try to get that from CMS, HHS, or CDC)
-- any way to get at cancer patients, etc.?
-	
-## Campaign Finance
+Data on the size of various issue publics will be collected at the state and, where possible, congressional district levels. For doctors, I will use the CMS' Medicare Provider Utilization and Payment Data for 2012, which contains practice information for all physicians and provider organizations that billed Medicare that year. Since almost all providers in the country bill Medicare at least once per year, this data covers virtually all physicians. I geocode the practice location information to ascertain the congressional district in which the provider practices. This yields a count of providers practicing in each congressional district. I will use similar data on hospitals (still to be obtained, but likely from CMS or another government agency like HHS or CDC).
 
-- from CRP
-- provider groups (doctors, hospitals, other providers)
-- payers
-- patient advocacy groups (esp. Medicaid/ low-income groups, AARP, etc.)
-- what about devices, pharma, ancillary services, etc.?
-- Party committees (state and federal), leadership PACs
+Data on Medicare and Medicaid enrollees by state might be available from CMS or another agency. If not, I can try to use Census data on age and income to infer enrollment rates in Medicare and Medicaid respectively. Another possibility is the Census Bureau's Small Area Health Insurance Estimates, which give insurance status estimates (based on modeling techniques) in states and counties. The SAHIE data also gives estimates of the uninsured, another issue public I plan to examine. Another option for measuring the number uninsured is model estimates in the Catalist data.
+
+*[If possible, I would also look at patients with chronic diseases, cancer, etc. as issue publics. I will need to explore data options for this; perhaps CDC has something, or maybe the websites of the various organized groups have some estimates.]*
+	
+## Campaign Finance and Lobbying
+
+Campaign finance and data will be collected from opensecrets.org, the website of the Center for Responsive Politics (CRP). CRP takes their data from the FEC and groups it by industry/ advocacy group type and, for campaign contributions, by candidates. Specifically, I will collect campaign contribution data from physician groups (like the AMA); hospital industry groups (like AHA); insurance inductry groups (ex, AHIP); advocacy groups that represent particular patient populations such as seniors (AARP), Medicaid enrollees, and perhaps chronic disease patients; other medical industry groups such as PHrMA; and major party committees and leadership PACs. These data will be collected for all candidates in relevant election cycles. I will also collect lobbying expenditures by these groups for relevant congresses.
 
 ## Other Data
 
-- MC partisanship data
-- income (Census?)
-- race (Census?)
+Legislator partisanship data is available from a number of sources, including the GovTrack bill and roll call data. To collect whatever demographic information is determined to be necessary for analysis, I will look first at Census Bureau offerings. If that fails, I would turn next to the Catalist dataset.
+
 
 [^1]: Fowler and his coauthors, Andrew Waugh and Yunkyu Sohn, collected cosponsorship data for the 93rd-108th Congresses for some of their own published work. The data are described on Fowler's website, http://jhfowler.ucsd.edu/cosponsorship.htm and in his peer-reviewed articles [@Fowler2006a, @Fowler2006b].
 

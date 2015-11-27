@@ -56,9 +56,9 @@ Information on the partisan affiliations of members of Congress is obviously nec
 
 ## Planned Analysis
 
-- In analysis, be sure to look for interaction effects between median voter and issue public; negative means issue public influence (if higher value for median is conservative and the issue public tends to be conservative)
-- Issue to be concerned about: predicting legislative behvior using public opinion, which may be endogenous to legislative behavior. Counter to this: public opinion driven by elites, not by a particular action of a particular elite. Just because the public discourse and therefore public opinion is elite-driven, responsiveness to public opinion need not occur, at least not at an overall legislative level. (look at Zaller, Jacobs and Shapiro, and Druckman and Jacobs for more on this issue).
-- Think about how to examine overall effects of issue publics on legislature as a whole; perhaps something like how many votes are influenced by issue publics?
+To test my hypotheses regarding issue publics, I will use the size of an issue public in a state/ district to predict legislator support for health-related bills, controlling for median state/ district opinion, campaign contributions from organized health groups, and legislator partisanship. If the size of an issue public has an independent correlation with the dependent variable, issue public influence is occurring. A further test of the hypothesis involves interaction terms between issue public size and public opinion. If the size of an issue public changes the relationship between public preferences and legislative behavior, then the issue public is affecting the representational relationship.
+
+I propose to examine the effects of issue publics on legislatures in two ways. First, I can examine how many votes on each bill are influenced by issue publics, using the results of the analyses described above. If enough votes are influenced, it could change the fate of a particular bill. Second, I can examine the relationship between the size of the issue public nationally and legislative behavior. In this analysis, I could control not only for campaign contributions, but also for lobbying expenditures by relevant groups.
 
 ## References
 
