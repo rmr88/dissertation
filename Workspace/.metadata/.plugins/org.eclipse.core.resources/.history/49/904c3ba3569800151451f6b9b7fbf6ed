@@ -1,0 +1,81 @@
+package launchers;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+
+import utilities.DataObj;
+import utilities.InFile;
+
+public class AppendData
+{
+	public static void main(String args[])
+	{
+		HashMap<String, Integer> headers = new HashMap<String, Integer>();
+		String basePath = "C:\\Users\\Robbie\\Documents\\dissertation\\Workspace\\"
+				+ "dissertationData\\resources";
+		InFile hdrFile = null;
+		String line = "";
+		int colIndex = 0;
+		
+		try
+		{
+			hdrFile = new InFile(basePath + "\\columnNamesTest.txt");
+			while((line = hdrFile.readLine()) != null)
+			{
+				headers.put(line, colIndex);
+				colIndex++;
+			}
+		}
+		catch (IOException e)
+		{
+			System.err.println("Error in reading header file.");
+			e.printStackTrace();
+		}
+		finally
+		{
+			hdrFile.close();
+		} //end global header processing
+		
+		InFile in = null;
+		File[] dataFiles = new File(basePath + "\\data").listFiles();
+		HashMap<String, DataObj> data = new HashMap<String, DataObj>();
+		String[] heads, row;
+		
+		for (File file : dataFiles)
+		{
+			data.clear();
+			colIndex = 0;
+			
+			try
+			{
+				in = new InFile(file);
+				heads = in.readRowLite("\t");
+				for (String head : heads)
+				{
+					data.put(head, new DataObj(head, colIndex));
+					colIndex++;
+				}
+				System.out.println(file.getName());
+				
+				while ((row = in.readRowLite("\t")) != null)
+				{
+					System.out.println(row.length);
+					for (int rowIndex = 0; rowIndex < row.length; rowIndex++)
+					{
+						data.get(heads[rowIndex]).addData(row[rowIndex]);
+					}
+				}
+				for (String key : data.keySet())
+					System.out.println(data.get(key));
+			}
+			catch (IOException e)
+			{
+				System.err.println("Error in reading file " + file.getAbsolutePath());
+			}
+		} //end for loop through dataFiles
+		
+//		for (String key : headers.keySet())
+//			System.out.println(key + ": " + headers.get(key));
+	} //end main
+} //end AppendData

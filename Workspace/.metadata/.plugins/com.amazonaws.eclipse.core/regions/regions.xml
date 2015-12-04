@@ -289,6 +289,7 @@
       <service name="SQS">https://sqs.cn-north-1.amazonaws.com.cn/</service>
       <service name="RDS">https://rds.cn-north-1.amazonaws.com.cn/</service>
       <service name="ELB">https://elasticloadbalancing.cn-north-1.amazonaws.com.cn/</service>
+      <service name="ElasticBeanstalk">https://elasticbeanstalk.cn-north-1.amazonaws.com.cn/</service>
       <service name="AutoScaling">https://autoscaling.cn-north-1.amazonaws.com.cn/</service>
       <service name="CloudWatch">https://monitoring.cn-north-1.amazonaws.com.cn/</service>
       <service name="CloudFormation">https://cloudformation.cn-north-1.amazonaws.com.cn/</service>

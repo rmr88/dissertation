@@ -67,7 +67,7 @@ public class InFile
 		String[] row = null;
 		try
 		{
-			row = this.reader.readLine().split(delim);
+			row = this.reader.readLine().split(delim, -1);
 		}
 		catch (NullPointerException e) {}
 		

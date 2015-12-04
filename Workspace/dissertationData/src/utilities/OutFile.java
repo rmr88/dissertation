@@ -90,6 +90,18 @@ public class OutFile
 		return this.writeDir;
 	}
 	
+	public void flush()
+	{
+		try
+		{
+			this.writer.flush();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
 	public void close()
 	{
 		try

@@ -1,0 +1,49 @@
+package utilities;
+
+import java.util.ArrayList;
+
+public class DataObj
+{
+	private String colName;
+	private int colNum;
+	private ArrayList<String> data = new ArrayList<String>;
+	
+	public DataObj() {}
+	
+	public DataObj(String name, int num)
+	{
+		this.colName = name;
+		this.colNum = num;
+	}
+	
+	public String getName()
+	{
+		return this.colName;
+	}
+	
+	public int getNum()
+	{
+		return this.colNum;
+	}
+	
+	public ArrayList<String> getData()
+	{
+		return this.data;
+	}
+	
+	public void addData(String cell)
+	{
+		this.data.add(cell);
+	}
+	
+	public int getDataSize()
+	{
+		return this.data.size();
+	}
+	
+	public String toString()
+	{
+		return this.colName + " (" + this.colNum +  "); data array length = "
+				+ this.data.size();
+	}
+}

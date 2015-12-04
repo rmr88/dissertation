@@ -1,0 +1,114 @@
+package launchers;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import utilities.DataObj;
+import utilities.InFile;
+import utilities.OutFile;
+
+public class AppendData
+{
+	public static void main(String args[])
+	{
+	//****  Helper Objects  ****//
+		String basePath = "C:\\Users\\Robbie\\Documents\\dissertation\\Workspace\\"
+				+ "dissertationData\\resources";
+		File[] dataFiles = new File(basePath + "\\data").listFiles();
+			
+		InFile hdrFile = null;
+		InFile in = null;
+		OutFile out = null;
+		
+		String delim = "\t";
+		ArrayList<String> headers = new ArrayList<String>();
+		HashMap<String, DataObj> data = new HashMap<String, DataObj>();
+		
+		String[] heads, row;
+		int rows;
+		String line = "";
+	//end helper objects
+		
+		try //try global header processing
+		{
+			hdrFile = new InFile(System.getProperty("user.dir") + "resources\\columnNamesTest.txt");
+			while((line = hdrFile.readLine()) != null)
+				headers.add(line);
+		}
+		catch (IOException e)
+		{
+			System.err.println("Error in reading header file.");
+		}
+		finally
+		{
+			hdrFile.close();
+		} //end global header processing
+		
+		try //try creating out file, writing header line
+		{
+			out = new OutFile(basePath + "\\datatestOut.txt");
+			out.writeRow(headers, delim);
+		}
+		catch(IOException e)
+		{
+			System.err.println("Error in creating out file.");
+		} //end creating out file
+		
+		for (File file : dataFiles) //loop through dataFiles array
+		{
+			data.clear();
+			rows = 0;
+			
+			try //try to read next file
+			{
+				in = new InFile(file);
+				heads = in.readRowLite("\t");
+				for (String head : heads)
+				{
+					data.put(head, new DataObj(head));
+				}
+				
+				while ((row = in.readRowLite("\t")) != null)
+				{
+					int rowIndex = 0;
+					while (rowIndex < row.length)
+					{
+						data.get(heads[rowIndex]).addData(row[rowIndex]);
+						rowIndex++;
+					}
+					
+					if (rowIndex > rows)
+						rows = rowIndex;
+				}
+			}
+			catch (IOException e)
+			{
+				System.err.println("Error in reading file " + file.getName() + ".");
+			} //end try read file
+			
+			try //try writing
+			{
+				for (int index = 0; index < rows; index++)
+				{
+					for (int i = 0; i < headers.size()-1; i++)
+					{
+						if (data.containsKey(headers.get(i)))
+							out.write(data.get(headers.get(i)).getData().get(index) + delim);
+						else
+							out.write(delim);
+					}
+					if (data.containsKey(headers.get(headers.size()-1)))
+						out.writeLine(data.get(headers.get(headers.size()-1)).getData().get(index));
+					else
+						out.writeLine("");
+				}
+			}
+			catch (IOException e)
+			{
+				System.err.println("Error in writing data for " + file.getName() + ".");
+			} //end try writing
+		} //end for loop through dataFiles
+	} //end main
+} //end AppendData
