@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
-<fullyQualifiedTypeName name="java.nio.file.Path"/>
-<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
 <fullyQualifiedTypeName name="utilities.IOFile"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
@@ -32,12 +29,35 @@
 <fullyQualifiedTypeName name="org.apache.commons.exec.CommandLine"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="javax.swing.filechooser.FileFilter"/>
-<fullyQualifiedTypeName name="java.io.FilenameFilter"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="utilities.InFile"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="utilities.DataObj"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.WebClient"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.html.HtmlPage"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.BrowserVersion"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.html.HtmlSpan"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.html.DomElement"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.html.HtmlTableRow"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.html.HtmlTableCell"/>
 <fullyQualifiedTypeName name="utilities.OutFile"/>
+<fullyQualifiedTypeName name="java.util.logging.Logger"/>
+<fullyQualifiedTypeName name="java.util.logging.Level"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.html.HtmlElement"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.html.HtmlTableHeader"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.html.HtmlTableBody"/>
+<fullyQualifiedTypeName name="java.util.function.Predicate"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.html.HtmlTable"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="utilities.CandidateData"/>
+<fullyQualifiedTypeName name="utilities.ElectionData"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.io.FilenameFilter"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="org.apache.poi.hssf.OldExcelFormatException"/>
+<fullyQualifiedTypeName name="jxl.Workbook"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="utilities.ExcelToCsv"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="utilities.InFile"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

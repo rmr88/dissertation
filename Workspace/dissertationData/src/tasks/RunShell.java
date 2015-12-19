@@ -9,6 +9,7 @@ public class RunShell
 {
 	private String cmd;
 	private String dir;
+	private String[] params;
 	
 	public RunShell(String command)
 	{
@@ -16,10 +17,24 @@ public class RunShell
 		this.dir = System.getProperty("user.dir");
 	}
 	
+	public RunShell(String command, String[] parameters) //not fully implemented
+	{
+		this.cmd = command;
+		this.dir = System.getProperty("user.dir");
+		this.params = parameters;
+	}
+	
 	public RunShell(String command, String directory)
 	{
 		this.cmd = command;
 		this.dir = directory;
+	}
+	
+	public RunShell(String command, String directory, String[] parameters) //not fully implemented
+	{
+		this.cmd = command;
+		this.dir = directory;
+		this.params = parameters;
 	}
 	
 	public String run()

@@ -1,0 +1,21 @@
+package tests;
+
+import java.io.File;
+import java.io.FilenameFilter;
+import java.util.Arrays;
+
+import tasks.RunShell;
+
+public class Testing
+{
+	public static void main(String args[])
+	{
+		String path = "C:\\Users\\Robbie\\Documents\\dissertation\\Data\\elections"
+				+ "\\stateResults\\AL\\AUTAUGA.XLS";
+		String dir = "C:\\Users\\Robbie\\Documents\\dissertation\\Code";
+
+		String command = "XlsToCsv.vbs";
+		RunShell shell = new RunShell(command + " " + path, dir);
+		System.out.println(shell.run());
+	}
+}

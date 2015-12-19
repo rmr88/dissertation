@@ -1,0 +1,26 @@
+package utilities;
+
+import java.io.File;
+
+import tasks.RunShell;
+
+public class ExcelToCsv
+{
+	private static String dir = "C:\\Users\\Robbie\\Documents\\dissertation\\Code";
+	private static String command = "XlsToCsv.vbs";
+	public static void run(File path, String fileType)
+	{
+		for (String filePath: path.list())
+		{
+			File file = new File(filePath);
+			if (file.isDirectory())
+				run(file.getAbsoluteFile(), fileType);
+			else
+			{
+				RunShell shell = new RunShell(command + " " + filePath, dir);
+				System.out.println(filePath);
+				System.out.println(shell.run());
+			}
+		}
+	}
+}

@@ -1,0 +1,117 @@
+package utilities;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class ElectionData
+{
+	private String office, state, type, location;
+	private int year;
+	private ArrayList<CandidateData> data = new ArrayList<CandidateData>();
+	static HashMap<String, String> offices = new HashMap<String, String>();
+	
+	public ElectionData() {}
+	
+	public ElectionData(String _state, String _type, String _location, int _year)
+	{
+		this.year = _year;
+		this.state = _state;
+		this.location = _location;
+		this.type = _type;
+	}
+	
+	public void setOffice(String _office)
+	{
+		String off = _office.toUpperCase();
+		
+		if (offices.keySet().contains(off))
+		{
+			this.office = offices.get(off);
+		}
+		else
+		
+		this.office = _office;
+	}
+	
+	public void setLocation(String _location)
+	{
+		this.location = _location;
+	}
+	
+	public void setState(String _state)
+	{
+		this.state = _state;
+	}
+	
+	public void setType(String _type)
+	{
+		this.type = _type;
+	}
+	
+	public void setYear(int _year)
+	{
+		this.year = _year;
+	}
+	
+	public void addData(CandidateData d)
+	{
+		this.data.add(d);
+	}
+	
+	public String getState()
+	{
+		return this.state;
+	}
+	
+	public String getType()
+	{
+		return this.type;
+	}
+	
+	public String getLocation()
+	{
+		return this.location;
+	}
+	
+	public int getYear()
+	{
+		return this.year;
+	}
+	
+	public ArrayList<CandidateData> getCandData()
+	{
+		return this.data;
+	}
+	
+	public String getRows()
+	{
+		String rows = "";
+		String delim = "\t";
+		
+		for(CandidateData d : this.data)
+		{
+			rows += this.state + delim +
+					this.year + delim +
+					this.type + delim +
+					this.location + delim +
+					this.office + delim +
+					d.getRow(delim) + "\r\n";	
+		}
+		return rows;
+	}
+	
+	public String getRows(String delim)
+	{
+		String rows = "";
+		for(CandidateData d : this.data)
+		{
+			rows += this.state + delim +
+					this.year + delim +
+					this.type + delim +
+					this.location + delim +
+					this.office + delim +
+					d.getRow(delim) + "\r\n";	
+		}
+		return rows;
+	}
+}

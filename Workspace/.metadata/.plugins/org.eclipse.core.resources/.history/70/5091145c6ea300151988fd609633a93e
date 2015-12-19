@@ -1,0 +1,55 @@
+package utilities;
+
+public class CandidateData
+{
+	private String name, party;
+	private int votes;
+	private double percent;
+	
+	public CandidateData() {}
+	
+	public CandidateData(String _name, String _party, int _votes, double _perc)
+	{
+		this.name = _name;
+		this.party = _party;
+		this.votes = _votes;
+		this.percent = _perc;
+	}
+	
+	public int getVotes()
+	{
+		return this.votes;
+	}
+	
+	public double getPercent()
+	{
+		return this.percent;
+	}
+	
+	public String getName()
+	{
+		return this.name;
+	}
+	
+	public String getParty()
+	{
+		return this.party;
+	}
+	
+	public String getRow()
+	{
+		String delim = "\t";
+		return this.name + delim +
+				this.party + delim +
+				this.votes + delim +
+				this.percent;
+	}
+	
+	public String getRow(String delim)
+	{
+		return this.name + delim +
+				this.party + delim +
+				this.votes + delim +
+				this.percent;
+	}
+}

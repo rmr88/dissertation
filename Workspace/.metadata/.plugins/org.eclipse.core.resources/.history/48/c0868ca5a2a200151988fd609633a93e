@@ -1,0 +1,194 @@
+package utilities;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class ElectionData
+{
+	private String office, state, type, location, district;
+	private int year;
+	private ArrayList<CandidateData> data = new ArrayList<CandidateData>();
+	static HashMap<String, String> offices = new HashMap<String, String>();
+	static ArrayList<String> checkedOffices = new ArrayList<String>();
+	
+	public ElectionData() {}
+	
+	public ElectionData(String _state, String _type, String _location, int _year)
+	{
+		this.year = _year;
+		this.state = _state;
+		this.location = _location;
+		this.type = _type;
+	}
+	
+	public void setOffice(String _office)
+	{
+		String off = _office.toUpperCase();
+		
+		if (off.contains(", DISTRICT"))
+		{
+			String dist = off.substring(off.lastIndexOf("DISTRICT"));
+			dist = dist.replace("DISTRICT ", "");
+			this.district = dist;
+			off = off.substring(0, off.indexOf(", DISTRICT"));
+		}
+		else
+			this.district = "";
+		
+		//System.out.println("****New check: " + off);
+		if (offices.keySet().contains(off))
+		{
+			//System.out.println("\toff = " + off + " matched to " + offices.get(off));
+			this.office = offices.get(off);
+		}
+		else if (!checkedOffices.contains(off))
+		{
+			String checkResult = check(off);
+			if (!checkResult.isEmpty())
+			{
+				//System.out.println("\tNew match: off = " + off + " matched to " + checkResult);
+				offices.put(off, checkResult);
+				this.office = checkResult;
+			}
+			else
+			{
+				//System.out.println("\t" + off + " not matched, added to checkedOffices.");
+				checkedOffices.add(off);
+				this.office = off;
+			}
+		}
+		else
+		{
+			//System.out.println("\t" + off + " not checked, already in checkedOffices.");
+			this.office = off;
+		}
+		//System.out.println("\tend check for " + off);
+	}
+	
+	private String check(String toCheck)
+	{
+		String officeKey = "";
+		Offices[] officeKeys = Offices.values();
+		
+		int keyIndex = 0;
+		while (officeKey.isEmpty() && keyIndex < officeKeys.length)
+		{
+			//System.out.print("\t\tChecking office " + officeKeys[keyIndex].toString() + "...");
+			int index = 0;
+			String[] keys = officeKeys[keyIndex].getKeys();
+			while (officeKey.isEmpty() && index < keys.length)
+			{
+				if (toCheck.toUpperCase().contains(keys[index]))
+				{
+					//System.out.print("MATCH...");
+					officeKey = officeKeys[keyIndex].toString();
+					
+					int ind2 = 0;
+					String [] exclusions = officeKeys[keyIndex].getExclusions();
+					while (!officeKey.isEmpty() && ind2 < exclusions.length)
+					{
+						if (toCheck.toUpperCase().contains(exclusions[ind2]))
+						{
+							//System.out.print("EXCLUDED");
+							officeKey = "";
+							index = keys.length;
+						}
+						ind2++;
+					}
+				}
+				index++;
+			}
+			keyIndex++;
+		}
+		//System.out.println("\r\n\t\treturning " + officeKey);
+		return officeKey;
+	}
+	
+	public String getOffice()
+	{
+		return this.office;
+	}
+	
+	public void setLocation(String _location)
+	{
+		this.location = _location;
+	}
+	
+	public void setState(String _state)
+	{
+		this.state = _state;
+	}
+	
+	public void setType(String _type)
+	{
+		this.type = _type;
+	}
+	
+	public void setYear(int _year)
+	{
+		this.year = _year;
+	}
+	
+	public void addData(CandidateData d)
+	{
+		this.data.add(d);
+	}
+	
+	public String getState()
+	{
+		return this.state;
+	}
+	
+	public String getType()
+	{
+		return this.type;
+	}
+	
+	public String getLocation()
+	{
+		return this.location;
+	}
+	
+	public int getYear()
+	{
+		return this.year;
+	}
+	
+	public ArrayList<CandidateData> getCandData()
+	{
+		return this.data;
+	}
+	
+	public String getRows()
+	{
+		String rows = "";
+		String delim = "\t";
+		
+		for(CandidateData d : this.data)
+		{
+			rows += this.state + delim +
+					this.year + delim +
+					this.type + delim +
+					this.location + delim +
+					this.office + delim +
+					d.getRow(delim) + "\r\n";	
+		}
+		return rows;
+	}
+	
+	public String getRows(String delim)
+	{
+		String rows = "";
+		for(CandidateData d : this.data)
+		{
+			rows += this.state + delim +
+					this.year + delim +
+					this.type + delim +
+					this.location + delim +
+					this.office + delim +
+					this.district + delim +
+					d.getRow(delim) + "\r\n";	
+		}
+		return rows;
+	}
+}

@@ -1,0 +1,16 @@
+package tests;
+
+import java.io.File;
+
+public class Testing
+{
+	public static void main(String args[])
+	{
+		String path = "C:\\Users\\Robbie\\Documents\\dissertation\\Data\\elections"
+				+ "\\stateResults\\AL";
+		String[] dataFiles = new File(path).list();
+		for (String file : dataFiles)
+			if (!(new File(file).isFile()))
+				System.out.println(file);
+	}
+}
