@@ -1,0 +1,17 @@
+package launchers;
+
+import utilities.State;
+
+public class ParseAndScrape
+{
+	public static void main(String args[])
+	{
+		for (State state : State.values())
+		{
+			if (state.getProcessType().equals("scrape"))
+				new ElectionScraper.run(state);
+			else if (state.getProcessType().equals("parse"))
+				System.out.println(state.getState() + ": parse");
+		}
+	}
+}

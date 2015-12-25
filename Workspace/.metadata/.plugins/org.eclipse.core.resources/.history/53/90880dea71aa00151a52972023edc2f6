@@ -1,0 +1,27 @@
+package launchers;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import com.gargoylesoftware.htmlunit.BrowserVersion;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+
+import utilities.State;
+
+public class ElectionScraper
+{
+	public void run(State state) //TODO want to return anything for ScrapeAndParse to post-process?
+	{
+		System.out.println(state.getState() + ": scraping");
+		
+		Logger.getLogger("com.gargoylesoftware").setLevel(Level.OFF);
+		final WebClient wc = new WebClient(BrowserVersion.FIREFOX_38);
+		HtmlPage page = null;
+		
+		for (int year : state.getYears())
+		{
+			System.out.println("\t" + year);
+		}
+	}
+}

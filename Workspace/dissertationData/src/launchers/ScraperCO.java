@@ -60,7 +60,7 @@ public class ScraperCO
 					e.printStackTrace();
 				}
 				
-				String office = ElectionData.getOfficeKey(off);
+				String office = ElectionData.checkStatic(off);
 				System.out.println(office);
 				
 				String outPath = "C:\\Users\\Robbie\\Documents\\dissertation\\Data"

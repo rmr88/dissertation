@@ -17,8 +17,7 @@ public enum Offices
 	TRE (new String[] {"TREASURER"}, new String[] {}),
 	CCJ (new String[] {"CIRCUIT"}, new String[] {"ATTORNEY"}),
 	SCJ (new String[] {"SUPREME COURT", "SUPREME"}, new String[] {}),
-	SBOE (new String[] {"STATE BOARD OF EDUCATION", "EDUCATION"}, new String[] {}); //TODO make sure the "EDUCATION" token doesn't conflate other office names
-	
+	SBOE (new String[] {"STATE BOARD OF EDUCATION", "EDUCATION@"}, new String[] {});
 	
 	private String[] keys, exclusions;
 	

@@ -1,0 +1,11 @@
+package launchers;
+
+import utilities.State;
+
+public class ElectionParser
+{
+	public void run(State state) //TODO want to return anything for ScrapeAndParse to post-process?
+	{
+		System.out.println(state.getState() + ": scrape");
+	}
+}

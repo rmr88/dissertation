@@ -8,6 +8,7 @@ public class CandidateData
 	private int votes, year;
 	private double percent;
 	private ArrayList<ElectionData> data;
+	private String[] namePieces;
 	
 	public CandidateData() {}
 	
@@ -27,6 +28,27 @@ public class CandidateData
 		this.party = _party;
 		this.year = _year;
 		this.data = new ArrayList<ElectionData>();
+	}
+	
+	public CandidateData(int _year, String off, String[] name, String pty, String dist)
+	{
+		this.year = _year;
+		this.office = off;
+		this.namePieces = name;
+		this.party = pty;
+		this.district = dist;
+	}
+	
+	public String partyCheck(String nameToCheck, int _year, String off, String dist)
+	{
+		String _party = "";
+
+		for (String piece : this.namePieces)
+			if (nameToCheck.contains(piece) && _year == this.year
+					&& off.equals(this.office) && dist.equals(this.district))
+				_party = this.party;
+		
+		return _party;
 	}
 	
 	public void setOffice(String _office)
