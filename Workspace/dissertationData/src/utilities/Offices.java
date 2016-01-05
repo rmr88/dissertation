@@ -4,13 +4,14 @@ public enum Offices
 {
 	USP (new String[] {"PRESIDENT", "PRESIDENTIAL"}, new String[] {"@", "COMMISSION"}),
 	USS (new String[] {"SENATE", "SENATOR"}, new String[] {"STATE ", "DISTRICT", "@"}),
-	USH (new String[] {"CONGRESS", "HOUSE", "REPRESENTATIVE", "US REP"}, new String[] {"@"}),
+	USH (new String[] {"CONGRESS", "HOUSE", "US REP"},
+			new String[] {"@", "SENATE", "SENATOR"}),
 	GOV (new String[] {"GOVERNOR", "GUBERNATORIAL", "GOV"}, new String[] {"LIEUTENANT", "LT", "BOARD"}),
-	LTG (new String[] {"LIEUTENANT", "LT. GOVERNOR"}, new String[] {}),
+	LTG (new String[] {"LIEUTENANT", "LT. GOVERNOR"}, new String[] {}), //TODO need to handle cases when gov and ltg are mentioned in the same line (would default to ltg, which is not desirable)
 	STS (new String[] {"STATE SENATE", "STATE SENATOR", "SENATE@", "STATE SEN."},
 			new String[] {"US", "U.S", "UNITED STATES"}),
-	STH (new String[] {"STATE HOUSE", "STATE REPRESENTATIVE", "ASSEMBLY", "REPRESENTATIVES@",
-			 "STATE REP."}, new String[] {"US", "U.S", "UNITED STATES"}),
+	STH (new String[] {"STATE HOUSE", "STATE REPRESENTATIVE", "REPRESENTATIVE", "ASSEMBLY",
+			"REPRESENTATIVES@", "STATE REP."}, new String[] {"US", "U.S.", "UNITED STATES"}),
 	ATG (new String[] {"ATTORNEY GENERAL", "ATTORNEY GEN", "ATTGEN"}, new String[] {}),
 	SOS (new String[] {"SECRETARY OF STATE", "SECY OF STATE", "SEC. OF STATE", "SOS"},
 			new String[] {"OFFICE OF THE SECRETARY"}),

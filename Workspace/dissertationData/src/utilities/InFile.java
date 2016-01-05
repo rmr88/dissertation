@@ -95,4 +95,14 @@ public class InFile
 			e.printStackTrace();
 		}
 	}
+	
+	public static String determineDelimiter(String text)
+	{
+		if (text.matches("^([^\t]*\t{1})+[^\t]*$"))
+			return "\t";
+		else if (text.matches("^([^,]*(\"?,\"?){1})+[^,]*$"))
+			return ",";
+		else
+			return null;
+	}
 }

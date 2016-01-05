@@ -1,0 +1,314 @@
+package launchers;
+
+import java.io.File;
+import java.io.FilenameFilter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import utilities.CandidateData;
+import utilities.ElectionData;
+import utilities.InFile;
+import utilities.OutFile;
+import utilities.State;
+
+public class ElectionParser
+{
+	private State state;
+	private final String FILETYPE = ".txt";
+	private OutFile out = null;
+	
+	public ElectionParser(State _state)
+	{
+		this.state = _state;
+	}
+	
+	public void run() //TODO want to return anything for ScrapeAndParse to post-process?
+	{
+		System.out.println(this.state.getState() + ": parse");
+		
+		int[] years = this.state.getYears();
+		if (years.length == 0)
+		{
+			String[] folders = new File(state.getPath()).list(new FilenameFilter()
+			{
+				public boolean accept(File current, String name)
+				{
+					return new File(current, name).isDirectory();
+				}
+			});
+			
+			years = new int[folders.length];
+			for (int index = 0; index < years.length; index++)
+				years[index] = Integer.parseInt(folders[index]);
+		}
+
+		for (int year : years)
+		{
+			System.out.print("\t" + year);
+			
+			try
+			{
+				this.out = new OutFile(state.getPath() + "\\" + year + ".txt", false);
+			}
+			catch (IOException e)
+			{
+				System.err.println("Error in setting up output file " + state.getPath() + ".txt");
+				e.printStackTrace();
+			}
+			
+			File[] inputFiles = this.getFileList(this.state.getPath());
+			
+			if (state.getOffices().length != 0)
+				this.offices(year, inputFiles);
+			else if (state.getLocations().length != 0)
+				this.locations(year, inputFiles);
+			else if (inputFiles.length > 0)
+			{
+				System.out.println(inputFiles.toString());
+				inputFiles = this.getFileList(this.state.getPath() + "\\" + year);
+				int officesFound = 0;
+				for (File file : inputFiles)
+					if (file.getName().toUpperCase().contains("USH_") ||
+							file.getName().toUpperCase().contains("USP_") ||
+							file.getName().toUpperCase().contains("USS_") ||
+							file.getName().toUpperCase().contains("GOV_"))
+						officesFound++;
+
+				if (officesFound < 2)
+					this.offices(year, inputFiles);
+				else
+					this.locations(year, inputFiles);
+			}
+			
+			if (this.out != null)
+				this.out.close();
+		} //end loop through years
+	} //end run method
+	
+	public void offices(int year, File[] files)
+	{
+		System.out.println(": Parsing by offices");
+		
+		ArrayList<CandidateData> parties = this.getParties(); //TODO need to determine for each state whether this is needed.
+		for (File inputFile : files)
+		{
+			HashMap<Integer, CandidateData> data = new HashMap<Integer, CandidateData>();
+			
+			String county = inputFile.getName().toUpperCase()
+					.replaceAll("_SHEET[\\d]?", "").replace(FILETYPE.toUpperCase(), "")
+					.replace(".", "").replaceAll("1996_COMPILED_RESULTS_", "");
+			if (county.contains("_"))
+				county = county.substring(county.lastIndexOf("_")+1);
+
+			InFile in = null;
+			try
+			{
+				in = new InFile(inputFile);
+			}
+			catch (IOException e)
+			{
+				System.err.println("Error in opening " + inputFile.getAbsolutePath());
+				e.printStackTrace();
+			}
+			
+			String[] line = null;
+			String[] offices, districts;
+			ArrayList<String[]> topLines = new ArrayList<String[]>();
+			
+			try //try to process files
+			{ 
+				boolean lineIsHeader = true;
+				while (lineIsHeader && in.isReady()) //collect all header data into a single object
+				{
+					line = in.readRowLite("\t"); //at the end of the loop, will have the first data line
+					int numericCols = 0;
+					for (String cell : line)
+					{
+						cell = cell.replaceAll(",", "")
+								.replaceAll("\"", "")
+								.replaceAll("unopposed", "1").trim();
+						if (cell.matches("^[\\d\\.]+$"))
+							numericCols++;
+					}
+					
+					if (numericCols >= 5)
+						lineIsHeader = false;
+					else
+						topLines.add(line);
+				} //end header collection loop
+				
+				if (in.isReady()) //process a file with data
+				{
+					boolean haveNames = false;
+					while (!haveNames && topLines.size() >= 2)
+					{ //checking for office code row below names
+						int officesFound = 0;
+						int allCapsCells = 0;
+						for (String col : topLines.get(topLines.size()-1))
+						{
+							if (!ElectionData.checkStatic(col).equals(""))
+								officesFound++;
+							if (col.matches("^[^a-z]+"))
+								allCapsCells++;
+						}
+
+						if (officesFound >= 2 && allCapsCells >= 10)
+							topLines.remove(topLines.size()-1);
+						else
+							haveNames = true;
+					} //end check for office code row
+					
+					offices = topLines.get(0);
+					districts = new String[offices.length];
+					
+					boolean matchMade = false;
+					int firstOfficeCol = 0;
+					for (int col = 0; col < offices.length; col++)
+					{ //process header data
+						for (int topLine = 1; topLine < topLines.size()-1; topLine ++)
+							offices[col] += " " + topLines.get(topLine)[col].trim();
+						
+						districts[col] = "";
+						String officeCheck = offices[col].toUpperCase().trim();
+						if ((officeCheck.contains("DISTRICT") && !officeCheck.contains("ATTORNEY"))
+								|| officeCheck.contains("CIRCUIT"))
+							districts[col] = officeCheck.replaceAll("\\D", "").trim();
+						else if (officeCheck.toUpperCase().contains("PLACE"))
+							districts[col] = officeCheck
+									.substring(officeCheck.lastIndexOf("PLACE")).trim();
+						
+						if (offices[col].toUpperCase().trim().equals(districts[col]))
+							offices[col] = "";
+						
+						officeCheck = ElectionData.checkStatic(officeCheck);
+						if (!officeCheck.equals(""))
+						{
+							offices[col] = officeCheck;
+							if (!matchMade)
+							{
+								firstOfficeCol = col;
+								matchMade = true;
+							}
+						}
+						else if (!matchMade)
+							offices[col] = "";
+					} //end process header data
+					
+					String office = "";
+					String district = "";
+					for (int col = firstOfficeCol; col < offices.length; col++)
+					{ //create CandidateData objects, put in data map
+						if (!offices[col].equals(""))
+						{
+							office = offices[col].trim();
+							district = "";
+						}
+						if (!districts[col].equals(""))
+							district = districts[col].trim();
+						String name = topLines.get(topLines.size()-1)[col];
+						
+						int ptyIndex = 0;
+						boolean ptyMatched = false;
+						String party = "";
+						while (!ptyMatched && ptyIndex < parties.size())
+						{
+							party = parties.get(ptyIndex).partyCheck(name, year, office, district);
+							if (!party.equals(""))
+								ptyMatched = true;
+							ptyIndex++;
+						}
+						
+						if (!name.equals(""))
+						{
+							data.put(col, new CandidateData(this.state.getState(),
+									this.state.getGeoType(), name, party, year));
+							data.get(col).setOffice(office);
+							data.get(col).setDistrict(district);
+						}
+					} //end create CandidateData objects
+					
+					while (in.isReady()) //loop through data lines, create ElectionData objects
+					{
+						String location = county;
+						for (int col = 0; col < firstOfficeCol; col++)
+							location += "_" + line[col];
+						
+						for (int col = firstOfficeCol; col < offices.length; col++)
+						{
+							if (line[col].toUpperCase().trim().equals("UNOPPOSED"))
+								data.get(col).addData(new ElectionData(location, 0, 100.0));
+							else if (!line[col].trim().replaceAll("\\D", "").equals("")
+									&& data.containsKey(col))
+							{
+								data.get(col).addData(new ElectionData(location,
+										Integer.parseInt(line[col]
+												.replaceAll("\\D", "")
+												.trim()), -1.0));
+							}
+						}
+						line = in.readRowLite("\t");
+					} //end loop through data lines
+					
+					for (Integer key : data.keySet())
+						out.write(data.get(key).getRows("\t"));
+				} //end process file with data
+				else
+					out.write("<<Blank File>>");
+			}
+			catch(IOException e)
+			{
+				System.err.println("Error in reading rows of " + inputFile.getAbsolutePath());
+				e.printStackTrace();
+			} //end try to process files
+		} //end loop through files
+	} //end offices method
+	
+	public void locations(int year, File[] files)
+	{
+		System.out.println(": Parsing by location");
+	} //end locations method
+	
+	public ArrayList<CandidateData> getParties()
+	{
+		InFile partyFile = null;
+		ArrayList<CandidateData> parties = new ArrayList<CandidateData>();
+		try
+		{
+			partyFile = new InFile(this.state.getPath() + "\\parties.txt");
+			partyFile.readLine();
+			while (partyFile.isReady())
+			{
+				String[] ptyLine = partyFile.readRowLite("\t");
+				parties.add(new CandidateData(Integer.parseInt(ptyLine[0]),
+						ptyLine[1], ptyLine[2].split(" "), ptyLine[3], ptyLine[4]));
+			}
+		}
+		catch (IOException e)
+		{
+			System.err.println("Error in reaidng party data.");
+			e.printStackTrace();
+		}
+		finally
+		{
+			partyFile.close();
+		}
+		return parties;
+	} //end getParties method
+	
+	public File[] getFileList(String path)
+	{
+		File[] inputFiles = new File(path).listFiles(new FilenameFilter()
+		{
+			public boolean accept(File dir, String name)
+			{
+				if (!name.toUpperCase().contains("SUMMARY")
+						&& !name.toUpperCase().contains("README"))
+					return name.endsWith(FILETYPE);
+				else
+					return false;
+			}
+		});
+		return inputFiles;
+	} //end getFileList method
+}

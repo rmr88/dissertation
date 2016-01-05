@@ -7,6 +7,8 @@ public enum State
 			{"president", "usSenate", "congress", "governor", "sos",
 			"treasurer", "attGen", "education@", "senate@", "representatives@"},
 			new int[] {2014, 2012}), //end CO
+	IL ("IL", "county", "parse", new String[] {}, new String[] {},
+			new int[] {2014, 2012, 2010, 2008, 2006, 2004, 2002, 2000, 1998}), //end IL
 	NV ("NV", "county", "scrape", new String[]
 				{"CarsonCity", "Churchill", "Clark", "Douglas",
 				"Elko", "Esmeralda", "Eureka", "Humboldt", "Lander",
