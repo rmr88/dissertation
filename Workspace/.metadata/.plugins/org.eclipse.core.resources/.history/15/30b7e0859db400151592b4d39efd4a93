@@ -1,0 +1,77 @@
+package launchers;
+
+import java.io.File;
+import java.io.FilenameFilter;
+import java.io.IOException;
+
+import utilities.InFile;
+import utilities.OutFile;
+
+public class MergeRows
+{
+	public static void main(String args[])
+	{
+		String basePath = "C:\\Users\\Robbie\\Documents\\dissertation\\Data\\elections\\stateResults\\WA";
+		int[] years = {2000, 1998, 1996, 1994, 1992, 1990, 1988, 1986, 1984, 1982, 1980, 1978,
+				1976, 1974, 1972, 1970, 1968, 1966, 1964, 1962, 1960, 1958, 1956};
+		OutFile out = null;
+		InFile master = null;
+		InFile using = null;
+		
+		for (int year : years)
+		{ //loop through years
+			File masterFile = new File(basePath + "\\" + year + "_General.txt");
+			if (masterFile.exists())
+			{
+				try
+				{
+					out = new OutFile(basePath + "\\" + year + ".txt", false);
+				}
+				catch (IOException e)
+				{
+					System.err.println("Error opening output file for " + year);
+					e.printStackTrace();
+				}
+				
+				File[] usingFiles = new File(basePath).listFiles(new FilenameFilter()
+				{
+					public boolean accept(File dir, String name)
+					{
+						if (name.endsWith(".txt") && name.contains(year + "_General")
+								&& !name.equals(year + "_General.txt")
+								&& !name.toLowerCase().contains("index"))
+							return true;
+						else
+							return false;
+					}
+				});
+				
+				for (File usingFile : usingFiles)
+				{
+					try
+					{
+						master = new InFile(masterFile);
+						using = new InFile(usingFile);
+					}
+					catch (IOException e)
+					{
+						System.err.println("Error opening master file or using file for " + year
+								+ "; current using file is " + usingFile.getName());
+						e.printStackTrace();
+					}
+					
+					try
+					{
+						master
+					}
+				}
+			}
+			else
+				System.err.println("Master file for " + year + " not found.");
+		} //end year loop
+//		try
+//		{
+//			out = new OutFile();
+//		}
+	}
+}

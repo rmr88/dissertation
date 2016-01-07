@@ -30,6 +30,18 @@ public class CandidateData
 		this.data = new ArrayList<ElectionData>();
 	}
 	
+	public CandidateData(int _year, String st, String _type, String off, String _name, String pty, String dist)
+	{
+		this.year = _year;
+		this.state = st;
+		this.type = _type;
+		this.office = off;
+		this.name = _name;
+		this.party = pty;
+		this.district = dist;
+		this.data = new ArrayList<ElectionData>();
+	}
+	
 	public CandidateData(int _year, String off, String[] name, String pty, String dist)
 	{
 		this.year = _year;

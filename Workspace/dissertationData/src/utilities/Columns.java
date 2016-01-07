@@ -2,9 +2,10 @@ package utilities;
 
 public enum Columns
 {
-	LOCATION (new String[] {"county", "precinct"}, new String[] {}),
+	LOCATION (new String[] {"county", "precinct"}, new String[] {"name"}),
 	OFFICE (new String[] {"office"}, new String[] {"name"}),
-	PARTY (new String[] {"party"}, new String[] {"abbrev"}),
+	DIST (new String[] {"dist", "district", "juris"}, new String[] {"1"}),
+	PARTY (new String[] {"party"}, new String[] {"abbrev", "code"}),
 	VOTE (new String[] {"votes", "vote", "total"}, new String[] {"votes"}),
 	CANDNAME (new String[] {"candidate", "cand", "can"}, new String[] {"last"});
 	

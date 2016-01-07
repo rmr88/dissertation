@@ -17,7 +17,7 @@ Dim objWB
 Dim objws  
 
 Set objExcel = CreateObject("Excel.Application")  
-Set objWB = objExcel.Workbooks.Open(strFilename)  
+Set objWB = objExcel.Workbooks.Open(strFilename)
 
 objExcel.DisplayAlerts = False
 For Each objws In objWB.Sheets  

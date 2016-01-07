@@ -4,3 +4,12 @@
 1451959185460	Rename local variable 'districtPattern'
 1451961695089	Move compilation units
 1451961720504	Move compilation units
+1452005742562	Rename method 'multiFile'
+1452005751978	Rename method 'singleFile'
+1452006436383	Rename method 'locations'
+1452008303620	Rename local variable 'file'
+1452034223555	Rename local variable 'topLine'
+1452035024830	Rename local variable 'blanks'
+1452101932542	Rename local variable 'inputFiles'
+1452115173707	Rename local variable 'name'
+1452115923831	Rename local variable 'column'
