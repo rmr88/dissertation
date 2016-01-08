@@ -17,3 +17,13 @@
 1452184271548	Rename field 'parseByOffice'
 1452184286415	Rename method 'offices'
 1452217667384	Copy compilation unit
+1452268135140	Rename local variable 'blankCols'
+1452268806845	Rename local variable 'FIRSTDATACOL'
+1452270494774	Rename local variable 'priorLocation'
+1452292078213	Rename method 'location'
+1452292087313	Rename method 'candLocation'
+1452292120955	Rename field 'parseByCandLoc'
+1452292128415	Rename field 'parseByLocation'
+1452292148076	Rename field 'pCL'
+1452292164088	Rename field 'pCLoc'
+1452292179775	Rename field 'parseByLoc'

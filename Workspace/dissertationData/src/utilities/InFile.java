@@ -100,6 +100,8 @@ public class InFile
 	{
 		if (text.matches("^([^\t]*\t{1})+[^\t]*$"))
 			return "\t";
+		else if (text.matches("^([^\\|]*\\|{1})+[^\\|]*$"))
+			return "\\|"; //backslashes included because delimiters are primarily used by String#split, which takes regex 
 		else if (text.matches("^([^,]*(\"?,\"?){1})+[^,]*$"))
 			return ",";
 		else
