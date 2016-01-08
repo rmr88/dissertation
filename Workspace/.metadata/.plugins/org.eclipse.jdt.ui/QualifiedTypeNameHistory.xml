@@ -41,7 +41,6 @@
 <fullyQualifiedTypeName name="java.util.function.Predicate"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.html.HtmlTable"/>
-<fullyQualifiedTypeName name="utilities.CandidateData"/>
 <fullyQualifiedTypeName name="utilities.ElectionData"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.io.FilenameFilter"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="utilities.InFile"/>
+<fullyQualifiedTypeName name="utilities.CandidateData"/>
 </qualifiedTypeNameHistroy>

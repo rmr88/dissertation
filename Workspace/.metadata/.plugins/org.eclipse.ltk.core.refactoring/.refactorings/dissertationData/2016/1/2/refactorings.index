@@ -13,3 +13,7 @@
 1452101932542	Rename local variable 'inputFiles'
 1452115173707	Rename local variable 'name'
 1452115923831	Rename local variable 'column'
+1452184250844	Rename field 'pOff'
+1452184271548	Rename field 'parseByOffice'
+1452184286415	Rename method 'offices'
+1452217667384	Copy compilation unit

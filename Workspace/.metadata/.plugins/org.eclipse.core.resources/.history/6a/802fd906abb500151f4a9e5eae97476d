@@ -1,0 +1,20 @@
+package launchers;
+
+import java.io.File;
+
+import tasks.RunShell;
+import utilities.ExcelToCsv;
+
+public class PrepWI
+{
+	public static void main(String args[])
+	{
+		String dir = "C:\\Users\\Robbie\\Documents\\dissertation\\Code";
+		String command = "XlsToCsv.vbs";
+		String path = "C:\\Users\\Robbie\\Documents\\dissertation\\Data\\"
+				+ "elections\\stateResults\\WI\\2012_ward.xls";
+
+		RunShell shell = new RunShell(command + " " + path, dir);
+		System.out.print(shell.run());
+	}
+}
