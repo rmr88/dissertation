@@ -8,8 +8,8 @@ public class ExcelToTabMain
 	public static void main(String args[])
 	{
 		String path = "C:\\Users\\Robbie\\Documents\\dissertation\\Data\\"
-				+ "elections\\stateResults\\WI";
-		ExcelToCsv.run(new File(path), ".XLS");
-		ExcelToCsv.run(new File(path), ".xls");
+				+ "elections\\stateResults\\ME";
+//		ExcelToCsv.run(new File(path), ".XLS");
+		ExcelToCsv.run(new File(path), ".xlsx");
 	}
 }

@@ -1,0 +1,24 @@
+package launchers;
+
+import tasks.ParsePDF;
+import utilities.InFile;
+import utilities.State;
+
+public class ParseNE
+{
+	public static void main(String args[])
+	{
+		String path = "C:\\Users\\Robbie\\Documents\\dissertation\\Data\\elections\\stateResults\\NE";
+		
+		
+		for (Integer year : State.NE.getYears())
+		{
+			String pdfText = ParsePDF.getText(path + "\\" + year + State.NE.getFileType());
+			String[] pdfLines = pdfText.split("\r\n");
+			System.out.println(pdfLines[0]);
+		}
+		
+		
+		//InFile in = null;
+	}
+}

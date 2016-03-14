@@ -51,16 +51,16 @@ public class CandidateData
 		this.district = dist;
 	}
 	
-	public String partyCheck(String nameToCheck, int _year, String off, String dist)
+	public int partyCheckScore(String nameToCheck, int _year, String off, String dist)
 	{
-		String _party = "";
+		int matches = 0;
 
 		for (String piece : this.namePieces)
 			if (nameToCheck.contains(piece) && _year == this.year
 					&& off.equals(this.office) && dist.equals(this.district))
-				_party = this.party;
+				matches++;
 		
-		return _party;
+		return matches;
 	}
 	
 	public void setOffice(String _office)
@@ -76,6 +76,16 @@ public class CandidateData
 	public void addData(ElectionData d)
 	{
 		this.data.add(d);
+	}
+	
+	public String getDistrict()
+	{
+		return this.district;
+	}
+	
+	public String getOffice()
+	{
+		return this.office;
 	}
 	
 	public int getVotes()
@@ -96,6 +106,11 @@ public class CandidateData
 	public String getParty()
 	{
 		return this.party;
+	}
+	
+	public String[] getNames()
+	{
+		return this.namePieces;
 	}
 	
 	public String getRowPiece()
@@ -119,15 +134,19 @@ public class CandidateData
 	{
 		String rows = "";
 		String delim = "\t";
+		String dist = this.district;
 		
 		for(ElectionData d : this.data)
 		{
+			if (!d.getDistrict().equals("") && this.district.equals(""))
+				dist = d.getDistrict();
+			
 			rows += this.state + delim +
 					this.year + delim +
 					this.type + delim +
 					this.name + delim +
 					this.office + delim +
-					this.district + delim +
+					dist + delim +
 					this.party + delim +
 					d.getRowPiece(delim) + "\r\n";	
 		}
@@ -137,14 +156,19 @@ public class CandidateData
 	public String getRows(String delim)
 	{
 		String rows = "";
+		String dist = this.district;
+		
 		for(ElectionData d : this.data)
 		{
+			if (!d.getDistrict().equals("") && this.district.equals(""))
+				dist = d.getDistrict();
+			
 			rows += this.state + delim +
 					this.year + delim +
 					this.type + delim +
 					this.name + delim +
 					this.office + delim +
-					this.district + delim +
+					dist + delim +
 					this.party + delim +
 					d.getRowPiece(delim) + "\r\n";	
 		}

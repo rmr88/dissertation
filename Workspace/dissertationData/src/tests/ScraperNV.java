@@ -37,25 +37,25 @@ public class ScraperNV
 				"Lincoln", "Lyon", "Mineral", "Nye", "Pershing", "Storey",
 				"Washoe", "WhitePine"};
 		String type = "county";
-		int[] years = {2014, 2012, 2010, 2008, 2006, 2004, 2002, 2000};
+		int[] years = {2014, 2012, 2010, 2008}; //, 2006, 2004, 2002, 2000};
+		
+		String outPath = "C:\\Users\\Robbie\\Documents\\dissertation\\Data"
+				+ "\\elections\\stateResults\\" + state +"\\" + state + "_"
+				+ type + ".txt";
+		
+		OutFile out = null;
+		try
+		{
+			out = new OutFile(outPath, false);
+		}
+		catch (IOException e)
+		{
+			System.err.println("Error in setting up output file " + outPath);
+			e.printStackTrace();
+		}
 		
 		for (int year : years)
 		{
-			String outPath = "C:\\Users\\Robbie\\Documents\\dissertation\\Data"
-					+ "\\elections\\stateResults\\" + state +"\\" + year + "_"
-					+ type + ".txt";
-			OutFile out = null;
-			
-			try
-			{
-				out = new OutFile(outPath, false);
-			}
-			catch (IOException e)
-			{
-				System.err.println("Error in setting up output file " + outPath);
-				e.printStackTrace();
-			}
-			
 			String yearSpecific;
 			if (year > 2004)
 				yearSpecific = "STatewideGeneral";
@@ -197,7 +197,7 @@ public class ScraperNV
 				}
 				wc.close();
 			}
-			out.close();
 		}
+		out.close();
 	}
 }

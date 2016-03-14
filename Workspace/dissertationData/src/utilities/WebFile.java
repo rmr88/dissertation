@@ -26,5 +26,17 @@ public class WebFile
 		this.fos.getChannel().transferFrom(this.rbc, 0, Long.MAX_VALUE);
 	}
 	
+	public void close()
+	{
+		try
+		{
+			this.rbc.close();
+			this.fos.close();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
 	//TODO download to object in Java scope?
 }

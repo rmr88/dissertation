@@ -1,0 +1,13 @@
+1452539329548	Rename local variable 'firstDataCol'
+1452539943561	Rename local variable 'numBlank'
+1452541143986	Rename local variable 'l'
+1452566835449	Rename method 'containsParties'
+1452573341883	Rename local variable 'c'
+1452574365381	Rename method 'getOffices'
+1452574379090	Rename local variable 'office'
+1452574384165	Rename local variable 'offices'
+1452612130060	Rename local variable 'dictLine'
+1452624933518	Rename local variable 'year'
+1452625254180	Delete element
+1452789696795	Rename local variable 'p'
+1452789706065	Rename local variable 'infixP'

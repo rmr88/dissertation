@@ -7,7 +7,7 @@ toReplace = Wscript.Arguments.Item(1)
 If objFSO.fileexists(strFilename) Then  
   Call Writefile(strFilename)  
 Else  
-  wscript.echo "no such file!"  
+  wscript.echo "no such file! " & strFilename  
 End If  
 Set objFSO = Nothing  
 

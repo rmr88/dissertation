@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="out.println" key="selection"/>
+		<item value="Out" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="&#x09;IL (&quot;IL&quot;, &quot;county&quot;, &quot;parse&quot;, new String[] {}, new String[] {},"/>
-			<item value="out.println"/>
-			<item value="println"/>
-			<item value="&lt;&lt;"/>
-			<item value="party"/>
-			<item value="log.write("/>
-			<item value="addData"/>
-			<item value="System.out."/>
+			<item value="out"/>
+			<item value="&quot;No party data identified"/>
+			<item value="this."/>
+			<item value="USH"/>
+			<item value="System.out.pr"/>
+			<item value="Pattern"/>
+			<item value="delimiter"/>
+			<item value="state\tyear"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 			<item value="log.writeLine("/>
 		</list>
 	</section>

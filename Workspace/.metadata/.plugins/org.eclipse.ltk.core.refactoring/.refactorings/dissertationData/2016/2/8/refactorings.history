@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;launchers.SenateClasses&apos; to &apos;MichiganResults&apos;&#x0D;&#x0A;- Original project: &apos;dissertationData&apos;&#x0D;&#x0A;- Original element: &apos;launchers.SenateClasses&apos;&#x0D;&#x0A;- Renamed element: &apos;launchers.MichiganResults&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SenateClasses&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;launchers{SenateClasses.java[SenateClasses" matchStrategy="1" name="MichiganResults" qualified="false" references="true" similarDeclarations="false" stamp="1455807847393" textual="false" version="1.0"/>
+</session>

@@ -38,6 +38,15 @@ public class OutFile
 		this.writer = new BufferedWriter(new FileWriter(fout, append));
 	}
 	
+	public OutFile(File file, boolean append) throws IOException
+	{
+		if (checkPath(file))
+			this.writeDir = file.getAbsolutePath();
+		else
+			throw new FileNotFoundException("Cannot write to output file.");
+		this.writer = new BufferedWriter(new FileWriter(file, append));
+	}
+
 	public void writeLine(String line) throws IOException
 	{
 		this.writer.write(line);

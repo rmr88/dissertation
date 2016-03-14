@@ -8,6 +8,7 @@ public class ExcelToCsv
 {
 	private static String dir = "C:\\Users\\Robbie\\Documents\\dissertation\\Code";
 	private static String command = "XlsToCsv.vbs";
+	
 	public static void run(File path, String fileType)
 	{
 		for (String filePath: path.list())

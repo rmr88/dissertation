@@ -29,6 +29,15 @@ public class ElectionData
 		this.location = _location;
 		this.votes = _votes;
 		this.percent = perc;
+		this.district = "";
+	}
+	
+	public ElectionData(String _location, int _votes, double perc, String dist)
+	{
+		this.location = _location;
+		this.votes = _votes;
+		this.percent = perc;
+		this.district = dist;
 	}
 	
 	public void setOffice(String _office)
@@ -128,6 +137,7 @@ public class ElectionData
 	{
 		String officeKey = "";
 		Offices[] officeKeys = Offices.values();
+		toCheck = toCheck.toUpperCase();
 		
 		int keyIndex = 0;
 		while (officeKey.isEmpty() && keyIndex < officeKeys.length)
@@ -160,6 +170,10 @@ public class ElectionData
 			keyIndex++;
 		}
 		//System.out.println("\r\n\treturning " + officeKey);
+		if (toCheck.toUpperCase().contains("GOVERNOR") && (toCheck.toUpperCase().contains("/")
+				|| toCheck.toUpperCase().contains("AND")))
+			officeKey = "GOV";
+		
 		offices.put(toCheck, officeKey);
 		return officeKey;
 	}
@@ -175,6 +189,11 @@ public class ElectionData
 	public String getOffice()
 	{
 		return this.office;
+	}
+	
+	public String getDistrict()
+	{
+		return this.district;
 	}
 	
 	public void setLocation(String _location)

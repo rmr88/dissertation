@@ -23,8 +23,8 @@ public class ElectionParser
 	private State state;
 	private OutFile out = null;
 	
-	private String[] pCL = {"AL", "ID"};
-	private String[] pOff = {"MA", "VA", "WI"};
+	private String[] pCL = {"AL", "ID", "ID2"};
+	private String[] pOff = {"AR", "MA", "MA2", "MD2", "VA", "VA2", "WI"};
 	private String[] pLoc = {"FL", "IL", "MD"};
 	private String[] pDict = {"WA"};
 	
@@ -52,17 +52,17 @@ public class ElectionParser
 
 			if (file.exists())
 			{ //if years are in single files:
-				if (this.parseByLocation.contains(this.state.getState()))
+				if (this.parseByLocation.contains(this.state.name()))
 				{
 					System.out.println(": Parsing by location");
 					this.location(year, file);
 				}
-				else if (this.parseByCandLoc.contains(this.state.getState()))
+				else if (this.parseByCandLoc.contains(this.state.name()))
 				{
 					System.out.println(": Parsing by candidate/ location");
 					this.candLocation(year, file, new ArrayList<CandidateData>());
 				}
-				else if (this.parseByDict.contains(this.state.getState()))
+				else if (this.parseByDict.contains(this.state.name()))
 				{
 					File dictFile = new File(this.state.getPath() + "\\" + year
 							+ "_dict" + this.state.getFileType());
@@ -77,7 +77,7 @@ public class ElectionParser
 				else
 					System.err.println("uncoded case");
 			} 
-			else if (this.parseByOffice.contains(this.state.getState()))
+			else if (this.parseByOffice.contains(this.state.name()))
 			{ //if years are in multiple files (by office):
 				System.out.println(": Parsing by office");
 				ArrayList<CandidateData> parties = this.getParties();
@@ -272,20 +272,34 @@ public class ElectionParser
 						district = districts[col].trim();
 					
 					int ptyIndex = 0;
-					boolean ptyMatched = false;
 					String party = "";
 
 					if (parties.size() == 0 && partyArr != null)
 						party = partyArr[col].replace(".", "");
 					else if (parties.size() > 0)
 					{
-						while (!ptyMatched && ptyIndex < parties.size())
+						if (!names[col].equals(""))
 						{
-							party = parties.get(ptyIndex).partyCheck(names[col], year, office, district);
-							if (!party.equals(""))
-								ptyMatched = true;
-							ptyIndex++;
+							int bestPtyMatchIndex = -1;
+							int bestMatchScore = 0;
+							int matchScore;
+							for (int i = 0; i < parties.size(); i++)
+							{
+								matchScore = parties.get(ptyIndex).partyCheckScore(names[col],
+										year, office.toUpperCase(), district);
+								if (matchScore > bestMatchScore)
+								{
+									bestMatchScore = matchScore;
+									bestPtyMatchIndex = ptyIndex;
+								}
+							}
+							if (bestPtyMatchIndex < 0)
+								party = "";
+							else
+								party = parties.get(bestPtyMatchIndex).getParty();
 						}
+						else
+							party = "";
 					}
 					else
 						System.err.println("No party data identified in " + file.getPath());
@@ -802,7 +816,6 @@ public class ElectionParser
 						}
 					}
 
-					System.out.println(Arrays.toString(candNames));
 					if (candNames[0].equals(""))
 					{ //no explicit labeling of location columns:
 						int col = 0;
@@ -866,6 +879,7 @@ public class ElectionParser
 				} //end find parties in file
 				else
 				{ //parties are in a separate file, read in previously to parties ArrayList
+//					while ()
 					for (int col = 0; col < candNames.length; col++)
 					{
 						if (locationNames.contains(candNames[col]
@@ -873,19 +887,41 @@ public class ElectionParser
 							locationCols.add(col);
 					}
 					
+					if (!locationCols.isEmpty())
+					{
+						int max = 0;
+						for (Integer num : locationCols)
+							if (num > max)
+								max = num;
+						firstDataCol = max + 1;
+					}
+				
 					for (int col = firstDataCol; col < candNames.length; col++)
 					{
-						int ptyIndex = 0;
-						boolean ptyMatched = false;
-						while (!ptyMatched && ptyIndex < parties.size())
+						if (!candNames[col].equals(""))
 						{
-							party = parties.get(ptyIndex).
-									partyCheck(candNames[col], year,
-									office.toUpperCase(), district);
-							if (!party.equals(""))
-								ptyMatched = true;
-							ptyIndex++;
+							int bestPtyMatchIndex = -1;
+							int bestMatchScore = 0;
+							int matchScore;
+							for (int ptyIndex = 0; ptyIndex < parties.size(); ptyIndex++)
+							{
+								matchScore = parties.get(ptyIndex).
+										partyCheckScore(candNames[col], year,
+										office.toUpperCase(), district);
+								if (matchScore > bestMatchScore)
+								{
+									bestMatchScore = matchScore;
+									bestPtyMatchIndex = ptyIndex;
+								}
+							}
+							if (bestPtyMatchIndex < 0)
+								party = "";
+							else
+								party = parties.get(bestPtyMatchIndex).getParty();
 						}
+						else
+							party = "";
+						
 						data.add(new CandidateData(year, this.state.getState(), this.state.getGeoType(),
 								office.toUpperCase(), candNames[col], party, district));
 					}

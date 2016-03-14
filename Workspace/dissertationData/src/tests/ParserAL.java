@@ -196,15 +196,27 @@ public class ParserAL
 								district = districts[col].trim();
 							String name = topLines.get(topLines.size()-1)[col];
 							
-							int ptyIndex = 0;
-							boolean ptyMatched = false;
 							String party = "";
-							while (!ptyMatched && ptyIndex < parties.size())
+							if (name.equals(""))
 							{
-								party = parties.get(ptyIndex).partyCheck(name, year, office, district);
-								if (!party.equals(""))
-									ptyMatched = true;
-								ptyIndex++;
+								int bestPtyMatchIndex = -1;
+								int bestMatchScore = 0;
+								int matchScore;
+								for (int ptyIndex = 0; ptyIndex < parties.size(); ptyIndex++)
+								{
+									matchScore = parties.get(ptyIndex).
+											partyCheckScore(name, year,
+											office.toUpperCase(), district);
+									if (matchScore > bestMatchScore)
+									{
+										bestMatchScore = matchScore;
+										bestPtyMatchIndex = ptyIndex;
+									}
+								}
+								if (bestPtyMatchIndex < 0)
+									party = "";
+								else
+									party = parties.get(bestPtyMatchIndex).getParty();
 							}
 							
 							if (!name.equals(""))

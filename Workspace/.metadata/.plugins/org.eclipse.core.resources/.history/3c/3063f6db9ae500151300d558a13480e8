@@ -1,0 +1,38 @@
+package launchers;
+
+import java.io.IOException;
+
+import tasks.ParsePDF;
+import utilities.InFile;
+import utilities.OutFile;
+import utilities.State;
+
+public class ParseNE
+{
+	public static void main(String args[])
+	{
+		String path = "C:\\Users\\Robbie\\Documents\\dissertation\\Data\\elections\\stateResults\\NE";
+		OutFile out = null;
+		try
+		{
+			out = new OutFile(path + "\\NE_county.txt", false);
+			out.writeLine("state\t\tyear\tgeographyType\tcandName\toffice\tdistrict\tparty\t"
+					+ "locationName\tvotes\tvotePerc");
+		}
+		catch (IOException e)
+		{
+			System.err.println("Error opening output file.");
+			e.printStackTrace();
+		}
+		
+		for (Integer year : new int[] {2014}) //State.NE.getYears())
+		{
+			String pdfText = ParsePDF.getText(path + "\\" + year + State.NE.getFileType());
+			String[] pdfLines = pdfText.split("\r\n");
+			System.out.println(pdfLines[960]);
+		}
+		
+		
+		//InFile in = null;
+	}
+}

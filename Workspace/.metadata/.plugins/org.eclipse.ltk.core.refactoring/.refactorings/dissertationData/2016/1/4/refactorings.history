@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;party&apos; in &apos;utilities.CandidateData.partyCheck(...)&apos; to &apos;pty&apos;&#x0D;&#x0A;- Original project: &apos;dissertationData&apos;&#x0D;&#x0A;- Original element: &apos;utilities.CandidateData.partyCheck(String, int, String, String).party&apos;&#x0D;&#x0A;- Renamed element: &apos;party&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;party&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;utilities{CandidateData.java[CandidateData~partyCheck~QString;~I~QString;~QString;@party!1849!1879!1856!1860!QString;!0!false" name="pty" references="true" stamp="1453484625945" version="1.0"/>
+</session>

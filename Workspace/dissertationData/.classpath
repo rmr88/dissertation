@@ -30,5 +30,6 @@
 	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/htmlunit-2.19/lib/xalan-2.7.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/htmlunit-2.19/lib/xercesImpl-2.11.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/htmlunit-2.19/lib/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/pdfbox-app-1.8.11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
