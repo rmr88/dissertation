@@ -41,11 +41,12 @@ public enum State
 	MD ("MD", "county", "parse", new String[] {}, new String[] {}, new int[] {1998, 1996, 1994, 1992}, ".txt"), //end MD
 	NE ("NE", "county", "PDF", new String[] {}, new String[] {}, new int[] {2014, 2012, 2010, 2008, 2000}, ".txt"), //end NE
 	NE2("NE", "county", "PDF", new String[] {}, new String[] {}, new int[] {2006, 2002}, ".csv"), //end NE2
-	NY ("NY", "county", "PDF", new String[] {}, new String[] {}, new int[] { 2014, 2012, 2010, 2008}, ".pdf"); //end NY
+	NY ("NY", "county", "PDF", new String[] {}, new String[] {}, new int[] { 2014, 2012, 2010, 2008}, ".pdf"), //end NY
 //	NV ("NV", "county", "scrape", new String[] {"CarsonCity", "Churchill", "Clark",
 //			"Douglas", "Elko", "Esmeralda", "Eureka", "Humboldt", "Lander", "Lincoln",
 //			"Lyon", "Mineral", "Nye", "Pershing", "Storey", "Washoe", "WhitePine"},
 //			new String[] {}, new int[] {2014, 2012, 2010, 2008, 2006, 2004, 2002, 2000}, ""), //end NV
+	OR ("OR", "county", "PDF", new String[] {}, new String[] {}, new int[] {2014, 2012, 2006, 2004}, ".pdf"), //end OR
 //	VA ("VA", "precinct", "parse", new String[] {}, new String[] {"usp", "uss", "gov"},
 //			new int[] {2012, 2009, 2004, 2002, 2000, 1997, 1996}, ".csv"), //end VA
 //	VA2("VA", "muni", "parse", new String[] {}, new String[] {"usp", "uss", "gov"},
@@ -54,6 +55,8 @@ public enum State
 //	WA ("WA", "county", "parse", new String[] {}, new String[] {},
 //			new int[] {2000, 1998, 1996, 1994, 1992, 1990, 1988, 1986, 1984, 1982, 1980, 1978,
 //			1976, 1974, 1972, 1970, 1968, 1966, 1964, 1962, 1960, 1958, 1956}, ".txt"), //end WA
+	WV ("WV", "county", "PDF", new String[] {}, new String[] {}, new int [] {2004, 2002, 2000,
+			1996, 1994, 1992}, ".pdf"), //end WV
 //	WI ("WI", "ward", "parse", new String[] {}, new String[] {"USP", "USS", "USH",
 //			"STS", "STH", "DA"}, new int[] {2012, 2000}, ".txt") //end WI
 	;

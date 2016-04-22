@@ -1,0 +1,40 @@
+package launchers;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+
+public class ElectionAtlasScraper
+{
+	public static void main(String args[])
+	{
+		String baseURL = "http://uselectionatlas.org/RESULTS/state.php?fips=%d&year=%d&f=0&off=3&elect=0&class=%d";
+		for (int year = 1992; year < 2016; year += 2)
+		{
+			int senClass = (year % 6) / 2;
+			if (senClass == 0) senClass = 3;
+			
+			for (int fips = 0; fips <= 56; fips++)
+			{
+				try
+				{
+					URL url = new URL(String.format(baseURL, fips, year, senClass));
+					BufferedReader in = new BufferedReader(new InputStreamReader(
+							url.openConnection().getInputStream()));
+					
+					for(int line = 0; line < 5; line++)
+						System.out.println(in.readLine());
+					
+					in.close();
+				}
+				catch (IOException e)
+				{
+					System.err.println("Error reading data for FIPS " + fips + ", year " + year + ".");
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+}

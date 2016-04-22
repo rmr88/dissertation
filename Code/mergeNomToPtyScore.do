@@ -3,7 +3,7 @@
 //Robbie Richards, 2/8/16
 
 cd "C:\Users\Robbie\Documents\dissertation\Data"
-use "VoteView\legis_DWNOM.DTA", clear
+use "VoteView\legis_DWNOM.dta", clear
 
 *Rename variables
 ren state state_icpsr

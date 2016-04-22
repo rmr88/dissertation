@@ -1,0 +1,64 @@
+package launchers.govTrack;
+
+import java.io.File;
+import java.io.FilenameFilter;
+import java.io.IOException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.*;
+import org.xml.sax.SAXException;
+
+public class ProcessRolls
+{
+	public static void main(String args[])
+	{
+		String basePath = "C:\\Users\\Robbie\\Documents\\dissertation\\Data\\GovTrack";
+		
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder dBuilder = null;
+		try { dBuilder = factory.newDocumentBuilder(); }
+			catch (ParserConfigurationException e1) { e1.printStackTrace(); }
+		
+		for (int cong = 80; cong < 81; cong++)
+		{
+			File[] files = new File(basePath + "\\" + cong + "\\rolls").listFiles(new FilenameFilter()
+			{
+				public boolean accept(File dir, String name)
+				{
+					return true;
+				}
+			});
+			
+			for (int f = 0; f < 1; f++) //for (File file : files)
+			{
+				try
+				{
+					Document doc = dBuilder.parse(files[f]); //file
+					doc.getDocumentElement().normalize();
+					
+					Node topNode = doc.getElementsByTagName("roll").item(0);
+					String chamber = topNode.getAttributes().getNamedItem("where").toString().substring(0, 1);
+					
+					NodeList nodes = doc.getElementsByTagName("voter");
+					for (int n = 0; n < nodes.getLength(); n++)
+					{
+						Node node = nodes.item(n);
+						System.out.println(chamber + "-" + topNode.getAttributes().getNamedItem("session")
+								+ "-" + topNode.getAttributes().getNamedItem("roll") + "\t" 
+								+ node.getAttributes().getNamedItem("id") + "\t"
+								+ node.getAttributes().getNamedItem("vote"));
+					}
+				}
+				catch (SAXException | IOException e)
+				{
+//					System.err.println("Error in opening new Document, " + cong + ", " + files.getName());
+					e.printStackTrace();
+				}
+			}
+		}
+		
+	}
+}

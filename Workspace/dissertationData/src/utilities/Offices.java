@@ -21,7 +21,8 @@ public enum Offices
 	AUD (new String[] {"AUDITOR"}, new String[] {}),
 	CCJ (new String[] {"CIRCUIT"}, new String[] {"ATTORNEY"}),
 	SCJ (new String[] {"SUPREME COURT", "SUPREME"}, new String[] {}),
-	SBOE (new String[] {"STATE BOARD OF EDUCATION", "EDUCATION@"}, new String[] {});
+	SBOE (new String[] {"STATE BOARD OF EDUCATION", "EDUCATION@"}, new String[] {}),
+	ComAg (new String[] {"COMMISSIONER OF AGRICULTURE"}, new String[] {});
 	
 	private String[] keys, exclusions;
 	

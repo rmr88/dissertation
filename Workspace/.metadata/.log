@@ -4938,3 +4938,401 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.amazonaws.eclipse.core 1 0 2016-03-10 20:00:16.290
 !MESSAGE AWS toolkit core plugin initialized after 2268 milliseconds.
+!SESSION 2016-03-14 11:38:19.775 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-14 11:39:05.573
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-14 11:39:09.215
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-14 11:39:12.640
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-14 11:39:12.672
+!MESSAGE AWS toolkit core plugin initialized after 3457 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2016-03-14 11:49:12.760
+!MESSAGE Downloading the SDK from CloudFront to location C:\Users\Robbie\AppData\Local\Temp\aws-java-sdk6160831737752775803\sdk.zip
+
+!ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2016-03-14 11:55:20.926
+!MESSAGE SDK download completes. Location: C:\Users\Robbie\AppData\Local\Temp\aws-java-sdk6160831737752775803\sdk.zip, File-length: 161836165
+!SESSION 2016-03-16 10:49:57.824 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-16 10:50:35.358
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-16 10:50:37.307
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-16 10:50:39.660
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-16 10:50:39.685
+!MESSAGE AWS toolkit core plugin initialized after 2380 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2016-03-16 10:50:46.583
+!MESSAGE Downloading the SDK from CloudFront to location C:\Users\Robbie\AppData\Local\Temp\aws-java-sdk1379005046848069311\sdk.zip
+
+!ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2016-03-16 10:57:04.098
+!MESSAGE SDK download completes. Location: C:\Users\Robbie\AppData\Local\Temp\aws-java-sdk1379005046848069311\sdk.zip, File-length: 164138694
+!SESSION 2016-03-16 16:34:27.356 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-16 16:34:49.329
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-16 16:34:51.327
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-16 16:34:53.457
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-16 16:34:53.474
+!MESSAGE AWS toolkit core plugin initialized after 2147 milliseconds.
+!SESSION 2016-03-17 10:25:00.156 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-17 10:26:25.380
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-17 10:26:29.777
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-17 10:26:40.476
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-17 10:26:40.526
+!MESSAGE AWS toolkit core plugin initialized after 10750 milliseconds.
+!SESSION 2016-03-17 11:08:57.403 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-17 11:09:27.193
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-17 11:09:28.515
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-17 11:09:32.807
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-17 11:09:32.856
+!MESSAGE AWS toolkit core plugin initialized after 5665 milliseconds.
+!SESSION 2016-03-17 21:19:52.278 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-17 21:20:54.863
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-17 21:20:57.763
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-17 21:20:59.751
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-17 21:20:59.790
+!MESSAGE AWS toolkit core plugin initialized after 2027 milliseconds.
+!SESSION 2016-03-18 12:22:22.552 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-18 12:22:53.459
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-18 12:22:55.330
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-18 12:22:57.613
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-18 12:22:57.661
+!MESSAGE AWS toolkit core plugin initialized after 2332 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2016-03-18 12:23:15.640
+!MESSAGE Downloading the SDK from CloudFront to location C:\Users\Robbie\AppData\Local\Temp\aws-java-sdk2475860775383373641\sdk.zip
+
+!ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2016-03-18 12:24:36.302
+!MESSAGE SDK download completes. Location: C:\Users\Robbie\AppData\Local\Temp\aws-java-sdk2475860775383373641\sdk.zip, File-length: 164660915
+!SESSION 2016-03-23 13:35:03.483 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-23 13:35:37.460
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-23 13:35:40.555
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-23 13:35:43.261
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-23 13:35:43.287
+!MESSAGE AWS toolkit core plugin initialized after 2732 milliseconds.
+!SESSION 2016-03-28 15:31:56.458 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-28 15:32:24.770
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-28 15:32:26.626
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-28 15:32:29.109
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-28 15:32:29.131
+!MESSAGE AWS toolkit core plugin initialized after 2505 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2016-03-28 16:38:01.157
+!MESSAGE Downloading the SDK from CloudFront to location C:\Users\Robbie\AppData\Local\Temp\aws-java-sdk777514467919466414\sdk.zip
+
+!ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2016-03-28 16:45:33.552
+!MESSAGE SDK download completes. Location: C:\Users\Robbie\AppData\Local\Temp\aws-java-sdk777514467919466414\sdk.zip, File-length: 165284281
+!SESSION 2016-03-28 20:19:06.310 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-28 20:19:25.245
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-28 20:19:27.968
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-28 20:19:29.563
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-28 20:19:29.575
+!MESSAGE AWS toolkit core plugin initialized after 1608 milliseconds.
+!SESSION 2016-03-29 09:19:04.924 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-29 09:19:41.580
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-29 09:19:45.603
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-29 09:19:48.278
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-29 09:19:48.310
+!MESSAGE AWS toolkit core plugin initialized after 6734 milliseconds.
+!SESSION 2016-03-29 16:44:44.583 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-29 16:45:13.202
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-29 16:45:15.549
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-29 16:45:17.807
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-29 16:45:17.830
+!MESSAGE AWS toolkit core plugin initialized after 2281 milliseconds.
+!SESSION 2016-03-31 12:25:21.205 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-03-31 12:25:54.527
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-31 12:25:56.908
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-31 12:25:59.144
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-03-31 12:25:59.190
+!MESSAGE AWS toolkit core plugin initialized after 2283 milliseconds.
+!SESSION 2016-04-12 13:26:36.298 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-04-12 13:27:14.759
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-04-12 13:27:15.095
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-04-12 13:27:19.079
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-04-12 13:27:19.111
+!MESSAGE AWS toolkit core plugin initialized after 4357 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2016-04-12 13:27:31.105
+!MESSAGE Downloading the SDK from CloudFront to location C:\Users\Robbie\AppData\Local\Temp\aws-java-sdk2085304525661252920\sdk.zip
+
+!ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2016-04-12 13:34:03.088
+!MESSAGE SDK download completes. Location: C:\Users\Robbie\AppData\Local\Temp\aws-java-sdk2085304525661252920\sdk.zip, File-length: 168026940
+!SESSION 2016-04-14 19:45:28.906 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-04-14 19:45:56.333
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-04-14 19:45:59.345
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-04-14 19:46:01.563
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-04-14 19:46:01.595
+!MESSAGE AWS toolkit core plugin initialized after 2250 milliseconds.
+!SESSION 2016-04-15 09:23:01.795 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-04-15 09:24:08.703
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Robbie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-04-15 09:24:13.324
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-04-15 09:24:20.194
+!MESSAGE Monitoring content of C:\Users\Robbie\.aws\credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2016-04-15 09:24:20.231
+!MESSAGE AWS toolkit core plugin initialized after 6906 milliseconds.

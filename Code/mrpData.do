@@ -47,6 +47,10 @@ ren state name
 
 append using "cd.dta"
 
+replace pres_2012 = pres_2008 if missing(pres_2012)
+drop pres_2008
+ren pres_2012 sumVotesDEM
+
 tostring cd_fips state_fips, replace
 replace cd_fips = "0" + cd_fips if strlen(cd_fips) == 3
 replace state_fips = "0" + state_fips if strlen(state_fips) == 1

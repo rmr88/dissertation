@@ -23,7 +23,7 @@ preserve
 	replace winnerFirst2 = strtrim(winnerFirst2)
 	replace mc_party = 100 if mc_party == 200 & idno == 95122
 
-	//hardcodes
+	//Hardcodes:
 	replace winnerLast = "STARKWEATHER" if winnerLast == "STARKWEATHE" & idno == 8854
 	replace winnerLast = "SEYMOUR" if winnerLast == "SEYMOOR" & idno == 8386
 	replace winnerLast = "HUMPHREY" if winnerLast == "HUMPHERY" & (idno == 4729 | idno == 4730)
@@ -58,9 +58,8 @@ save "$data\working\vvSen.dta", replace
 
 *** Party Score Data ***
 
-use "$data\elections\partyScores.dta", clear
-replace year = year - 1 if mod(year, 2) == 1 ///
-	& (elec_type == "G" | elec_type == "M")
+use "$data\elections\allElectionData.dta", clear //partyScores.dta
+replace year = year - 1 if mod(year, 2) == 1 //& (elec_type == "G" | elec_type == "M")
 ren state state2
 
 preserve
@@ -68,43 +67,81 @@ preserve
 	save "$data\working\psHouse.dta", replace
 restore
 
-
 preserve
 	drop if offSmall == 4 | offSmall == 3
 	save "$data\working\psOthers.dta", replace
 restore
 
 keep if offSmall == 4
-replace votesRep = -1 if missing(votesRep)
-replace votesDem = -1 if missing(votesDem)
-replace votesSumOth = -1 if missing(votesSumOth)
 
-gen winnerLast = substr(candNameDem, 1, strpos(candNameDem, ",")-1) ///
-	if votesDem > votesRep & votesDem > votesSumOth
-replace winnerLast = substr(candNameRep, 1, strpos(candNameRep, ",")-1) ///
-	if votesRep > votesDem & votesRep > votesSumOth & missing(winnerLast)
-replace winnerLast = substr(candNameOth, 1, strpos(candNameOth, ",")-1) ///
-	if votesSumOth > votesRep & votesSumOth > votesDem & missing(winnerLast)
-replace winnerLast = substr(candNameDem, 1, strpos(candNameDem, ",")-1) ///
-	if candNameDem == candNameOth & (votesDem + votesSumOth) > votesRep
-replace winnerLast = substr(candNameRep, 1, strpos(candNameRep, ",")-1) ///
-	if candNameRep == candNameOth & (votesRep + votesSumOth) > votesDem
+replace sumVotesREP = -1 if missing(sumVotesREP)
+replace sumVotesDEM = -1 if missing(sumVotesDEM)
+replace sumVotesOTH = -1 if missing(sumVotesOTH)
 
-gen winnerFirst = substr(candNameDem, strpos(candNameDem, ",")+1, .) ///
-	if votesDem > votesRep & votesDem > votesSumOth
-replace winnerFirst = substr(candNameRep, strpos(candNameRep, ",")+1, .) ///
-	if votesRep > votesDem & votesRep > votesSumOth & missing(winnerFirst)
-replace winnerFirst = substr(candNameOth, strpos(candNameOth, ",")+1, .) ///
-	if votesSumOth > votesRep & votesSumOth > votesDem & missing(winnerFirst)
-replace winnerFirst = substr(candNameDem, strpos(candNameDem, ",")+1, .) ///
-	if candNameDem == candNameOth & (votesDem + votesSumOth) > votesRep
-replace winnerFirst = substr(candNameRep, strpos(candNameRep, ",")+1, .) ///
-	if candNameRep == candNameOth & (votesRep + votesSumOth) > votesDem
-	
+gen winnerLast = substr(candNameDEM, 1, strpos(candNameDEM, ",")-1) ///
+	if sumVotesDEM > sumVotesREP & sumVotesDEM > sumVotesOTH
+replace winnerLast = substr(candNameREP, 1, strpos(candNameREP, ",")-1) ///
+	if sumVotesREP > sumVotesDEM & sumVotesREP > sumVotesOTH & missing(winnerLast)
+replace winnerLast = substr(candNameOTH, 1, strpos(candNameOTH, ",")-1) ///
+	if sumVotesOTH > sumVotesREP & sumVotesOTH > sumVotesDEM & missing(winnerLast)
+replace winnerLast = substr(candNameDEM, 1, strpos(candNameDEM, ",")-1) ///
+	if candNameDEM == candNameOTH & (sumVotesDEM + sumVotesOTH) > sumVotesREP
+replace winnerLast = substr(candNameREP, 1, strpos(candNameREP, ",")-1) ///
+	if candNameREP == candNameOTH & (sumVotesREP + sumVotesOTH) > sumVotesDEM
+
+gen winnerFirst = substr(candNameDEM, strpos(candNameDEM, ",")+1, .) ///
+	if sumVotesDEM > sumVotesREP & sumVotesDEM > sumVotesOTH
+replace winnerFirst = substr(candNameREP, strpos(candNameREP, ",")+1, .) ///
+	if sumVotesREP > sumVotesDEM & sumVotesREP > sumVotesOTH & missing(winnerFirst)
+replace winnerFirst = substr(candNameOTH, strpos(candNameOTH, ",")+1, .) ///
+	if sumVotesOTH > sumVotesREP & sumVotesOTH > sumVotesDEM & missing(winnerFirst)
+replace winnerFirst = substr(candNameDEM, strpos(candNameDEM, ",")+1, .) ///
+	if candNameDEM == candNameOTH & (sumVotesDEM + sumVotesOTH) > sumVotesREP
+replace winnerFirst = substr(candNameREP, strpos(candNameREP, ",")+1, .) ///
+	if candNameREP == candNameOTH & (sumVotesREP + sumVotesOTH) > sumVotesDEM
+
 replace winnerLast = winnerFirst if missing(winnerLast) ///
 	& !missing(winnerFirst)
 replace winnerFirst = "" if winnerLast == winnerFirst
 replace winnerFirst = strtrim(winnerFirst)
+
+replace winnerLast = strupper(winnerLast)
+replace winnerFirst = strupper(winnerFirst)
+replace winnerLast = subinstr(winnerLast, " JR", "", .)
+replace winnerLast = subinstr(winnerLast, " III", "", .)
+replace winnerLast = subinstr(winnerLast, " IV", "", .)
+replace winnerLast = "HARRY REID" if strpos(winnerLast, "REID HARRY") > 0
+replace winnerLast = "JOHN H. GLENN" if winnerLast == "JOHN H. GLENN."
+replace winnerLast = "PATTY MURRAY" if (winnerLast == "MURRAY-D" ///
+	| winnerLast == "MURRAY P") & state2 == "WA" & offSmall == 4
+	
+//Jrs with commas:
+gen winnerLast2 = winnerLast if winnerFirst == "JR." ///
+	| winnerFirst == "JR"
+replace winnerLast = substr(winnerLast2, strrpos(winnerLast2, " "), .) ///
+	if !missing(winnerLast2)
+replace winnerFirst = substr(winnerLast2, 1, strrpos(winnerLast2, " ")-1) ///
+	+ " " + winnerFirst if !missing(winnerLast2)
+drop winnerLast2
+
+//No comma, last name first
+gen winnerLast2 = winnerLast if year > 1990 & offSmall == 4 ///
+	& state2 == "AK" & (winnerLast == "MURKOWSKI FRANK" ///
+	| winnerLast == "STEVENS TED" | winnerLast == "SULLIVAN DAN")
+replace winnerFirst = substr(winnerLast2, ///
+	strrpos(winnerLast2, " "), .) if !missing(winnerLast2)
+replace winnerLast = substr(winnerLast2, 1, ///
+	strrpos(winnerLast2, " ")-1) if !missing(winnerLast2)
+drop winnerLast2
+
+//No comma, last name last
+gen winnerLast2 = winnerLast if year > 1990 & offSmall == 4 ///
+	& missing(winnerFirst)
+replace winnerFirst = substr(winnerLast2, 1, ///
+	strrpos(winnerLast2, " ")-1) if !missing(winnerLast2)
+replace winnerLast = substr(winnerLast2, ///
+	strrpos(winnerLast2, " "), .) if !missing(winnerLast2)
+drop winnerLast2
 
 //Hardcodes:
 replace winnerLast = "MCKELLAR" if winnerLast == "MCKELLER" ///
@@ -139,16 +176,24 @@ replace winnerLast = "JEFFORDS" if winnerLast == "JEFORDS" ///
 	& state_icpsr == 6 & year == 1988
 replace winnerLast = subinstr(winnerLast, "'", "", .)
 
+replace winnerLast = strtrim(winnerLast)
+
 joinby state_icpsr year winnerLast using "$data\working\vvSen.dta", ///
 	unmatched(both) _merge(join_result)
-duplicates tag state_icpsr year winnerLast, gen(dup)
-drop if elec_type == "S" & dup > 0
-drop dup
+//duplicates tag state_icpsr year winnerLast, gen(dup)
+//drop if elec_type == "S" & dup > 0
+//drop dup
 
 //Hardcodes:
 drop if idno == 14516 & winnerFirst2 == "M"
 drop if idno == 10802 & winnerFirst2 == ""
 drop if idno == 3559 & nchoices == 44 //this one is son who filled by appointment the office of his father of the same name, who died in office
+drop if (idno == 94240 | idno == 14240) & year == 2000 //Jim Jeffords (VT) the year he switched form REP to IND
+drop if (idno == 94910 | idno == 14910) & year == 2008 //Arlen Specter (PA) when he switched parties
+drop if idno == 49905 & year == 1998 //Lincoln Chaffee's (RI) short term after father's death
+drop if (idno == 15407 | idno == 95407) & year == 1994 //Ben Nighthorse Campbell (CO) switched parties
+drop if idno == 14517 & year == 1976 //James Allen died; this is the short appointed term of his widow, Maryon Allen
+drop if idno == 5766 & year == 1934 //Rose Long (LA) was appointed to fill the remainder of her husband's term
 replace state_n = "INDIANA" if state_icpsr == 22 & missing(state_n)
 replace state_n = "VIRGINI" if state_icpsr == 40 & missing(state_n)
 replace state_n = "ILLINOI" if state_icpsr == 21 & missing(state_n)
@@ -159,15 +204,29 @@ replace state_n = "N DAKOT" if state_icpsr == 36 & missing(state_n)
 replace state_n = "TEXAS" if state_icpsr == 49 & missing(state_n)
 replace state_n = "WYOMING" if state_icpsr == 68 & missing(state_n)
 
-replace votesRep = . if votesRep == -1
-replace votesDem = . if votesDem == -1
-replace votesSumOth = . if votesSumOth == -1
+replace sumVotesREP = . if sumVotesREP == -1
+replace sumVotesDEM = . if sumVotesDEM == -1
+replace sumVotesOTH = . if sumVotesOTH == -1
 
 duplicates tag state_n year idno, gen(dup)
 drop if dup > 0
 drop dup
 
 merge 1:1 state_n year idno using "$data\working\vvSen.dta", update keep(3 4) nogen
+
+/*
+gen class = office - 3 if offSmall == 4
+bys idno: egen minYear = min(year)
+replace class = office - 3 if year == minYear & !missing(class)
+bys idno: egen class2 = mean(class)
+gen class3 = office - 3
+replace office = class2 + 3 if class2 != class3
+drop class2 class3 minYear
+*/
+
+replace office = 4 if idno == 14914 & cong < 107
+replace office = 5 if idno == 14914 & cong > 107
+
 save "$data\elections\scoresMerged.dta", replace
 
 keep if !missing(office)
@@ -175,12 +234,19 @@ keep state_icpsr year idno office
 
 ren year elec_year
 expand 3
-bys state_icpsr idno elec_year: gen n = _n
+bys state_icpsr office idno elec_year: gen n = _n
 gen year = elec_year + (2*(n-1))
 drop n
 
-duplicates drop state_icpsr idno year, force
-merge 1:m state_icpsr idno year using "$data\elections\scoresMerged.dta", nogen
+duplicates tag state_icpsr year office, gen(d)
+drop if d
+drop d
+merge m:1 state_icpsr idno year using "$data\elections\scoresMerged.dta", nogen
+
+duplicates tag state_icpsr year office winnerLast elec_year, gen(d)
+drop if d
+drop d
+
 save "$data\elections\scoresMerged.dta", replace
 
 
@@ -188,31 +254,34 @@ save "$data\elections\scoresMerged.dta", replace
 
 use "$data\working\psHouse.dta", clear
 
-replace votesRep = -1 if missing(votesRep)
-replace votesDem = -1 if missing(votesDem)
-replace votesSumOth = -1 if missing(votesSumOth)
+replace district = 99 if missing(district)
+replace sumVotesREP = -1 if missing(sumVotesREP)
+replace sumVotesDEM = -1 if missing(sumVotesDEM)
+replace sumVotesOTH = -1 if missing(sumVotesOTH)
 
-gen winnerLast = substr(candNameDem, 1, strpos(candNameDem, ",")-1) ///
-	if votesDem > votesRep & votesDem > votesSumOth
-replace winnerLast = substr(candNameRep, 1, strpos(candNameRep, ",")-1) ///
-	if votesRep > votesDem & votesRep > votesSumOth & missing(winnerLast)
-replace winnerLast = substr(candNameOth, 1, strpos(candNameOth, ",")-1) ///
-	if votesSumOth > votesRep & votesSumOth > votesDem & missing(winnerLast)
+gen winnerLast = substr(candNameDEM, 1, strpos(candNameDEM, ",")-1) ///
+	if sumVotesDEM > sumVotesREP & sumVotesDEM > sumVotesOTH
+replace winnerLast = substr(candNameREP, 1, strpos(candNameREP, ",")-1) ///
+	if sumVotesREP > sumVotesDEM & sumVotesREP > sumVotesOTH & missing(winnerLast)
+replace winnerLast = substr(candNameOTH, 1, strpos(candNameOTH, ",")-1) ///
+	if sumVotesOTH > sumVotesREP & sumVotesOTH > sumVotesDEM & missing(winnerLast)
 
-gen winnerFirst = substr(candNameDem, strpos(candNameDem, ",")+1, .) ///
-	if votesDem > votesRep & votesDem > votesSumOth
-replace winnerFirst = substr(candNameRep, strpos(candNameRep, ",")+1, .) ///
-	if votesRep > votesDem & votesRep > votesSumOth & missing(winnerFirst)
-replace winnerFirst = substr(candNameOth, strpos(candNameOth, ",")+1, .) ///
-	if votesSumOth > votesRep & votesSumOth > votesDem & missing(winnerFirst)
+gen winnerFirst = substr(candNameDEM, strpos(candNameDEM, ",")+1, .) ///
+	if sumVotesDEM > sumVotesREP & sumVotesDEM > sumVotesOTH
+replace winnerFirst = substr(candNameREP, strpos(candNameREP, ",")+1, .) ///
+	if sumVotesREP > sumVotesDEM & sumVotesREP > sumVotesOTH & missing(winnerFirst)
+replace winnerFirst = substr(candNameOTH, strpos(candNameOTH, ",")+1, .) ///
+	if sumVotesOTH > sumVotesREP & sumVotesOTH > sumVotesDEM & missing(winnerFirst)
 
 replace winnerLast = winnerFirst if missing(winnerLast) ///
 	& !missing(winnerFirst)
 replace winnerFirst = "" if winnerLast == winnerFirst
 replace winnerFirst = strtrim(winnerFirst)
 
-joinby state_icpsr year winnerLast using "$data\working\vvHouse.dta", ///
+joinby state_icpsr year district using "$data\working\vvHouse.dta", ///
 	unmatched(both) _merge(join_result)
+drop if join_result == 2 & year < 1868
+replace office = 3 if missing(office)
 
 //Hardcodes:
 drop if idno == 4729 & winnerFirst == "JAMES M"
@@ -240,8 +309,11 @@ drop if idno == 195 & winnerFirst == "GLENN"
 drop if idno == 10512 & winnerFirst == "JAMES C"
 drop if idno == 2389 & winnerFirst == "JOHN W"
 
-duplicates tag state_icpsr year winnerLast elec_type district, gen(dup)
-drop if elec_type == "S" & dup >= 1
+duplicates tag state_icpsr office district year, gen(d)
+drop if d
+drop d
+	
+duplicates tag state_icpsr year winnerLast district, gen(dup)
 drop if dup >= 1 & substr(winnerFirst, 1, 1) != substr(winnerFirst2, 1, 1)
 drop dup
 gsort state_icpsr year winnerLast winnerFirst district -month
@@ -252,9 +324,9 @@ gen test = substr(winnerFirst, 1, strlen(winnerFirst2)) != winnerFirst2 ///
 drop if test == 1
 drop test
 
-replace votesRep = . if votesRep == -1
-replace votesDem = . if votesDem == -1
-replace votesSumOth = . if votesSumOth == -1
+replace sumVotesREP = . if sumVotesREP == -1
+replace sumVotesDEM = . if sumVotesDEM == -1
+replace sumVotesOTH = . if sumVotesOTH == -1
 
 
 *** Recombine Other Pieces ***
@@ -264,6 +336,7 @@ append using "$data\working\psOthers.dta"
 replace elec_year = year if missing(elec_year)
 sort state_icpsr year office district
 
+/*
 drop if office == 1 & elec_type == "S"
 expand 2 if office == 1, gen(n)
 replace elec_year = elec_year + (2 * n) if office == 1
@@ -272,6 +345,7 @@ bys state_icpsr elec_year: egen demPresShare = mean(dsp)
 
 drop if office == 1
 drop n dsp
+*/
 
 merge m:1 state_icpsr year using "$data\elections\ranney_hvd.dta", ///
 	nogen keep(1 3) keepusing(ranney_*yrs folded_ranney_*yrs hvd_*yr)
@@ -282,10 +356,10 @@ save "$data\elections\scoresMerged.dta", replace
 
 *** Analysis Version ***
 
-keep state_icpsr year month office district elec_type cands partyCands ///
-	votesDem votesRep votesSumOth distPost distType numWinners ///
-	oneMajorCand uncontested demScore* percDem percRep ///
-	offSmall cong idno mc_party dwnom1 elec_year demPresShare ///
-	ranney_*yrs folded_ranney_*yrs hvd_*yr
+keep state_icpsr year month office district cands partyCands distPost ///
+	distType numWinners sumVotesDEM sumVotesREP sumVotesOTH ///
+	oneMajorCand uncontested demScore* offSmall cong idno mc_party ///
+	dwnom1 elec_year usp* partyVotes totalVotes ranney_*yrs ///
+	folded_ranney_*yrs hvd_*yr
 save "C:\Users\Robbie\Documents\dissertation\Analysis\scoresMerged.dta", replace
 

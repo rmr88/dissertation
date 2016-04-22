@@ -26,8 +26,8 @@ INDEX VERSION 1.127+C:\Users\Robbie\Documents\dissertation\Workspace\.metadata\.
 2690778029.index
 1520228180.index
 591183239.index
-3949308504.index
 2959957318.index
+3949308504.index
 185975254.index
 3389072140.index
 1923297441.index
@@ -39,7 +39,6 @@ INDEX VERSION 1.127+C:\Users\Robbie\Documents\dissertation\Workspace\.metadata\.
 586307937.index
 3414683811.index
 3771318538.index
-972575148.index
 3453233361.index
 3649454487.index
 755122220.index

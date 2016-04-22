@@ -3,96 +3,129 @@
 //Robbie Richards, 1/13/16
 //TODO: still need to handle 1950-1972 and 1824-1968, as well as state leg
 
-*Process files for 1974-1990
+*** Process files for 1970-1990 ***
+
+*Append Files
 cd "C:\Users\Robbie\Documents\dissertation\Data\elections\ICPSRfedResults"
 cap erase "fedResults.dta"
-foreach fileNum of numlist 1 2 5/15 {
+foreach fileNum of numlist 1/3 5/15 {
 	if (`fileNum' < 10) local stub = "000`fileNum'"
 	else local stub = "00`fileNum'"
 	
+	di "Processing `stub'..."
 	use "DS`stub'\00013-`stub'-Data.dta", clear
 	run "DS`stub'\00013-`stub'-Supplemental_syntax.do"
-	
-	local year = "1"
+
 	foreach var of varlist _all {
 		local varLab : variable label `var'
-		
-		//Get election year from first var label that has it
-		if ("`year'" == "1" & substr("`varLab'", 1, 1) == "9") {
+		if (substr("`varLab'", 1, 1) == "9") ///
 			local year = "1" + substr("`varLab'", 1, 3)
-			di "`year'"
-		}
 		
-		if ("`varLab'" == "ICPSR STUDY NUMBER" | "`varLab'" == "IDENTIFICATION NUMBER") {
-			ren `var' studyNum
-		}
-		else if ("`varLab'" == "ICPSR VERSION NUMBER" | "`varLab'" == "ICPSR PART NUMBER") {
-			drop `var'
-		}
-		else if ("`varLab'" == "ICPSR STATE CODE" | "`varLab'" == "ICPR STATE CODE") {
-			ren `var' stCode
-		}
-		else if ("`varLab'" == "COUNTY NAME") ren `var' countyName
-		else if ("`varLab'" == "ICPSR COUNTY CODE") ren `var' countyCode
-		else if ("`varLab'" == "DISTRICT" | substr("`varLab'", 1, 16) == "CONG DIST NUMBER") {
-			ren `var' district
-		}
-		else if (substr("`varLab'", 1, 16) == "STATE OFFICE SUB") ren `var' stOffCode
+		if ("`varLab'" == "ICPSR VERSION NUMBER" | ///
+				"`varLab'" == "ICPSR PART NUMBER") drop `var'
+		else if ("`varLab'" == "ICPSR STATE CODE" | ///
+				"`varLab'" == "ICPR STATE CODE" | "`varLab'" == "STATE") ///
+			ren `var' state_icpsr
+		else if ("`varLab'" == "COUNTY NAME") ren `var' county_name
+		else if ("`varLab'" == "ICPSR COUNTY CODE" | ///
+				"`varLab'" == "IDENTIFICATION NUMBER") ///
+			ren `var' county_icpsr
+		else if (substr("`varLab'", 1, 16) == "CONG DIST NUMBER" | ///
+				"`varLab'" == "DISTRICT") ren `var' cd_icpsr
+		else if (substr("`varLab'", 1, 16) == "STATE OFFICE SUB") ///
+			ren `var' stOffCode
 		else {
 			local varLab = stritrim(regexr("`varLab'", " VOTE", ""))
 			local varLab = regexr("`varLab'", "[0-9][0-9][0-9] [0-9] G ", "")
 			
-			if (regexm("`varLab'", "([A-Z]+) 0100")) {
-				local newName = "votes" + strlower(regexs(1)) + "Dem"
+			if (strpos("`varLab'", "%") > 0) drop `var'
+			else if (regexm("`varLab'", "([A-Z]+) 0100*")) {
+				local newName = "votes" + strlower(regexs(1)) + "DEM`year'"
 				ren `var' `newName'
 			}
 			else if (regexm("`varLab'", "([A-Z]+) 0200")) {
-				local newName = "votes" + strlower(regexs(1)) + "Rep"
+				local newName = "votes" + strlower(regexs(1)) + "REP`year'"
 				ren `var' `newName'
 			}
 			else if (regexm("`varLab'", "([A-Z]+) TOTAL")) {
-				local newName = "votes" + strlower(regexs(1)) + "Total"
+				local newName = "votes" + strlower(regexs(1)) + "TOTAL`year'"
 				ren `var' `newName'
 			}
 			else if (regexm("`varLab'", "([A-Z]+) 1735")) {
-				local newName = "votes" + strlower(regexs(1)) + "Lib"
+				local newName = "votes" + strlower(regexs(1)) + "Lib`year'"
 				ren `var' `newName'
 			}
 			else if (regexm("`varLab'", "([A-Z]+) 2582")) {
-				local newName = "votes" + strlower(regexs(1)) + "Gre"
+				local newName = "votes" + strlower(regexs(1)) + "Gre`year'"
 				ren `var' `newName'
 			}
 			else if (regexm("`varLab'", "([A-Z]+) 1299")) {
-				local newName = "votes" + strlower(regexs(1)) + "Con"
+				local newName = "votes" + strlower(regexs(1)) + "Con`year'"
 				ren `var' `newName'
 			}
 			else drop `var'
 		}	
 	}
 	
-	gen year = "`year'"
+	local list ""
+	foreach var of varlist votes*`year' {
+		local list = "`list' " + subinstr("`var'", "`year'", "", .)
+	}
+	
+	qui reshape long `list', i(county_name state_icpsr) j(year)
 	cap append using "fedResults.dta"
 	save "fedResults.dta", replace
 }
 
+*Total Other Votes
 foreach off in pres sen cong gov state {
 	egen `off'Oth = rowtotal(votes`off'*)
-	gen votes`off'Oth = (2 * votes`off'Total) - `off'Oth
+	gen votes`off'Oth = (2 * votes`off'TOTAL) - `off'Oth
 	drop `off'Oth
 }
 
-reshape long votespres votessen votescong votesgov votesstate, ///
-	i(study* stCode county* district year stOffCode) ///
-	j(party) string
+*Fix County ICPSR IDs
+replace county_name = "ARLINGTON/ALEXANDRIA" if county_name == "ARLINGTON/ALEXAND"
+merge m:1 state_icpsr county_name using "C:\Users\Robbie\Documents\dissertation\Data\working\county_icpsr.dta", ///
+	update nogen keep(1 3 4)
+replace county_name_full = county_name
+merge m:1 state_icpsr county_name_full using "C:\Users\Robbie\Documents\dissertation\Data\working\county_icpsr.dta", ///
+	update nogen keep(1 3 4 5)
+drop county_name_f* state_name state_fips
 
-reshape long votes, j(office) string ///
-	i(study* stCode county* district year stOffCode party)
+egen rightID = mode(county_icpsr), maxmode by(state_icpsr county_name)
+replace county_icpsr = rightID if missing(county_icpsr)
+drop rightID
 
-order year, after(district)
+*All Results, Long
+preserve
+	reshape long votespres votessen votescong votesgov votesstate, ///
+	i(state_icpsr county* cd_icpsr year stOffCode) j(party) string
+	reshape long votes, j(office) string ///
+		i(state_icpsr county* cd_icpsr year stOffCode party)
+	save "fedResults.dta", replace
+restore
 
-save "fedResults.dta", replace
-//remaining issue: district numbers are weird. Some county results may also be aggregated district-in-county numbers
+*Presidential Results Only, Wide
+keep county_name state_icpsr year county_icpsr cd_icpsr votespres*
+foreach var of varlist votes* {
+	local new = subinstr("`var'", "votes", "", .)
+	ren `var' `new'
+}
+drop if missing(presDEM) & missing(presREP) & missing(presTOTAL)
 
+replace presOth = presOth + presLib + presCon
+drop presLib presCon
+ren presOth sumVotesOTH
+ren presDEM sumVotesDEM
+ren presREP sumVotesREP
+ren presTOTAL totalVotes
+gen partyVotes = sumVotesDEM + sumVotesREP
+
+append using "ICPSR_00001\presDataPre1970.dta"
+save "presData.dta", replace
+
+/*
 *State Leg results:
 cd "C:\Users\Robbie\Documents\dissertation\Data\elections\stateLegData"
 use "34297-0001-Data.dta", clear
@@ -162,3 +195,4 @@ ren V57 distPost21480
 ren V58 distName21480
 
 save "stateLegResults.dta", replace
+*/

@@ -2,7 +2,7 @@
 
 //Robbie Richards, 2/4/16
 
-cd "C:\Users\Robbie\Documents\dissertation\Data\elections\ICPSR_00002\DS0001"
+global icpsr "C:\Users\Robbie\Documents\dissertation\Data\elections\ICPSR_00002\DS0001"
 
 infix ///
 	candNum 1-2 ///
@@ -15,7 +15,7 @@ infix ///
 	str1 elec_type 30 ///
 	party 31-34 ///
 	str45 candName 35-80 ///
-	using "00002-0001-Data.txt", clear
+	using "$icpsr\00002-0001-Data.txt", clear
 
 label variable candNum "CAND NUMBER"
 label variable year "YEAR OF ELECTION"
@@ -1833,10 +1833,10 @@ replace party = 328 if state_icpsr == 35 & year == 1936 ///
 	& candName == "NORRIS, GEORGE W" & party == 9001
 //end hardcodes
 
-gen majorPty = "Dem" if party == 100 | (party == 809 & state_icpsr == 33)
-replace majorPty = "Rep" if party == 200
+gen majorPty = "DEM" if party == 100 | (party == 809 & state_icpsr == 33)
+replace majorPty = "REP" if party == 200
 bys state_icpsr-elec_type: egen votesThird = max(votes) if missing(majorPty)
-replace majorPty = "Oth" if votesThird == votes ///
+replace majorPty = "OTH" if votesThird == votes ///
 	& missing(majorPty) & !missing(votes)
 drop votesThird
 keep if !missing(majorPty)
@@ -1847,33 +1847,33 @@ replace partyCands = partyCands - others
 drop others
 
 gsort state_icpsr year month office district elec_type party -votes
-collapse (sum) votesSum=votes (max) votesMax=votes (firstnm) candName majorPty, ///
+collapse (sum) sumVotes=votes (max) maxVotes=votes (firstnm) candName majorPty, ///
 	by(state_icpsr-elec_type party totalVotes cands partyCands)
-gen votesPerc = votesMax / totalVotes
+gen votesPerc = maxVotes / totalVotes
 drop if (majorPty == "Oth" & votesPerc < 0.01) | party > 9000
 
-bys state_icpsr-elec_type: egen pvotes = total(votesSum) ///
+bys state_icpsr-elec_type: egen pvotes = total(sumVotes) ///
 	if majorPty != "Oth"
 bys state_icpsr-elec_type: egen partyVotes = max(pvotes)
 drop pvotes
 duplicates drop state_icpsr year month office district elec_type ///
 	totalVotes cands partyVotes partyCands majorPty, force
 
-reshape wide votesMax votesSum votesPerc candName party, ///
+reshape wide maxVotes sumVotes votesPerc candName party, ///
 	i(state_icpsr-elec_type totalVotes cands partyVotes partyCands) ///
 	j(majorPty) string
 
-replace candNameRep = candNameOth if missing(votesSumRep) & ///
-	(partyOth == 605 | partyOth == 12 | partyOth == 25 | partyOth == 331)
-replace votesSumRep = votesSumOth if missing(votesSumRep) & ///
-	(partyOth == 605 | partyOth == 12 | partyOth == 25 | partyOth == 331)
-replace votesMaxRep = votesMaxOth if missing(votesMaxRep) & ///
-	(partyOth == 605 | partyOth == 12 | partyOth == 25 | partyOth == 331)
-replace partyRep = partyOth if missing(partyRep) & ///
-	(partyOth == 605 | partyOth == 12 | partyOth == 25 | partyOth == 331)
-replace partyVotes = partyVotes + votesSumRep ///
-	if partyRep != 200 & !missing(partyRep)
-drop partyDem partyRep votesPerc*
+replace candNameREP = candNameOTH if missing(sumVotesREP) & ///
+	(partyOTH == 605 | partyOTH == 12 | partyOTH == 25 | partyOTH == 331)
+replace sumVotesREP = sumVotesOTH if missing(sumVotesREP) & ///
+	(partyOTH == 605 | partyOTH == 12 | partyOTH == 25 | partyOTH == 331)
+replace maxVotesREP = maxVotesOTH if missing(maxVotesREP) & ///
+	(partyOTH == 605 | partyOTH == 12 | partyOTH == 25 | partyOTH == 331)
+replace partyREP = partyOTH if missing(partyREP) & ///
+	(partyOTH == 605 | partyOTH == 12 | partyOTH == 25 | partyOTH == 331)
+replace partyVotes = partyVotes + sumVotesREP ///
+	if partyREP != 200 & !missing(partyREP)
+drop partyDEM partyREP votesPerc*
 
 append using "C:\Users\Robbie\Documents\dissertation\Data\elections\stateLegData\stateLegDataWide.dta"
 

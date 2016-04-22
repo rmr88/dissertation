@@ -7,7 +7,7 @@ run "C:\Users\Robbie\Documents\dissertation\Code\electionDataIcpsr0002.do"
 
 *Generate state-by-year scores
 drop if office == 1
-append using "C:\Users\Robbie\Documents\dissertation\Data\elections\polidata\_polidataResults.dta"
+//append using "C:\Users\Robbie\Documents\dissertation\Data\elections\polidata\_polidataResults.dta"
 
 collapse (mean) avgCands=cands percUncontested=uncontested ///
 	percOneMCand=oneMajorCand avgPartyCands=partyCands ///
@@ -20,7 +20,7 @@ save "C:\Users\Robbie\Documents\dissertation\Data\working\partyScoresOverall.dta
 
 *Merge partyScores back into data
 run "C:\Users\Robbie\Documents\dissertation\Code\electionDataIcpsr0002.do"
-append using "C:\Users\Robbie\Documents\dissertation\Data\elections\polidata\_polidataResults.dta"
+//append using "C:\Users\Robbie\Documents\dissertation\Data\elections\polidata\_polidataResults.dta"
 
 merge m:1 year state_icpsr using ///
 	"C:\Users\Robbie\Documents\dissertation\Data\working\partyScoresOverall.dta", ///
@@ -42,3 +42,4 @@ replace offSmall = 4 if office == 5 | office == 6
 label values offSmall OFF
 
 save "C:\Users\Robbie\Documents\dissertation\Data\elections\partyScores.dta", replace
+

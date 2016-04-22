@@ -1,3 +1,7 @@
+-- HEDA Data Table --
+
+--Robbie Richards, last modified 3/28/16
+
 --DROP TABLE dissertData..elections
 CREATE TABLE dissertData..elections (
 	state VARCHAR(4),
@@ -43,6 +47,30 @@ CREATE TABLE dissertData..elections (
 	g_SOS_dv DECIMAL(9,0),
 	g_SOS_rv DECIMAL(9,0),
 	g_SOS_tv DECIMAL(9,0),
+	g_AUD_rv DECIMAL(9,0),
+	g_AUD_dv DECIMAL(9,0),
+	g_AUD_tv DECIMAL(9,0),
+	g_TRE_rv DECIMAL(9,0),
+	g_TRE_dv DECIMAL(9,0),
+	g_TRE_tv DECIMAL(9,0),
+	g_COM_rv DECIMAL(9,0),
+	g_COM_dv DECIMAL(9,0),
+	g_COM_tv DECIMAL(9,0),
+	g_INS_rv DECIMAL(9,0),
+	g_INS_dv DECIMAL(9,0),
+	g_INS_tv DECIMAL(9,0),
+	g_LND_rv DECIMAL(9,0),
+	g_LND_dv DECIMAL(9,0),
+	g_LND_tv DECIMAL(9,0),
+	g_AGR_rv DECIMAL(9,0),
+	g_AGR_dv DECIMAL(9,0),
+	g_AGR_tv DECIMAL(9,0),
+	g_SPI_rv DECIMAL(9,0),
+	g_SPI_dv DECIMAL(9,0),
+	g_SPI_tv DECIMAL(9,0),
+	g_LBR_rv DECIMAL(9,0),
+	g_LBR_dv DECIMAL(9,0),
+	g_LBR_tv DECIMAL(9,0),
 	fips_cnty DECIMAL(9,0),
 	box VARCHAR(MAX),
 	ward VARCHAR(MAX),
@@ -642,6 +670,22 @@ CREATE TABLE dissertData..elections (
 BULK INSERT dissertData..elections
 	FROM 'C:\Users\Robbie\Documents\dissertation\data\elections\edadCombined.txt'
 	WITH (FIELDTERMINATOR = '\t', FIRSTROW = 2)
+
+--Remove quotes from state names
+UPDATE dissertData..elections SET elections.state = REPLACE(elections.state, '"', '')
+UPDATE dissertData..elections SET elections.county = REPLACE(elections.county, '"', '')
+UPDATE dissertData..elections SET elections.precinct = REPLACE(elections.precinct, '"', '')
+
+--Update CD value for single-district states
+UPDATE dissertData..elections SET elections.cd = 1.0
+		WHERE elections.cd IS NULL
+			AND (elections.state = 'AK'
+				OR elections.state = 'DE'
+				OR elections.state = 'MT'
+				OR elections.state = 'ND'
+				OR elections.state = 'SD'
+				OR elections.state = 'VT'
+				OR elections.state = 'WY')
 
 SELECT elections.state,
 		elections.year,

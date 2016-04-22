@@ -27,8 +27,8 @@ ren distNum district
 ren stateICPSR state_icpsr
 ren elecType elec_type
 ren numCand cands
-ren repVotes votesSumRep
-ren demVotes votesSumDem
+ren repVotes sumVotesREP
+ren demVotes sumVotesDEM
 
 save "stateLegDataWide.dta", replace
 

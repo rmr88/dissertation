@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+
+\begin{document}
+	{
+		\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+		\begin{tabular}{l|*{3}{c}|*{2}{c}}
+			\hline\hline
+			&(1)            &(2)            &(3)            &(4)            &(5)            \\
+			&Overall        &DEM            &REP            &Ranney         &HVD            \\
+			\hline                
+			\rule{0pt}{4ex}Election-based Index      &  -0.11\sym{**}&   0.19\sym{**}&  -0.49\sym{**}&               &               \\
+			& (0.04)        & (0.05)        & (0.08)        &               &               \\
+			\rule{0pt}{2ex}Ranney Index              &               &               &               &  -0.14\sym{*} &               \\
+			&               &               &               & (0.06)        &               \\
+			\rule{0pt}{2ex}HVD Index                 &               &               &               &               &  -0.00\sym{**}\\
+			&               &               &               &               & (0.00)        \\
+			\rule{0pt}{2ex}State Democratic    &   0.20\sym{**}&   0.39\sym{**}&  -0.22        &  -0.25\sym{**}&   0.02        \\
+			\sym{  } Share of Pres. Vote& (0.05)        & (0.05)        & (0.14)        & (0.07)        & (0.08)        \\
+			\rule{0pt}{2ex}Party Comp. Measure &   0.35\sym{**}&   0.04        &   0.57\sym{**}&   0.63\sym{**}&   0.02\sym{**}\\
+			\sym{  } X Dem Pres. Share& (0.06)        & (0.07)        & (0.16)        & (0.11)        & (0.00)        \\
+			\rule{0pt}{2ex}Winning Margin in         &   0.03\sym{**}&   0.07\sym{**}&  -0.00        &   0.02\sym{*} &   0.07\sym{**}\\
+			\sym{  } Election         & (0.01)        & (0.01)        & (0.01)        & (0.01)        & (0.01)        \\
+			\rule{0pt}{2ex}Uncontested Election      &  -0.09\sym{**}&  -0.06\sym{**}&  -0.02        &  -0.05\sym{**}&  -0.10\sym{**}\\
+			& (0.01)        & (0.01)        & (0.09)        & (0.01)        & (0.02)        \\
+			\rule{0pt}{2ex}Southern State            &  -0.10\sym{**}&  -0.11\sym{**}&  -0.06\sym{**}&  -0.17\sym{**}&  -0.10\sym{**}\\
+			& (0.00)        & (0.01)        & (0.01)        & (0.01)        & (0.01)        \\
+			\rule{0pt}{2ex}Democratic Incumbent      &   0.30\sym{**}&               &               &   0.15\sym{**}&   0.03        \\
+			& (0.01)        &               &               & (0.04)        & (0.16)        \\
+			\rule{0pt}{2ex}Republican Incumbent      &  -0.36\sym{**}&               &               &  -0.48\sym{**}&  -0.59\sym{**}\\
+			& (0.01)        &               &               & (0.04)        & (0.16)        \\
+			\rule{0pt}{2ex}Constant                  &   0.09\sym{*} &   0.11\sym{*} &   0.14        &   0.13\sym{*} &   0.19        \\
+			& (0.04)        & (0.05)        & (0.07)        & (0.06)        & (0.17)        \\
+			\hline             
+			\rule{0pt}{4ex}Year Fixed Effects        &      Y        &      Y        &      Y        &      Y        &      Y        \\
+			Observations              &  18533        &  10345        &   8073        &   8955        &   3167        \\
+			R-squared                 &   0.83        &   0.21        &   0.23        &   0.79        &   0.79        \\
+			\hline\hline
+			\multicolumn{6}{l}{\footnotesize Standard errors in parentheses \sym{*} \(p<0.05\), \sym{**} \(p<0.01\)}\\
+		\end{tabular}
+	}
+\end{document}
