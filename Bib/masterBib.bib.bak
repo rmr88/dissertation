@@ -40,6 +40,26 @@
   Url                      = {http://www.jstor.org/stable/2110458}
 }
 
+@Article{Adams2004,
+  Title                    = {Understanding Change and Stability in Party Ideologies: Do Parties Respond to Public Opinion or to Past Election Results?},
+  Author                   = {James Adams and Michael Clark and Lawrence Ezrow and Garrett Glasgow},
+  Journal                  = {British Journal of Political Science},
+  Year                     = {2004},
+
+  Month                    = {10},
+  Pages                    = {589--610},
+  Volume                   = {34},
+
+  Abstract                 = { ABSTRACT Previous research explains the evolution of parties&apos; ideological positions in terms of decision rules that stress the uncertainty of the political environment. The authors extend this research by examining whether parties adjust their ideologies in response to two possible influences: shifts in public opinion, and past election results. Their empirical analyses, which are based on the Comparative Manifesto Project&apos;s codings of parties&apos; post-war programmes in eight West European nations, suggest that parties respond to shifts in public opinion, but that these effects are only significant in situations where public opinion is clearly shifting away from the party&apos;s policy positions. By contrast, no evidence is found here that parties adjust their ideologies in response to past election results. These findings have important implications for parties&apos; election strategies and for models of political representation. },
+  Doi                      = {10.1017/S0007123404000201},
+  ISSN                     = {1469-2112},
+  Issue                    = {04},
+  Numpages                 = {22},
+  Owner                    = {Robbie},
+  Timestamp                = {2016.05.04},
+  Url                      = {http://journals.cambridge.org/article_S0007123404000201}
+}
+
 @Article{Adams2008,
   Title                    = {Candidate and Party Strategies in Two-Stage Elections Beginning with a Primary},
   Author                   = {Adams, James and Merrill, Samuel},
@@ -215,6 +235,20 @@ turnover between the 109th and 110th Senates occurred at approximately the same 
 does not move as abruptly as that of the House.},
   Owner                    = {Robbie},
   Timestamp                = {2015.08.26}
+}
+
+@Electronic{Baylor2010,
+  Title                    = {The Baylor Religion Survey, Wave III},
+
+  Address                  = {Waco, TX},
+  Author                   = {{Baylor University}},
+  HowPublished             = {Survey results},
+  Organization             = {Baylor Institute for Studies of Religion},
+  Url                      = {http://www.thearda.com/Archive/Files/Descriptions/BRS2011.asp},
+  Year                     = {2010},
+
+  Owner                    = {Robbie},
+  Timestamp                = {2016.04.27}
 }
 
 @Article{Berinsky2011,
@@ -723,6 +757,21 @@ does not move as abruptly as that of the House.},
   Type                     = {Journal Article}
 }
 
+@Electronic{cms2016,
+  Title                    = {Administration takes first step to implement legislation modernizing how Medicare pays physicians for quality},
+
+  Address                  = {Washington, DC},
+  Author                   = {{CMS Press Office}},
+  HowPublished             = {Online press release},
+  Month                    = {April 27},
+  Organization             = {Center for Medicare and Medicaid Services},
+  Url                      = {http://www.hhs.gov/about/news/2016/04/27/administration-takes-first-step-implement-legislation-modernizing-how-medicare-pays-physicians.html?linkId=23930378},
+  Year                     = {2016},
+
+  Owner                    = {Robbie},
+  Timestamp                = {2016.04.28}
+}
+
 @Article{Colombotos1969a,
   Title                    = {Social Origins and Ideology of Physicians: A Study of the Effects of Early Socialization},
   Author                   = {Colombotos, John},
@@ -957,6 +1006,22 @@ BRIGITTE MAHEUX},
   Publisher                = {American Political Science Association},
   Timestamp                = {2015.04.17},
   Url                      = {http://www.jstor.org/stable/1953842}
+}
+
+@Article{Dawson1963,
+  Title                    = {Inter-Party Competition, Economic Variables, and Welfare Policies in the American States},
+  Author                   = {Richard E. Dawson and James A. Robinson},
+  Journal                  = {The Journal of Politics},
+  Year                     = {1963},
+  Number                   = {2},
+  Pages                    = {265-289},
+  Volume                   = {25},
+
+  ISSN                     = {00223816, 14682508},
+  Owner                    = {Robbie},
+  Publisher                = {[University of Chicago Press, Southern Political Science Association]},
+  Timestamp                = {2016.05.04},
+  Url                      = {http://www.jstor.org/stable/2127465}
 }
 
 @Book{DelliCarpini1996,
@@ -2596,6 +2661,23 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Url                      = {http://jgarand.lsu.edu/Readings%20for%20POLI%207961%20%28Fall%202005%29/Week%208/Mansbridge%20%28APSR%202003%29.pdf}
 }
 
+@Article{Manza2002,
+  Title                    = {A Democratic Polity?: Three Views of Policy Responsiveness to Public Opinion in the United States},
+  Author                   = {Manza, Jeff and Cook, Fay Lomax},
+  Journal                  = {American Politics Research},
+  Year                     = {2002},
+  Number                   = {6},
+  Pages                    = {630-667},
+  Volume                   = {30},
+
+  Abstract                 = {The capacity of a politicalsystem to respond to the preferences of its citizens is centralto democratic theory and practice. Research and theory about the impact of public opinion on policy making in the United States, however, have produced decidedly mixed views. A number of analysts find a strong and persisting impact of public opinion on public policy. Others reject the idea that the public has consistent views at all or, even if it does, that those views exercise much influence over policy making. In this article, we evaluate the state of the art in the debates over the opinion-policy link in the rapidly growing body of research on public opinion and policy making. After an extensive review and critique of the theoretical and empirical research developing “strong” and “weak” effect views of the impact of opinion on policy, we conclude that a third “contingent” view, highlighting the historical, institutional, and political contingencies, provides the best understanding of the impact of opinion on policy.},
+  Doi                      = {10.1177/153267302237231},
+  Eprint                   = {http://apr.sagepub.com/content/30/6/630.full.pdf+html},
+  Owner                    = {Robbie},
+  Timestamp                = {2016.05.04},
+  Url                      = {http://apr.sagepub.com/content/30/6/630.abstract}
+}
+
 @Article{Marmor1994,
   Title                    = {The Politics of Universal Health Insurance: Lessons from Past Administrations?},
   Author                   = {Marmor, Theodore R},
@@ -3581,12 +3663,12 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
 
   Month                    = {2},
   Pages                    = {111--127},
-  Volume                   = {null},
+  Volume                   = {101},
 
-  Abstract                 = { ABSTRACT This article analyzes the strategic use of public policy as a tool for reshaping public opinion. In the 1990s, “progressive revisionists” argued that, by reforming welfare, liberals could free the Democratic Party of a significant electoral liability, reduce the race-coding of poverty politics, and produce a public more willing to invest in anti-poverty efforts. Connecting this argument to recent scholarship on policy feedback, we pursue a quantitative case study of the potential for new policies to move public opinion. Our analysis reveals that welfare reform in the 1990s produced few changes in mass opinion. To explain this result, we propose a general framework for the analysis of mass feedback effects. After locating welfare as a “distant-visible” case in this framework, we advance four general propositions that shed light on our case-specific findings as well as the general conditions under which mass feedback effects should be viewed as more or less likely. },
+  Abstract                 = {ABSTRACT This article analyzes the strategic use of public policy as a tool for reshaping public opinion. In the 1990s, “progressive revisionists” argued that, by reforming welfare, liberals could free the Democratic Party of a significant electoral liability, reduce the race-coding of poverty politics, and produce a public more willing to invest in anti-poverty efforts. Connecting this argument to recent scholarship on policy feedback, we pursue a quantitative case study of the potential for new policies to move public opinion. Our analysis reveals that welfare reform in the 1990s produced few changes in mass opinion. To explain this result, we propose a general framework for the analysis of mass feedback effects. After locating welfare as a “distant-visible” case in this framework, we advance four general propositions that shed light on our case-specific findings as well as the general conditions under which mass feedback effects should be viewed as more or less likely.},
   Doi                      = {10.1017/S0003055407070049},
   ISSN                     = {1537-5943},
-  Issue                    = {01},
+  Issue                    = {1},
   Numpages                 = {17},
   Owner                    = {Robbie},
   Timestamp                = {2016.04.20},
@@ -3615,6 +3697,26 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Owner                    = {Robbie},
   Timestamp                = {2015.01.08},
   Type                     = {Book}
+}
+
+@Article{Stimson1995,
+  Title                    = {Dynamic Representation},
+  Author                   = {Stimson,James A. and Mackuen,Michael B. and Erikson,Robert S.},
+  Journal                  = {American Political Science Review},
+  Year                     = {1995},
+
+  Month                    = {9},
+  Pages                    = {543--565},
+  Volume                   = {89},
+
+  Abstract                 = { ABSTRACT If public opinion changes and then public policy responds, this is dynamic representation. Public opinion is the global policy preference of the American electorate. Policy is a diverse set of acts of elected and unelected officials. Two mechanisms of policy responsiveness are (1) elections change the government's political composition, which is then reflected in new policy and (2) policymakers calculate future (mainly electoral) implications of current public views and act accordingly (rational anticipation). We develop multiple indicators of policy activity for the House, Senate, presidency, and Supreme Court, then model policy liberalism as a joint function of the two mechanisms. For each institution separately, and also in a global analysis of “government as a whole,” we find that policy responds dynamically to public opinion change. This responsiveness varies by institution, both in level and in mechanism, as would be expected from constitutional design. },
+  Doi                      = {10.2307/2082973},
+  ISSN                     = {1537-5943},
+  Issue                    = {03},
+  Numpages                 = {23},
+  Owner                    = {Robbie},
+  Timestamp                = {2016.05.23},
+  Url                      = {http://journals.cambridge.org/article_S000305540009715X}
 }
 
 @Article{Stokes1996,
@@ -3836,20 +3938,6 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
 
   Owner                    = {Robbie},
   Timestamp                = {2016.04.21}
-}
-
-@Electronic{baylor2010,
-  Title                    = {The Baylor Religion Survey, Wave III},
-
-  Address                  = {Waco, TX},
-  Author                   = {Baylor University},
-  HowPublished             = {Survey results},
-  Organization             = {Baylor Institute for Studies of Religion},
-  Url                      = {http://www.thearda.com/Archive/Files/Descriptions/BRS2011.asp},
-  Year                     = {2010},
-
-  Owner                    = {Robbie},
-  Timestamp                = {2016.04.27}
 }
 
 @Article{Verba1996,

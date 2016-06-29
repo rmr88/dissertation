@@ -81,7 +81,7 @@ replace dwnom1_tv = -dwnom1_tv
 *** Models: Final ***
 
 replace beta3 = beta3_overall
-reg dwnom1_tv beta1-beta5 south dem rep i.years_to_elec i.offSmall i.year //if offSmall == 4
+reg dwnom beta1-beta5 south dem rep i.years_to_elec i.offSmall i.year //if offSmall == 4
 estimates store m1, title("Overall")
 //outreg2 using "Tables\prelimModels.xml", excel replace 2aster drop(i.year) dec(3) label ctitle("Overall") policy(beta3) 
 	
@@ -112,6 +112,7 @@ esttab m1 m2 m3 m4 m5 using "Tables\table1_v2.rtf", rtf replace ///
 
 	//cells(b(star fmt(2) label(" ")) se(par fmt(2) label(" ")))
 
+cap drop yr b3 b3_se b3_ll b3_ul b1 b1_se b1_ul b1_ll
 xtset stoff year
 gen yr = 1870 + (2 * _n)
 replace yr = . if yr > 2010
@@ -121,19 +122,65 @@ gen b3_se = .
 gen b3_ll = .
 gen b3_ul = .
 
+gen b1 = .
+gen b1_se = .
+gen b1_ll = .
+gen b1_ul = .
+
+/*
 levelsof yr, local(yrs)
 qui foreach yr of local yrs {
-	reg dwnom1_tv cf2.partyComp##cf2.uspDEMdm beta4 beta5 south ///
+	reg dwnom cf2.partyComp##cf2.uspDEMdm beta4 beta5 south ///
 		dem rep i.years_to_elec i.offSmall i.state_icpsr if year == `yr'
+	
 	replace b3 = _b[cF2.partyComp#cF2.uspDEMdm] if yr == `yr'
 	replace b3_se = _se[cF2.partyComp#cF2.uspDEMdm] if yr == `yr'
 	replace b3_ll = _b[cF2.partyComp#cF2.uspDEMdm] ///
 		- (1.96 * _se[cF2.partyComp#cF2.uspDEMdm]) if yr == `yr'
 	replace b3_ul = _b[cF2.partyComp#cF2.uspDEMdm] ///
-		+ (1.96 * _se[cF2.partyComp#cF2.uspDEMdm]) if yr == `yr'	
+		+ (1.96 * _se[cF2.partyComp#cF2.uspDEMdm]) if yr == `yr'
+	
+	replace b1 = _b[F2.uspDEMdm] if yr == `yr'
+	replace b1_se = _se[F2.uspDEMdm] if yr == `yr'
+	replace b1_ll = _b[F2.uspDEMdm] ///
+		- (1.96 * _se[F2.uspDEMdm]) if yr == `yr'
+	replace b1_ul = _b[F2.uspDEMdm] ///
+		+ (1.96 * _se[F2.uspDEMdm]) if yr == `yr'
+}
+*/
+
+local yr = 1870
+qui while (`yr' <= 2010) {
+	local yrmax = `yr' + 10
+	reg dwnom1_tv cf2.partyComp##cf2.uspDEMdm beta4 beta5 south ///
+		dem rep i.years_to_elec i.offSmall if year >= `yr' & year < `yrmax'
+	
+	replace b3 = _b[cF2.partyComp#cF2.uspDEMdm] if yr == `yr'
+	replace b3_se = _se[cF2.partyComp#cF2.uspDEMdm] if yr == `yr'
+	replace b3_ll = _b[cF2.partyComp#cF2.uspDEMdm] ///
+		- (1.96 * _se[cF2.partyComp#cF2.uspDEMdm]) if yr == `yr'
+	replace b3_ul = _b[cF2.partyComp#cF2.uspDEMdm] ///
+		+ (1.96 * _se[cF2.partyComp#cF2.uspDEMdm]) if yr == `yr'
+	
+	replace b1 = _b[F2.uspDEMdm] if yr == `yr'
+	replace b1_se = _se[F2.uspDEMdm] if yr == `yr'
+	replace b1_ll = _b[F2.uspDEMdm] ///
+		- (1.96 * _se[F2.uspDEMdm]) if yr == `yr'
+	replace b1_ul = _b[F2.uspDEMdm] ///
+		+ (1.96 * _se[F2.uspDEMdm]) if yr == `yr'
+	
+	local yr = `yrmax'
 }
 
 twoway (line b3 b3_ul b3_ll yr), yline(0) //xline(1962) xline(1982) xline(2002)
+
+cap drop resph resp_ul resp_ll respl
+gen resph = b1 + b3
+gen resp_ul = b1_ul + b3_ul
+gen resp_ll = b1_ll + b3_ll
+gen respl = b1 + (b3/2)
+
+twoway (line resph respl yr), yline(0) //xline(1962) xline(1982) xline(2002)
 
 /*
 *** Models: New Pty Comp Index ***

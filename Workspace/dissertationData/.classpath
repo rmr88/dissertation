@@ -31,5 +31,12 @@
 	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/htmlunit-2.19/lib/xercesImpl-2.11.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/htmlunit-2.19/lib/xml-apis-1.4.01.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/pdfbox-app-1.8.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/jsoup-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/twitter4j-4.0.4/lib"/>
+	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/twitter4j-4.0.4/lib/twitter4j-async-4.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/twitter4j-4.0.4/lib/twitter4j-core-4.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/twitter4j-4.0.4/lib/twitter4j-examples-4.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/twitter4j-4.0.4/lib/twitter4j-media-support-4.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/twitter4j-4.0.4/lib/twitter4j-stream-4.0.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

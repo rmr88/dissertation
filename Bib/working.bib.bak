@@ -201,6 +201,27 @@
   Url                      = {http://dx.doi.org/10.1111/lsq.12019}
 }
 
+@Article{Patashnik2013,
+  Title                    = {The Struggle to Remake Politics: Liberal Reform and the Limits of Policy Feedback in the Contemporary American State},
+  Author                   = {Patashnik, Eric M. and Zelizer, Julian E.},
+  Journal                  = {Perspectives on Politics},
+  Year                     = {2013},
+
+  Month                    = {12},
+  Pages                    = {1071--1087},
+  Volume                   = {11},
+
+  __markedentry            = {[Robbie:1]},
+  Abstract                 = { ABSTRACT President Barack Obama's two signature first-term legislative victories—the Affordable Care Act and the Dodd-Frank Act—are the law of the land, but the political battle over their entrenchment continues. The question now is whether these landmark reforms will be consolidated and create a new politics going forward. We develop an argument about the limits of policy feedback to illuminate the obstacles to durable liberal reform in the contemporary American state. We argue that political scientists have paid insufficient attention to the fragility of inherited policy commitments, and that the capacity of reforms to remake politics is contingent, conditional, and contested. Feedbacks are shaped not only by the internal attributes of policies, but also by the interaction between policy-specific characteristics, the strategic goals of officeholders and clientele groups, and the political forces arising from a contentious and uncertain political environment. },
+  Doi                      = {10.1017/S1537592713002831},
+  ISSN                     = {1541-0986},
+  Issue                    = {04},
+  Numpages                 = {17},
+  Owner                    = {Robbie},
+  Timestamp                = {2016.04.20},
+  Url                      = {http://journals.cambridge.org/article_S1537592713002831}
+}
+
 @Article{Phillips2008,
   Title                    = {Does the Citizen Initiative Weaken Party Government in the U.S. States?},
   Author                   = {Phillips, Justin H.},

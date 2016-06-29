@@ -74,9 +74,19 @@ public class InFile
 		return row;
 	}
 	
-	public boolean isReady() throws IOException
+	public boolean isReady()
 	{
-		return this.reader.ready();
+		boolean state = false;
+		try
+		{
+			state = this.reader.ready();
+		}
+		catch (IOException e)
+		{
+			System.err.println("Error checking ready state of InFile object.");
+			e.printStackTrace();
+		}
+		return state;
 	}
 	
 	public String getDir()

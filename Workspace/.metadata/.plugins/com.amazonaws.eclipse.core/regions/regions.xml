@@ -274,6 +274,7 @@
       <service name="DynamoDBStream">https://streams.dynamodb.ap-southeast-2.amazonaws.com/</service>
 	  <service name="Kinesis">https://kinesis.ap-southeast-2.amazonaws.com/</service>
 	  <service name="Logs">https://logs.ap-southeast-2.amazonaws.com/</service>	  	  
+	  <service name="Lambda">https://lambda.ap-southeast-2.amazonaws.com/</service>
     </services>
   </region>
 

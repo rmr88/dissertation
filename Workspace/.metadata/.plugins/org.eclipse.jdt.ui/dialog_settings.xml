@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="JavaSE-1.8" key="org.eclipse.jdt.ui.last.selected.execution.enviroment"/>
-	<item value="C:\Users\Robbie\Documents\javaPackages" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="C:\Users\Robbie\Documents\javaPackages\twitter4j-4.0.4\lib" key="org.eclipse.jdt.ui.lastextjar"/>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 		<item value="false" key="renameSubpackages"/>
 		<item value="false" key="updateQualifiedNames"/>

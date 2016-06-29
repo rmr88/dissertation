@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;row&apos; in &apos;launchers.CPRscraper.main(...)&apos; to &apos;r&apos;&#x0D;&#x0A;- Original project: &apos;dissertationData&apos;&#x0D;&#x0A;- Original element: &apos;launchers.CPRscraper.main(String[]).row&apos;&#x0D;&#x0A;- Renamed element: &apos;row&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;row&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;launchers{CPRscraper.java[CPRscraper~main~\[QString;@row!887!897!891!893!I!0!false" name="r" references="true" stamp="1466020417022" version="1.0"/>
+</session>
