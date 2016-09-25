@@ -1,0 +1,27 @@
+package launchers;
+
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+
+public class BilliansScraper
+{
+	public static void main(String args[])
+	{
+		String baseURL = "https://billianshealthdata.com/?request=build";
+		try
+		{
+			Document doc = Jsoup.connect(baseURL).get();
+			Element table = doc.getElementById("rpt-grid-table");
+			System.out.println(table.getAllElements());
+		}
+		catch (IOException e)
+		{
+			System.err.println("Error opening page.");
+			e.printStackTrace();
+		}
+
+	}
+}

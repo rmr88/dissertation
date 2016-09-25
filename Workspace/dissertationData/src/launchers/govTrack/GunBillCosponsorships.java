@@ -22,12 +22,12 @@ public class GunBillCosponsorships
 		final int NUM = 0, TYPE = 1, CONG = 2;
 		
 		String gtPath = "C:\\Users\\Robbie\\Documents\\dissertation\\Data\\GovTrack";
-		String gunProjPath = "C:\\Users\\Robbie\\Documents\\gunPolicy\\Data\\PolicyAgendasProject";
+		String gunProjPath = "C:\\Users\\Robbie\\Documents\\dissertation\\Data\\PolicyAgendasProject";
 		
 		InFile list = null;
 		try
 		{
-			list = new InFile(gunProjPath + "\\gunBillsCosp.txt");
+			list = new InFile(gunProjPath + "\\healthBills.txt");
 			list.readLine();
 		}
 		catch(IOException e)
@@ -41,11 +41,11 @@ public class GunBillCosponsorships
 		try { dBuilder = factory.newDocumentBuilder(); }
 			catch (ParserConfigurationException e) { e.printStackTrace(); }
 		
-		OutFile out = null;
+		OutFile outCosp = null;
 		try
 		{
-			out = new OutFile(gunProjPath + "\\cosponsorships.txt", false);
-			out.writeLine("cong\tbilltype\tbillnum\tid\tsponsor");
+			outCosp = new OutFile(gunProjPath + "\\cosponsorships.txt", false);
+			outCosp.writeLine("cong\tbilltype\tbillnum\tid\tsponsor");
 		}
 		catch (IOException e)
 		{
@@ -66,7 +66,7 @@ public class GunBillCosponsorships
 					doc.getDocumentElement().normalize();
 					
 					NodeList nodes = doc.getElementsByTagName("sponsor");
-					out.writeLine(bill[CONG] + "\t" + bill[TYPE] + "\t" + bill[NUM] + "\t"
+					outCosp.writeLine(bill[CONG] + "\t" + bill[TYPE] + "\t" + bill[NUM] + "\t"
 							+ nodes.item(0).getAttributes().getNamedItem("id").getNodeValue() + "\t1");
 					
 					nodes = doc.getElementsByTagName("cosponsor");
@@ -74,7 +74,7 @@ public class GunBillCosponsorships
 					for (int n = 0; n < nodes.getLength(); n++)
 					{
 						node = nodes.item(n);
-						out.writeLine(bill[CONG] + "\t" + bill[TYPE] + "\t" + bill[NUM] + "\t"
+						outCosp.writeLine(bill[CONG] + "\t" + bill[TYPE] + "\t" + bill[NUM] + "\t"
 								+ node.getAttributes().getNamedItem("id").getNodeValue() + "\t0");
 					}
 				}

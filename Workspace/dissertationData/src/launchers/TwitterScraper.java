@@ -51,13 +51,13 @@ public class TwitterScraper
 		{
 			public void run()
 			{
-			    try
-			    {
+				try
+				{
 					createAndShowGUI();
 				}
-			    catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+				catch (ClassNotFoundException | InstantiationException | IllegalAccessException
 						| UnsupportedLookAndFeelException e)
-			    {
+				{
 					e.printStackTrace();
 				}
 			}
@@ -77,78 +77,78 @@ public class TwitterScraper
 	
 	public static void addComponentsToPane(Container pane)
 	{
-        JButton downloadButton, fileButton, closeButton;
-        JTextPane progress = new JTextPane();
-        JLabel searchLabel = new JLabel("Search Terms:");
-        
-        JTextField searchTerms = new JTextField("PCMH");
-        JTextField filePath = new JTextField("");
-        filePath.setEnabled(false);
-        
-        final JFileChooser fc = new JFileChooser();
-        fc.setCurrentDirectory(new File("C:\\Users\\Robbie\\Documents\\ArnFound\\Data"));
-        
-        downloadButton = new JButton("Run Search");
-        downloadButton.addActionListener(new ActionListener()
+		JButton downloadButton, fileButton, closeButton;
+		JTextPane progress = new JTextPane();
+		JLabel searchLabel = new JLabel("Search Terms:");
+		
+		JTextField searchTerms = new JTextField("PCMH");
+		JTextField filePath = new JTextField("");
+		filePath.setEnabled(false);
+		
+		final JFileChooser fc = new JFileChooser();
+		fc.setCurrentDirectory(new File("C:\\Users\\Robbie\\Documents\\ArnFound\\Data"));
+		
+		downloadButton = new JButton("Run Search");
+		downloadButton.addActionListener(new ActionListener()
 		{
-        	public void actionPerformed(ActionEvent e)
-        	{
-        		downloadButton.setText("Running...");
-        		downloadButton.setEnabled(false);
-        		pane.revalidate();
-        		pane.repaint();
-        		
-        		new TwitterScraper().run(new File(filePath.getText()), searchTerms.getText(), append);
-        		
-        		downloadButton.setText("Run Search");
-        		downloadButton.setEnabled(true);
-        		pane.revalidate();
-        		pane.repaint();
-        	}
+			public void actionPerformed(ActionEvent e)
+			{
+				downloadButton.setText("Running...");
+				downloadButton.setEnabled(false);
+				pane.revalidate();
+				pane.repaint();
+				
+				new TwitterScraper().run(new File(filePath.getText()), searchTerms.getText(), append);
+				
+				downloadButton.setText("Run Search");
+				downloadButton.setEnabled(true);
+				pane.revalidate();
+				pane.repaint();
+			}
 		});
-        
-        fileButton = new JButton("Output File");
-        fileButton.addActionListener(new ActionListener()
+		
+		fileButton = new JButton("Output File");
+		fileButton.addActionListener(new ActionListener()
 		{
-        	public void actionPerformed(ActionEvent e)
-        	{
-        		int returnVal = fc.showOpenDialog(pane);
-        		if (returnVal == JFileChooser.APPROVE_OPTION)
-                    filePath.setText(fc.getSelectedFile().getAbsolutePath());
-        	}
+			public void actionPerformed(ActionEvent e)
+			{
+				int returnVal = fc.showOpenDialog(pane);
+				if (returnVal == JFileChooser.APPROVE_OPTION)
+					filePath.setText(fc.getSelectedFile().getAbsolutePath());
+			}
 		});
-        
-        closeButton = new JButton("Close");
-        closeButton.addActionListener(new ActionListener()
+		
+		closeButton = new JButton("Close");
+		closeButton.addActionListener(new ActionListener()
 		{
-        	public void actionPerformed(ActionEvent e)
-        	{ 
-        		System.exit(0);
-        	}
+			public void actionPerformed(ActionEvent e)
+			{ 
+				System.exit(0);
+			}
 		});
-        
-        JRadioButton apndTrue = new JRadioButton("Append");
-        apndTrue.addActionListener(new ActionListener()
-       	{
-        	public void actionPerformed(ActionEvent e)
-        	{
-        		TwitterScraper.append = true;
-        	}
+		
+		JRadioButton apndTrue = new JRadioButton("Append");
+		apndTrue.addActionListener(new ActionListener()
+	   	{
+			public void actionPerformed(ActionEvent e)
+			{
+				TwitterScraper.append = true;
+			}
  		});
-        
-        JRadioButton apndFalse = new JRadioButton("Replace");
-        apndFalse.addActionListener(new ActionListener()
-       	{
-        	public void actionPerformed(ActionEvent e)
-        	{
-        		TwitterScraper.append = false;
-        	}
+		
+		JRadioButton apndFalse = new JRadioButton("Replace");
+		apndFalse.addActionListener(new ActionListener()
+	   	{
+			public void actionPerformed(ActionEvent e)
+			{
+				TwitterScraper.append = false;
+			}
  		});
-        
-        ButtonGroup group = new ButtonGroup();
-        group.add(apndFalse);
-        group.add(apndTrue);
-        
+		
+		ButtonGroup group = new ButtonGroup();
+		group.add(apndFalse);
+		group.add(apndTrue);
+		
 		pane.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
@@ -161,34 +161,34 @@ public class TwitterScraper
 		progress.setPreferredSize(new Dimension(400, 400));
 		progress.setSize(progress.getPreferredSize());
 		
-	    c.insets = new Insets(2,4,2,4);
-	    c.fill = GridBagConstraints.BOTH;
-	    c.gridx = 0;
-	    c.gridy = 0;
-	    pane.add(fileButton, c);
+		c.insets = new Insets(2,4,2,4);
+		c.fill = GridBagConstraints.BOTH;
+		c.gridx = 0;
+		c.gridy = 0;
+		pane.add(fileButton, c);
 
-	    c.gridx = 1;
-	    c.gridwidth = 2;
-	    pane.add(filePath, c);
-	    
-	    c.gridwidth = 1;
-	    c.gridx = 0;
-	    c.gridy = 1;
-	    pane.add(apndTrue, c);
-	    
-	    c.gridx = 1;
-	    pane.add(apndFalse, c);
-	    
-	    c.gridx = 0;
-	    c.gridy = 2;
-	    pane.add(downloadButton, c);
+		c.gridx = 1;
+		c.gridwidth = 2;
+		pane.add(filePath, c);
+		
+		c.gridwidth = 1;
+		c.gridx = 0;
+		c.gridy = 1;
+		pane.add(apndTrue, c);
+		
+		c.gridx = 1;
+		pane.add(apndFalse, c);
+		
+		c.gridx = 0;
+		c.gridy = 2;
+		pane.add(downloadButton, c);
 
-	    c.gridx = 1;
-	    pane.add(searchLabel, c);
-	    
-	    c.gridx = 2;
-	    pane.add(searchTerms, c);
-	    
+		c.gridx = 1;
+		pane.add(searchLabel, c);
+		
+		c.gridx = 2;
+		pane.add(searchTerms, c);
+		
 		c.gridx = 2;
 		c.gridy = 3;
 		c.fill = GridBagConstraints.NONE;
@@ -321,7 +321,7 @@ public class TwitterScraper
 					for (Status t: tweets) 
 						if(t.getId() < lastID)
 							lastID = t.getId();
-				    
+					
 					q.setMaxId(lastID-1);
 				}
 			}

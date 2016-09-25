@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;out&apos; in &apos;launchers.govTrack.GunBillCosponsorships.main(...)&apos; to &apos;outCosp&apos;&#x0D;&#x0A;- Original project: &apos;dissertationData&apos;&#x0D;&#x0A;- Original element: &apos;launchers.govTrack.GunBillCosponsorships.main(String[]).out&apos;&#x0D;&#x0A;- Renamed element: &apos;out&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;out&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;launchers.govTrack{GunBillCosponsorships.java[GunBillCosponsorships~main~\[QString;@out!1193!1211!1201!1203!QOutFile;!0!false" name="outCosp" references="true" stamp="1471376067299" version="1.0"/>
+</session>

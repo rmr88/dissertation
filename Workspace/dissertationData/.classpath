@@ -38,5 +38,9 @@
 	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/twitter4j-4.0.4/lib/twitter4j-examples-4.0.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/twitter4j-4.0.4/lib/twitter4j-media-support-4.0.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/twitter4j-4.0.4/lib/twitter4j-stream-4.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/sqljdbc_6.0/enu/sqljdbc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/sqljdbc_6.0/enu/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/sqljdbc_6.0/enu/sqljdbc41.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robbie/Documents/javaPackages/sqljdbc_6.0/enu/sqljdbc42.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

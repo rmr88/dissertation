@@ -1,0 +1,38 @@
+package launchers;
+
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import utilities.WebFile;
+
+public class PCPCCscraper
+{
+	public static void main(String args[])
+	{
+		String baseURL = "https://www.pcpcc.org";
+		String listURL = "https://www.pcpcc.org/initiatives/list?field_init_parent_program_nid="
+				+ "All&field_location_taxonomize_terms_tid=All&&&keys=&page=";
+		String outDir = "C:\\Users\\Robbie\\Documents\\TUNECC\\test.zip";
+		
+		int page = 0;
+		try
+		{
+			System.out.println("Page " + page + "...");
+			
+			Document doc = Jsoup.connect(listURL + page).get();
+			Elements table = doc.select("tr.odd views-row-first");
+			Element row = table.get(0);
+			System.out.println(row.text());
+		}
+		catch (IOException e)
+		{
+			System.err.println("Error opening page.");
+			e.printStackTrace();
+		}
+
+	}
+}

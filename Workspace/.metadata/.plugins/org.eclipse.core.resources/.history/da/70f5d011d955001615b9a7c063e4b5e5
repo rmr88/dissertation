@@ -1,0 +1,119 @@
+package launchers;
+
+import java.io.IOException;
+import java.net.SocketTimeoutException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import utilities.OutFile;
+
+public class PCPCCscraper
+{
+	public static void main(String args[])
+	{
+		String baseURL = "https://www.pcpcc.org";
+		String listURL = "https://www.pcpcc.org/initiatives/list?page=";
+		String outDir = "C:\\Users\\Robbie\\Documents\\ArnFound\\Data\\pcpccList.txt";
+		
+		OutFile out = null;
+		try
+		{
+			out = new OutFile(outDir, false);
+			out.writeLine("progName\tlocation\tevalResults\tpcpccURL\tpayerType\t"
+					+ "parentProgram\tpayers\tdescription\tpaymentModel\tprogURL\tevalURL");
+		}
+		catch (IOException e)
+		{
+			System.err.println("Error opening output file.");
+			e.printStackTrace();
+		}
+		
+//		int page = 0;
+		for (int page = 0; page < 11; page++)
+		{
+			try
+			{
+				System.out.println("Page " + page + "...");
+				
+				Document doc = Jsoup.connect(listURL + page)
+						.userAgent("Mozilla")
+						.referrer("http://www.google.com").get();
+				Elements table = doc.select("tr.even");
+				table.addAll(doc.select("tr.odd"));
+				
+				for (Element row : table)
+				{
+					String results = "";
+					for (Element result : row.child(2).children())
+						if (!result.attr("src").endsWith("/0.png"))
+							results += result.attr("data-original-title") + ", ";
+					
+					if (results.endsWith(", "))
+						results = results.substring(0, results.length()-2);
+					else
+						results = "None";
+					
+					String entryURL = baseURL + row.child(0).child(0).attr("href");
+					
+					boolean hasResults = !results.equals("None");
+					String pageData = "";
+					while (pageData.equals(""))
+						pageData = processEntryPage(entryURL, hasResults);
+					
+					out.writeLine(row.child(0).text() + "\t" + row.child(1).text()
+							+ "\t" + results + "\t" + entryURL + "\t" + pageData);
+				}
+			}
+			catch (SocketTimeoutException ste)
+			{
+				System.out.println("restarting...");
+				page--;
+				continue;
+			}
+			catch (IOException e)
+			{
+				System.err.println("Error opening page.");
+				e.printStackTrace();
+			}
+		}
+		
+		out.close();
+	}
+
+	private final static String[] FIELDSTOPARSE = {"field-name-field-payer-type",
+			"field-name-field-init-parent-program",
+			"field-name-field-init-payers",
+			"field-type-text-with-summary",
+			"field-name-field-initiative-payment-model"};
+	
+	private static String processEntryPage(String entryURL, boolean hasResults)
+	{
+		String entryData = "";
+		try
+		{
+			Document entry = Jsoup.connect(entryURL)
+					.userAgent("Mozilla")
+					.referrer("http://www.google.com").get();
+			Element data = entry.getElementById("block-system-main");
+			
+			for (String field : FIELDSTOPARSE)
+				entryData += data.select("div." + field).select("div.field-item").text() + "\t";
+			
+			entryData += data.select("div.prog_type").get(0).child(0).attr("href") + "\t";
+			
+			if (hasResults)
+				entryData += data.select("div.field-name-field-reinit-ported-data-link")
+						.select("div.field-item").get(0).child(0).attr("href");
+		}
+		catch (SocketTimeoutException ste) {}
+		catch (IOException e)
+		{
+			System.err.println("Error processing data from entry page: " + entryURL);
+			e.printStackTrace();
+		}
+		return entryData;
+	}
+}

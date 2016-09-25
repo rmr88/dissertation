@@ -1883,3 +1883,4 @@ compress
 
 sort state_icpsr year month office district
 
+save "C:\Users\Robbie\Documents\dissertation\Data\elections\electionDataPreScore.dta", replace

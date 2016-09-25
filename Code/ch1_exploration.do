@@ -47,11 +47,23 @@ forvalues q = 1/5 {
 bys cong offSmall quintile: egen mnComp = mean(partyComp)
 
 preserve
+	replace quintile = 1 if quintile == 2
+	replace quintile = 5 if quintile == 4
 	collapse mnComp, by(cong offSmall quintile)
 	drop if missing(quintile)
 	reshape wide mnComp, i(cong offSmall) j(quintile)
 	list cong offSmall mnComp* if !missing(offSmall) & !missing(cong)
-	line mnComp* cong if offSmall == 3, lcolor(red red*0.5 purple blue*0.5 blue)
+	//line mnComp* cong if offSmall == 3, lcolor(red purple blue)
+	twoway (line mnComp* year if offSmall == 3, lcolor(red*0.4 purple*0.4 blue*0.4)) ///
+		(lowess mnComp1 year if offSmall == 3, lcolor(red) bw(0.5)) ///
+		(lowess mnComp3 year if offSmall == 3, lcolor(purple) bw(0.5)) ///
+		(lowess mnComp5 year if offSmall == 3, lcolor(blue) bw(0.5)), ///
+		ylab(#4, glcolor(white)) xlab(1870(20)2010) xtitle("Year") ytitle("Average Party Competition") ///
+		leg(order(4 "Bottom Quintiles" 5 "Middle Quintile" 6 "Top Quintiles") ///
+			cols(3) region(lcolor(white) fcolor(gs15))) graphregion(color(white)) ///
+		note("Quintiles are quntiles of ideology, with lower values representing conservative ideology. Smoothed" ///
+			"lines are lowess curves, bin width = 0.5.", span)
+	graph export "..\Analysis\Figs\misc_fig2.png", replace height(800)
 	save "quintileData.dta", replace
 restore
 

@@ -30,7 +30,6 @@
 <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
 <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
 <fullyQualifiedTypeName name="javax.sound.midi.SysexMessage"/>
-<fullyQualifiedTypeName name="utilities.WebFile"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="org.jsoup.Jsoup"/>
 <fullyQualifiedTypeName name="org.jsoup.select.Elements"/>
@@ -48,8 +47,6 @@
 <fullyQualifiedTypeName name="twitter4j.conf.ConfigurationBuilder"/>
 <fullyQualifiedTypeName name="twitter4j.conf.Configuration"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="utilities.InFile"/>
-<fullyQualifiedTypeName name="utilities.OutFile"/>
 <fullyQualifiedTypeName name="javax.swing.JFileChooser"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="javax.swing.JTextField"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="javax.swing.JRadioButton"/>
 <fullyQualifiedTypeName name="javax.swing.ButtonGroup"/>
 <fullyQualifiedTypeName name="launchers.TwitterScraper"/>
+<fullyQualifiedTypeName name="utilities.WebFile"/>
+<fullyQualifiedTypeName name="utilities.InFile"/>
+<fullyQualifiedTypeName name="utilities.OutFile"/>
 </qualifiedTypeNameHistroy>

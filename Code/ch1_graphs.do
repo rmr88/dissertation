@@ -65,7 +65,7 @@ twoway (scatter folded_ranney_4yrs dwnom if dem == 1, mcolor(blue*0.8) msize(sma
 	name(sth90h, replace) $labs4 title("South, 1990-2010", $ttl)
 
 grc1leg nrth60h sth60h nrth90h sth90h, $grcopts note($hnote)
-
+graph export "C:\Users\Robbie\Documents\dissertation\Analysis\Figs\misc_fig1.png", replace height(800)
 
 *** Senate, Ranney ***
 
