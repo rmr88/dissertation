@@ -1,0 +1,33 @@
+# Table List
+
+## Chapter 1
+
+1. Table 1-1: Models of Legislator Responsiveness
+2. Table 1-2: Models of Overall House Responsiveness
+3. Appendix
+	1. Table A1-1: Models of Legislator Responsiveness, Bonica CF Scores
+	2. Table A1-2: Overall House Responsiveness, Mean Ideologies
+	3. Table A1-3: Overall House Responsiveness, Ranney Index
+	4. Table A1-4: Overall House Responsiveness, HVD Index
+	
+## Chapter 2
+
+1. Table 2-1: Overall Models of Voting with Democrats on Health Bills, 2003-2012
+2. Table 2-2: Models of Voting with Democrats on Health Bills by Subtopic
+3. Appendix:
+	1. Table A2-1: Models of Voting with Democrats on Health Bills by Subtopic
+	2. Table A2-2: Models of Voting with Democrats on Health Bills, Selected Bill Groups
+	3. Also need to add a list of bills/ rolls in the bills groups.
+
+## Chapter 3
+
+1. Appendix 3A
+	1. Table A3A-1: Descriptive Statistics
+	2. Table A3A-2: Similarity across Waves: Political and Demographic Variables
+	3. Table A3A-3: Similarity across Waves: ACA and Provision Opinion Data
+2. Appendix 3B
+	1. Table A3B-1: Means and T-Tests
+	2. Table A3B-2: OLS Models of ACA Opinion, Individual Mandate Groups
+	3. Table A3B-3: OLS Models of ACA Opinion, Dependent Coverage Groups
+	4. Table A3B-4: Ordered Logit Models of ACA Opinion, Individual Mandate Groups
+	5. Table A3B-5: Ordered Logit Models of ACA Opinion, Dependent Coverage Groups

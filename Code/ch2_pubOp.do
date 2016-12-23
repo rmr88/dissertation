@@ -85,11 +85,6 @@ merge 1:1 state district using "CCES\pubOpData.dta", nogen
 save "CCES\pubOpData.dta", replace
 
 
-*** Annenberg NAES ***
-
-//Don't have CD data yet; working on it...
-
-
 *** Catalist IPs ***
 
 replace district = 1 if district == 0
@@ -99,5 +94,10 @@ merge 1:1 distID using "C:\Users\Robbie\Documents\gunPolicy\Data\IPsmall.dta", n
 drop state_abrev
 ren IP_voter2 IP_voter
 
+
+
+*** Annenberg NAES ***
+
+merge 1:1 distID using "naes\naesDistrictData.dta", nogen
 save "pubOpDataMerged.dta", replace
 

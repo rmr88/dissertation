@@ -1,28 +1,34 @@
-****************************
-*  Ch. 2 - Roll Call Data  *
-****************************
+*********************
+*  Vote Level Data  *
+*********************
 
-//Robbie Richards, 8/17/16
-//TODO: figure out how to do cosponsorships as well (NOMINATE-like calculations?)
+//Robbie Richards, 10/6/16
 
-cd "C:\Users\Robbie\Documents\dissertation\Data"
 
-cap erase "VoteView\healthWNOM.dta"
-forvalues cong = 108/112 {
-	import delimited using "VoteView\results\health_rolls_h`cong'.txt", ///
-		delim(tab) clear
-	keep id coord1d coord2d
+*** Bills ***
 
-	ren coord1d wnom1_`cong'
-	ren coord2d wnom2_`cong'
-	
-	cap merge 1:1 id using "VoteView\healthWNOM.dta", nogen
-	save "VoteView\healthWNOM.dta", replace
-}
-destring wnom*, replace force
+cd "C:\Users\Robbie\Documents\dissertation\Data\PolicyAgendasProject"
+
+import delimited using "billsPAP.txt", clear delim(tab) varnames(1)
+
+keep if major == 3 & cong >= 108 & cong <= 112
+keep billnum billtype cong minor passh passs plaw
+
+save "healthBillsList.dta", replace
+
+
+*** Votes ***
+
+import delimited using "healthBillVotes.txt", clear delim(tab) varnames(1)
+
+replace billtype = strupper(billtype)
+replace billtype = "HR" if billtype == "H"
+
+merge m:1 cong billtype billnum using "healthBillsList.dta", nogen keep(3)
+
 ren id govTrackID
+drop if strpos(result, "SENATE") > 0
+drop result
 
-merge 1:m govTrackID using "working\govTrackIDs.dta", nogen keep(3)
+save "healthVotesList.dta", replace
 
-
-save "VoteView\healthWNOM.dta", replace

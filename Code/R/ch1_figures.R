@@ -74,5 +74,6 @@ fig1.3 <- fig1.3.p + theme + geom_hline(aes(yintercept=0), size=0.2) +
   scale_x_continuous(limits=c(1875,2005),
                      breaks=c(1880,1900,1920,1940,1960,1980,2000))
 #fig1.3
-ggsave(fig1.3, filename="fig1-3_ranney.png", width=8, height=5, units="in")
+ggsave(fig1.3, filename="fig1-3.png", width=8, height=5, units="in")
 
+#add code for Ranney fig, others?

@@ -53,6 +53,7 @@ gen beta2 = f2.uspDEMdm
 gen beta3 = beta3_overall
 gen beta4 = f2.winMarg
 gen beta5 = f2.uncontested
+replace beta5 = 0 if missing(beta5)
 
 gen beta1_ranney = f2.folded_ranney_4yrs
 gen beta1_hvd = f2.hvd_4yr
@@ -73,35 +74,58 @@ label variable beta1_ranney "Ranney Index"
 label variable beta1_hvd "HVD Index"
 
 merge m:1 idno state_icpsr cong district using ///
-	"C:\Users\Robbie\Documents\dissertation\Data\VoteView\dwnom_tv.dta", ///
-	keep(1 3) keepusing(dwnom1_tv) nogen
+	"..\Data\VoteView\dwnom_tv.dta", keep(1 3) keepusing(dwnom1_tv) nogen
 replace dwnom1_tv = -dwnom1_tv
+
+merge m:1 state_icpsr office district year using "..\Data\cfScores\cfScores.dta"
+replace cfscore = -cfscore
+replace cfscoresdyn = -cfscoresdyn
 
 
 *** Models: Final ***
 
 replace beta3 = beta3_overall
-reg dwnom beta1-beta5 south dem rep i.year if offSmall == 3
+reg dwnom beta1-beta5 south dem rep i.year if offSmall == 3 & year >= 1980
 estimates store m1, title("Overall")
-	
+
+reg cfscore beta1-beta5 south dem rep i.year if offSmall == 3
+estimates store m1_alt, title("Overall")
+
 *By Party
 reg dwnom beta1-beta5 south i.year if offSmall == 3 & dem == 1
 estimates store m2, title("DEM")
+reg cfscore beta1-beta5 south i.year if offSmall == 3 & dem == 1
+estimates store m2_alt, title("DEM")
 
 reg dwnom beta1-beta5 south i.year if offSmall == 3 & rep == 1
 estimates store m3, title("REP")
+reg cfscore beta1-beta5 south i.year if offSmall == 3 & rep == 1
+estimates store m3_alt, title("REP")
 
 *Ranney, HVD
 replace beta3 = beta3_ranney
 reg dwnom beta1_ranney beta2-beta5 south dem rep i.year if offSmall == 3
 estimates store m4, title("Ranney")
 
+reg cfscore beta1_ranney beta2-beta5 south dem rep i.year if offSmall == 3
+estimates store m4_alt, title("Ranney")
+
 replace beta3 = beta3_hvd
 reg dwnom beta1_hvd beta2-beta5 south dem rep i.year if offSmall == 3
 estimates store m5, title("HVD")
 
+reg cfscore beta1_hvd beta2-beta5 south dem rep i.year if offSmall == 3
+estimates store m5_alt, title("HVD")
+
 *Output
-esttab m1 m2 m3 m4 m5 using "Tables\table1_v2.rtf", rtf replace ///
+esttab m1 m2 m3 m4 m5 using "Tables\table1-1.rtf", rtf replace ///
+	b(2) se(2) mtitles legend onecell ///
+	star(* 0.05 ** 0.01) label varlabels(_cons Constant) ///
+	stats(N r2, fmt(0 2) label(Observations R-squared)) ///
+	indicate(Year Fixed Effects = *.year, labels("Y" "N")) ///
+	order(beta1 beta1_ranney beta1_hvd) varwidth(23) modelwidth(6)
+
+esttab m?_alt using "Tables\table1a-1.rtf", rtf replace ///
 	b(2) se(2) mtitles legend onecell ///
 	star(* 0.05 ** 0.01) label varlabels(_cons Constant) ///
 	stats(N r2, fmt(0 2) label(Observations R-squared)) ///
@@ -194,7 +218,7 @@ replace b1_ll = _b[F2.uspDEMdm] ///
 replace b1_ul = _b[F2.uspDEMdm] ///
 	+ (1.96 * _se[F2.uspDEMdm]) if yr == 2000
 
-twoway (line b3 b3_ul b3_ll yr), yline(0) //xline(1962) xline(1982) xline(2002)
+twoway (line b3 b3_ul b3_ll yr, yaxis(1)), yline(0) //xline(1962) xline(1982) xline(2002)
 export delimited yr-b1_ul using "Figs\data_fig1-3.txt" ///
 	if !missing(b3), delim(tab) replace
 	

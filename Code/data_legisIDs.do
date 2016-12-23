@@ -108,5 +108,6 @@ drop if missing(icpsrID) & missing(icpsrID2)
 
 drop icpsrID
 ren icpsrID2 icpsrID
+drop if missing(govTrackID)
 
 save "idsMerged.dta", replace

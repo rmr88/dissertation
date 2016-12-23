@@ -143,9 +143,8 @@ merge 1:1 state district using "IssuePublics\districtLevelData.dta", nogen
 save "IssuePublics\districtLevelData.dta", replace
 
 
-*** Medicare (Age) Data ***
-
-//Source: Catalist CA_AGE column (proprietary dataset, but based on state voter files)
+/*
+*** Old Code for Catalist Age Data ***
 
 import delimited using "IssuePublics\ageData.txt", clear delim(tab) //Data is not for the right districts... Need to go back to Catalist and get the right districts
 gen state = strupper(substr(distid, 1, 2))
@@ -159,4 +158,4 @@ collapse (mean) age (sum) isSenior, by(state district)
 merge 1:1 state district using "IssuePublics\districtLevelData.dta", nogen
 
 save "IssuePublics\districtLevelData.dta", replace
-
+*/

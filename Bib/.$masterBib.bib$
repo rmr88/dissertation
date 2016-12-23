@@ -2478,6 +2478,19 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Url                      = {http://igpa.uillinois.edu/system/files/WP71-RationalPublic.pdf}
 }
 
+@Article{Kutscher2016,
+  Title                    = {Will Measuredicare's Physician Payment Overhaul Drive More Docs to Hospitals?},
+  Author                   = {Kutscher, Beth and Rubenfire, Adam},
+  Journal                  = {Modern Healthcare},
+  Year                     = {2016},
+
+  Month                    = {Apr 27},
+
+  Owner                    = {Robbie},
+  Timestamp                = {2016.12.23},
+  Url                      = {http://www.modernhealthcare.com/article/20160427/NEWS/160429928}
+}
+
 @Article{Ladewig2010,
   Title                    = {Ideological Polarization and the Vanishing of Marginals: Retrospective Roll-Call Voting in the U.S. Congress},
   Author                   = {Ladewig, Jeffrey W.},
@@ -3502,7 +3515,7 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
 }
 
 @Article{Roy2012,
-  Title                    = {How the AARP Made {$}2.8 Billion by Supporting Obamacare's Cuts to Medicare},
+  Title                    = {How the AARP Made $2.8 Billion by Supporting Obamacare's Cuts to Medicare},
   Author                   = {Roy, Avik},
   Journal                  = {Forbes},
   Year                     = {2012},

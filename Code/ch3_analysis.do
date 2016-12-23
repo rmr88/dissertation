@@ -7,7 +7,7 @@
 
 *** Setup ***
 
-cd "F:\Poli Sci 704\survey"
+cd "C:\Users\Robbie\Documents\dissertation\Data\mturkSurvey"
 use "analysis dataset.dta", clear
 run "code\tabmatrix.do"
 run "code\mat2txt.do"
@@ -228,39 +228,53 @@ mat2txt, matrix(output) saving("stata output\ttest_ya_opp.csv") rows(2) cols(5) 
 *** Models ***
 
 *Mandate
-ologit aca im_op pres_app ib3.pid if primed == 1
+reg aca im_op pres_app ib3.pid ib2.ideo3 if primed == 1
 matrix define model = r(table)'
 outreg2 using "stata output\im_models_table.xml", replace excel 2aster e(chi2 r2_p) ctitle("Primed")
 mat2txt, matrix(model) saving("stata output\model_im_p.csv") rows(12) cols(9) replace
 
-ologit aca im_op pres_app ib3.pid if primed == 0
+reg aca im_op pres_app ib3.pid ib2.ideo3 if primed == 0
 matrix define model = r(table)'
 outreg2 using "stata output\im_models_table.xml", append excel 2aster e(chi2 r2_p) ctitle("Unprimed")
 mat2txt, matrix(model) saving("stata output\model_im_u.csv") rows(12) cols(9) replace
 
-ologit aca i.primed##c.im_op i.primed##c.pres_app i.primed##ib3.pid
-testparm primed#c.im_op primed#pres_app primed#pid
+reg aca i.primed##c.im_op i.primed##c.pres_app i.primed##ib3.pid i.primed##ib2.ideo3
+testparm primed#c.im_op primed#c.pres_app primed#pid primed#ideo3
 
-ologit im_op i.primed##c.aca i.primed##c.pres_app i.primed##ib3.pid
+reg im_op i.primed##c.aca i.primed##c.pres_app i.primed##ib3.pid i.primed##ib2.ideo3
 testparm primed#c.aca primed#pres_app primed#pid
 
 *YAcov
-ologit aca ya_op pres_app ib3.pid if primed == 1
+reg aca ya_op pres_app ib3.pid ib2.ideo3 if primed == 1
 matrix define model = r(table)'
 outreg2 using "stata output\ya_models_table.xml", replace excel 2aster e(chi2 r2_p) ctitle("Primed")
 mat2txt, matrix(model) saving("stata output\model_ya_p.csv") rows(12) cols(9) replace
 
-ologit aca ya_op pres_app ib3.pid if primed == 0
+reg aca ya_op pres_app ib3.pid ib2.ideo3 if primed == 0
 matrix define model = r(table)'
 outreg2 using "stata output\ya_models_table.xml", append excel 2aster e(chi2 r2_p) ctitle("Unprimed")
 mat2txt, matrix(model) saving("stata output\model_ya_u.csv") rows(12) cols(9) replace
 
-ologit aca i.primed##c.ya_op i.primed##c.pres_app i.primed##ib3.pid
-testparm primed#c.ya_op primed#pres_app primed#pid
+reg aca i.primed##c.ya_op i.primed##c.pres_app i.primed##ib3.pid i.primed##ib2.ideo3
+testparm primed#c.ya_op primed#c.pres_app primed#pid primed#ideo3
 
-ologit ya_op i.primed##c.aca i.primed##c.pres_app i.primed##ib3.pid
+reg ya_op i.primed##c.aca i.primed##c.pres_app i.primed##ib3.pid i.primed##ib2.ideo3
 testparm primed#c.aca primed#pres_app primed#pid
 
+*Ordered Logit Robustness Checks
+ologit aca i.primed##c.im_op i.primed##c.pres_app i.primed##ib3.pid i.primed##ib2.ideo3
+testparm primed#c.im_op primed#c.pres_app primed#pid primed#ideo3
+
+foreach var in c.im_op c.pres_app 1.pid 2.pid 4.pid 1.ideo3 3.ideo3 4.ideo3 {
+	lincom _b[`var'] + _b[1.primed#`var']
+}
+
+ologit aca i.primed##c.ya_op i.primed##c.pres_app i.primed##ib3.pid i.primed##ib2.ideo3
+testparm primed#c.ya_op primed#pres_app primed#pid
+
+foreach var in c.ya_op c.pres_app 1.pid 2.pid 4.pid 1.ideo3 3.ideo3 4.ideo3 {
+	lincom _b[`var'] + _b[1.primed#`var']
+}
 
 *** Power Analysis for models ***
 
