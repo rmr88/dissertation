@@ -41,14 +41,14 @@ foreach g of local grp {
 	
 	capture confirm variable _rn2
 	if (_rc == 0) {
-		qui logit agree_dem amt amtH01 amtBCBS `aarp' healthOpinion IP_voter ///
+		logit agree_dem amt amtH01 amtBCBS `aarp' healthOpinion IP_voter ///
 			percSenior unins_rate phys_perc raceWhite raceHisp educHS medianIncome ///
-			`ptyLine' dem rep birthYear _rn* if vote_group == "`g'"
+			`ptyLine' rep birthYear _rn* if vote_group == "`g'"
 	}
 	else {
-		qui logit agree_dem amt amtH01 amtBCBS `aarp' healthOpinion IP_voter ///
+		logit agree_dem amt amtH01 amtBCBS `aarp' healthOpinion IP_voter ///
 			percSenior unins_rate phys_perc raceWhite raceHisp educHS medianIncome ///
-			`ptyLine' dem rep birthYear if vote_group == "`g'"
+			`ptyLine' rep birthYear if vote_group == "`g'"
 	}
 
 	qui sum agree_dem if vote_group == "`g'"
@@ -74,8 +74,8 @@ foreach g of local grp {
 
 *For table A2-2
 esttab * using "Tables\ch2_modelsByGroup.csv", replace csv ///
-	b(2) se(2) mtitles legend star(* 0.05 ** 0.01) ///
-	pr2(%3.2f) varwidth(20) modelwidth(6) label nogaps ///
+	b(3) se(3) mtitles legend star(* 0.05 ** 0.01) ///
+	pr2(%4.3f) varwidth(20) modelwidth(6) label nogaps ///
 	drop(*.rollnum 100.party 328.party)
 estimates clear
 
@@ -138,7 +138,7 @@ foreach m of local minor {
 	
 	qui logit agree_dem amt amtH01 amtBCBS `aarp' healthOpinion IP_voter ///
 		percSenior unins_rate phys_perc raceWhite raceHisp educHS medianIncome ///
-		dem rep `ptyLine' birthYear `rn' if minor == `m'
+		rep `ptyLine' birthYear `rn' if minor == `m'
 
 	qui sum agree_dem if minor == `m'
 	local mean = r(mean)
@@ -163,21 +163,21 @@ foreach m of local minor {
 
 *For tables 2-2 and A2-1
 esttab _* using "Tables\ch2_modelsByMinor.csv", replace csv ///
-	b(2) se(2) mtitles legend star(* 0.05 ** 0.01) label ///
-	pr2(%3.2f) varwidth(20) modelwidth(6) nogaps
+	b(3) se(3) mtitles legend star(* 0.05 ** 0.01) label ///
+	pr2(%4.3f) varwidth(20) modelwidth(6) nogaps
 estimates clear
 
 
 *** Overall Model ***
 
 qui tab rollnum, gen(_rn)
-drop _rn1 _rn35 _rn75
+drop _rn1 _rn35 _rn53 _rn61 _rn75
 qui tab minor, gen(_min)
 drop _min1 _min7 _min10-_min13 _min15-_min17
 
-qui logit agree_dem amt amtH01 amtBCBS amtAARP healthOpinion IP_voter ///
+logit agree_dem amt amtH01 amtBCBS amtAARP healthOpinion IP_voter ///
 	percSenior unins_rate phys_perc raceWhite raceHisp educHS medianIncome ///
-	rep dem partyLineVote birthYear _rn* _min*
+	rep partyLineVote birthYear _rn* _min*
 
 qui sum agree_dem if e(sample)
 local mean = r(mean)
@@ -204,7 +204,7 @@ estimates store overall
 
 *For table 2-1
 esttab overall using "Tables\ch2_modelOverall.rtf", replace rtf ///
-	b(2) se(2) legend star(* 0.05 ** 0.01) label pr2(%3.2f) ///
+	b(3) se(3) legend star(* 0.05 ** 0.01) label pr2(%4.3f) ///
 	varwidth(20) modelwidth(6) nogaps wide ///
 	drop(*.rollnum *.minor 100.party 328.party )
 estimates clear

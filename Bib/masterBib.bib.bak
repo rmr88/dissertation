@@ -314,7 +314,7 @@ does not move as abruptly as that of the House.},
 
 @Book{Bishin2009,
   Title                    = {Tyranny of the minority: The subconstituency politics theory of representation},
-  Author                   = {Bishin, Benjamin},
+  Author                   = {Bishin, Benjamin G.},
   Publisher                = {Temple University Press},
   Year                     = {2009},
 
@@ -672,7 +672,7 @@ does not move as abruptly as that of the House.},
 
 @Electronic{Carroll2015,
   Title                    = {Common Space DW-NOMINATE Scores with Bootstrapped Standard Errors (Joint House and Senate Scaling)},
-  Author                   = {Carroll, Royce and Lewis, Jeff and Lo, James and McCarty, Nolan and Poole, Keith and Rosenthal, Howard},
+  Author                   = {Carroll, Royce and Lewis, Jeff and Lo, James and McCarty, Nolan and Poole, Keith T. and Rosenthal, Howard},
   HowPublished             = {Online},
   Month                    = {Sept},
   Url                      = {http://voteview.com/dwnomin_joint_house_and_senate.htm},
@@ -1272,20 +1272,9 @@ BRIGITTE MAHEUX},
   Url                      = {http://www.cbsnews.com/news/palin-weighs-in-on-health-care-reform/}
 }
 
-@Book{Fenno1973,
-  Title                    = {Congressmen in committees},
-  Author                   = {Fenno, Richard F.},
-  Publisher                = {Little, Brown},
-  Year                     = {1973},
-
-  __markedentry            = {[Robbie:2]},
-  Owner                    = {Robbie},
-  Timestamp                = {2015.07.30}
-}
-
 @Article{Fenno1978,
   Title                    = {U.S. House Members in Their Constituencies: An Exploration},
-  Author                   = {Fenno, Richard F., Jr.},
+  Author                   = {Fenno, Richard F.},
   Journal                  = {The American Political Science Review},
   Year                     = {1978},
   Number                   = {3},
@@ -1302,6 +1291,17 @@ BRIGITTE MAHEUX},
   Publisher                = {American Political Science Association},
   Timestamp                = {2015.04.13},
   Url                      = {http://www.jstor.org/stable/1960097}
+}
+
+@Book{Fenno1973,
+  Title                    = {Congressmen in committees},
+  Author                   = {Fenno, Richard F.},
+  Publisher                = {Little, Brown},
+  Year                     = {1973},
+
+  __markedentry            = {[Robbie:2]},
+  Owner                    = {Robbie},
+  Timestamp                = {2015.07.30}
 }
 
 @InCollection{Fiorina1984,
@@ -2478,6 +2478,19 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Url                      = {http://igpa.uillinois.edu/system/files/WP71-RationalPublic.pdf}
 }
 
+@Article{Kutscher2016,
+  Title                    = {Will Measuredicare's Physician Payment Overhaul Drive More Docs to Hospitals?},
+  Author                   = {Kutscher, Beth and Rubenfire, Adam},
+  Journal                  = {Modern Healthcare},
+  Year                     = {2016},
+
+  Month                    = {Apr 27},
+
+  Owner                    = {Robbie},
+  Timestamp                = {2016.12.23},
+  Url                      = {http://www.modernhealthcare.com/article/20160427/NEWS/160429928}
+}
+
 @Article{Ladewig2010,
   Title                    = {Ideological Polarization and the Vanishing of Marginals: Retrospective Roll-Call Voting in the U.S. Congress},
   Author                   = {Ladewig, Jeffrey W.},
@@ -2987,6 +3000,19 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Type                     = {Book}
 }
 
+@Electronic{Mylan2016,
+  Title                    = {Mylan Reports Strong Second Quarter 2016 Results Including Total Revenues Up 8%},
+  Author                   = {{Mylan N.V.}},
+  HowPublished             = {Online},
+  Month                    = {Aug 9},
+  Organization             = {{Mylan N. V.}},
+  Url                      = {http://newsroom.mylan.com/2016-08-09-Mylan-Reports-Strong-Second-Quarter-2016-Results-Including-Total-Revenues-Up-8},
+  Year                     = {2016},
+
+  Owner                    = {Robbie},
+  Timestamp                = {2017.01.17}
+}
+
 @Article{Navarro2008,
   Title                    = {Politics and health: A neglected area of research},
   Author                   = {Navarro, Vincent},
@@ -3275,7 +3301,7 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
 
 @Article{Poole2001,
   Title                    = {D-Nominate after 10 Years: A Comparative Update to Congress: A Political-Economic History of Roll-Call Voting},
-  Author                   = {Keith T. Poole and Howard Rosenthal},
+  Author                   = {Poole, Keith T. and Rosenthal, Howard},
   Journal                  = {Legislative Studies Quarterly},
   Year                     = {2001},
   Number                   = {1},
@@ -3502,7 +3528,7 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
 }
 
 @Article{Roy2012,
-  Title                    = {How the AARP Made {$}2.8 Billion by Supporting Obamacare's Cuts to Medicare},
+  Title                    = {How the AARP Made $2.8 Billion by Supporting Obamacare's Cuts to Medicare},
   Author                   = {Roy, Avik},
   Journal                  = {Forbes},
   Year                     = {2012},
@@ -4057,6 +4083,19 @@ Review by Agnes W. Brewster in "Inquiry," Sept 1972},
   Owner                    = {Robbie},
   Timestamp                = {2015.10.29},
   Url                      = {//www.oxfordhandbooks.com/10.1093/oxfordhb/9780199559947.001.0001/oxfordhb-9780199559947-e-25}
+}
+
+@Article{Thomas2016,
+  Title                    = {Mylan to Settle EpiPen Overpricing Case for $465 Million},
+  Author                   = {Thomas, Katie},
+  Journal                  = {The New York Times},
+  Year                     = {2016},
+
+  Month                    = {Oct 7},
+
+  Owner                    = {Robbie},
+  Timestamp                = {2017.01.17},
+  Url                      = {https://www.nytimes.com/2016/10/08/business/epipen-mylan-justice-department-settlement.html?_r=0}
 }
 
 @Article{Treier2009,

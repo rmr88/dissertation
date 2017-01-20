@@ -122,7 +122,7 @@ drop healthOpinion2
 //rotate
 gen amt = amtH02 + amtH03 + amtH04
 
-foreach var of varlist amt* {
+foreach var of varlist amt* medianIncome {
 	replace `var' = `var' / 1000
 }
 
@@ -175,7 +175,7 @@ label variable unins_rate "Percent Uninsured"
 label variable count_corrected "Number of Doctors"
 label variable raceWhite "Percent White"
 label variable educHS "Percent HS Only"
-label variable medianIncome "Median Income"
+label variable medianIncome "Median Income ($1,000s)"
 label variable birthYear "Legislator Birth Year"
 label variable minor "Minor Topic Code"
 label variable party "Party"
@@ -193,7 +193,9 @@ gen repYes = (party == 200) * vote
 bys cong billtype billnum rollnum: egen demYesTotal = total(demYes)
 bys cong billtype billnum rollnum: egen repYesTotal = total(repYes)
 gen dem = party == 100
+replace dem = . if missing(party) | party == 328
 gen rep = party == 200
+replace rep = . if missing(party) | party == 328
 bys cong billtype billnum rollnum: egen demTotal = total(dem)
 bys cong billtype billnum rollnum: egen repTotal = total(rep)
 gen demYesPerc = demYesTotal / demTotal

@@ -15,9 +15,10 @@
 1. Table 2-1: Overall Models of Voting with Democrats on Health Bills, 2003-2012
 2. Table 2-2: Models of Voting with Democrats on Health Bills by Subtopic
 3. Appendix:
-	1. Table A2-1: Models of Voting with Democrats on Health Bills by Subtopic
-	2. Table A2-2: Models of Voting with Democrats on Health Bills, Selected Bill Groups
-	3. Also need to add a list of bills/ rolls in the bills groups.
+	1. Table B-1: Models of Voting with Democrats on Health Bills by Subtopic, Part 1
+	2. Table B-2: Models of Voting with Democrats on Health Bills by Subtopic, Part 2
+	3. Table B-3: Models of Voting with Democrats on Health Bills, Selected Bill Groups
+	4. Also need to add a list of bills/ rolls in the bills groups.
 
 ## Chapter 3
 
