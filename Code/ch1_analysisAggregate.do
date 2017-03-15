@@ -95,6 +95,10 @@ label variable ranneyPres "Ranney X Dem Votes"
 label variable hvdMood "HVD X Mood"
 label variable hvdPres "HVD X Dem Votes"
 
+//export delimited med_dwnom ldv mn_partyComp mood ptyCompMood ///
+//	majPercChamber dem midterm using "..\Analysis\mfx_agg_rdata.csv", ///
+//	replace delim(",")
+
 
 *** Models ***
 
@@ -148,29 +152,29 @@ estimates store m4_mn, title("Majority Mean")
 
 *** Output ***
 
-*Table 1-2
-esttab m1 m2 m3 m4 using "..\Analysis\Tables\table1-2.rtf", ///
+*Table 1-3
+esttab m1 m2 m3 m4 using "..\Analysis\Tables\table1-3.rtf", ///
 	b(2) se(2) mtitles legend onecell replace rtf ///
 	star(* 0.05 ** 0.01) label varlabels(_cons Constant) ///
 	stats(N r2, fmt(0 2) label(Observations R-squared)) ///
 	order(ldv mn_partyComp mood ptyCompMood demPercUSP ptyCompPres)
 
-*Table 1a-2 (Means)
-esttab m?_mn using "..\Analysis\Tables\table1a-2.rtf", ///
+*Table A1-5 (Means)
+esttab m?_mn using "..\Analysis\Tables\table_a1-5.rtf", ///
 	b(2) se(2) mtitles legend onecell replace rtf ///
 	star(* 0.05 ** 0.01) label varlabels(_cons Constant) ///
 	stats(N r2, fmt(0 2) label(Observations R-squared)) ///
 	order(ldv mn_partyComp mood ptyCompMood demPercUSP ptyCompPres)
 
-*Table 1a-3 (Ranney)
-esttab m?_ran using "..\Analysis\Tables\table1a-3.rtf", ///
+*Table A1-6 (Ranney)
+esttab m?_ran using "..\Analysis\Tables\table_a1-6.rtf", ///
 	b(2) se(2) mtitles legend onecell replace rtf ///
 	star(* 0.05 ** 0.01) label varlabels(_cons Constant) ///
 	stats(N r2, fmt(0 2) label(Observations R-squared)) ///
 	order(ldv mn_ranney4 mood ranneyMood demPercUSP ranneyPres)
 
-*Table 1a-4 (HVD)
-esttab m?_hvd using "..\Analysis\Tables\table1a-4.rtf", ///
+*Table A1-7 (HVD)
+esttab m?_hvd using "..\Analysis\Tables\table_a1-7.rtf", ///
 	b(2) se(2) mtitles legend onecell replace rtf ///
 	star(* 0.05 ** 0.01) label varlabels(_cons Constant) ///
 	stats(N r2, fmt(0 2) label(Observations R-squared)) ///

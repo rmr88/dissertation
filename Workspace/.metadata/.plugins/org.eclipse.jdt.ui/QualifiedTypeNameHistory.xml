@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="jxl.Workbook"/>
-<fullyQualifiedTypeName name="utilities.ExcelToCsv"/>
-<fullyQualifiedTypeName name="utilities.Columns"/>
-<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
-<fullyQualifiedTypeName name="org.apache.pdfbox.pdmodel.PDDocument"/>
-<fullyQualifiedTypeName name="org.apache.pdfbox.pdfparser.PDFParser"/>
-<fullyQualifiedTypeName name="org.apache.pdfbox.cos.COSDocument"/>
-<fullyQualifiedTypeName name="org.apache.pdfbox.util.PDFTextStripper"/>
 <fullyQualifiedTypeName name="tasks.ParsePDF"/>
 <fullyQualifiedTypeName name="utilities.State"/>
 <fullyQualifiedTypeName name="utilities.CandidateData"/>
@@ -26,7 +18,6 @@
 <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilder"/>
 <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
 <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
 <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
 <fullyQualifiedTypeName name="javax.sound.midi.SysexMessage"/>
@@ -37,8 +28,6 @@
 <fullyQualifiedTypeName name="twitter4j.TwitterFactory"/>
 <fullyQualifiedTypeName name="twitter4j.Query"/>
 <fullyQualifiedTypeName name="twitter4j.QueryResult"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="twitter4j.Status"/>
 <fullyQualifiedTypeName name="twitter4j.auth.RequestToken"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
@@ -60,4 +49,15 @@
 <fullyQualifiedTypeName name="utilities.WebFile"/>
 <fullyQualifiedTypeName name="utilities.InFile"/>
 <fullyQualifiedTypeName name="utilities.OutFile"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="twitter4j.Paging"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.time.LocalDate"/>
+<fullyQualifiedTypeName name="java.time.ZoneId"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.concurrent.LinkedBlockingQueue"/>
+<fullyQualifiedTypeName name="twitter4j.Status"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthSpinnerUI"/>
+<fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
 </qualifiedTypeNameHistroy>

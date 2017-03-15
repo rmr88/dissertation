@@ -215,7 +215,7 @@ label variable partyLineVote "Party Line Vote"
 *Vote Groups
 gen vote_group = "HEALTH Act" if billtype == "HR" & ((billnum == 5 & ///
 	(cong == 108 | cong == 109 | cong == 112)) | (cong == 108 & billnum == 4280))
-replace vote_group = "ACA and Related" if (cong == 111 & (billnum == 3590 | billnum == 3962)) ///
+replace vote_group = "ACA and Related" if (cong == 111 & billnum == 3590) ///
 	| (cong == 112 & (billnum == 2 | billnum == 1213 | billnum == 2576 | billnum == 6079))
 replace vote_group = "CHIPRA 2007" if cong == 110 & (billnum == 3963 | billnum == 976)
 replace vote_group = "MMA 2003" if cong == 108 & billnum == 1

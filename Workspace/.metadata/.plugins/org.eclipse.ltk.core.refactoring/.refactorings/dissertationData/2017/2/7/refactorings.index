@@ -1,0 +1,11 @@
+1487005910071	Rename local variable 'statuses'
+1487006016557	Rename local variable 'searchTerms'
+1487006083830	Rename local variable 'terms'
+1487015438303	Rename local variable 'uid'
+1487015789712	Rename local variable 'filePath'
+1487015794308	Rename local variable 'fileButton'
+1487024175677	Move compilation unit
+1487033305692	Rename type 'RelevantTweets'
+1487034561851	Encapsulate field 'instance'
+1487035293562	Rename method 'getUserIDList'
+1487042999598	Encapsulate field 'instance'

@@ -10,6 +10,9 @@
 use "C:\Users\Robbie\Documents\dissertation\Data\ch2_analysisData.dta", clear
 cd "C:\Users\Robbie\Documents\dissertation\Analysis"
 
+replace dem = . if party == 328
+replace rep = . if party == 328
+
 
 *** Models by Bill Group ***
 
@@ -81,7 +84,7 @@ estimates clear
 
 /*
 //Figures for paper; run with named graphs above in memory.
-graph combine ACA_phys_perc ACA_unins_rate, col(2) graphregion(color(white))
+graph combine ACA_amtBCBS ACA_unins_rate, col(2) graphregion(color(white))
 graph export "Figs\fig2-1.png", replace height(800)
 graph combine HEALTH_phys_perc HEALTH_amtH01, col(2) graphregion(color(white))
 graph export "Figs\fig2-2.png", replace height(800)
@@ -99,16 +102,17 @@ foreach m of local minor {
 	
 	qui logit agree_dem amt amtH01 amtBCBS amtAARP healthOpinion IP_voter ///
 		percSenior unins_rate phys_perc raceWhite raceHisp educHS medianIncome ///
-		i.party partyLineVote birthYear i.rollnum if minor == `m'
+		rep partyLineVote birthYear i.rollnum if minor == `m'
 	local lab : label MINOR `m'
 	estimates store _`m', title("`lab'")
 	
+	/*
 	qui tab rollnum if minor == `m', gen(_rn)
 	drop _rn1	
 
 	qui logit agree_dem amt amtH01 amtBCBS amtAARP healthOpinion IP_voter ///
 		percSenior unins_rate phys_perc raceWhite raceHisp educHS medianIncome ///
-		dem rep partyLineVote birthYear _rn* if minor == `m'
+		rep partyLineVote birthYear _rn* if minor == `m'
 	
 	matrix define tab = r(table)
 	local names : colnames tab
@@ -159,6 +163,7 @@ foreach m of local minor {
 		cap drop _pr* //TODO: syntax error 503 here from omitted vars in model
 	}
 	cap drop _rn*
+	*/
 }
 
 *For tables 2-2 and A2-1
@@ -199,14 +204,14 @@ drop _rn* _min*
 
 logit agree_dem amt amtH01 amtBCBS amtAARP healthOpinion IP_voter ///
 	percSenior unins_rate phys_perc raceWhite raceHisp educHS medianIncome ///
-	i.party partyLineVote birthYear i.minor i.rollnum //if amt <= 200
+	rep partyLineVote birthYear i.minor i.rollnum //if amt <= 200
 estimates store overall
 
 *For table 2-1
 esttab overall using "Tables\ch2_modelOverall.rtf", replace rtf ///
 	b(3) se(3) legend star(* 0.05 ** 0.01) label pr2(%4.3f) ///
 	varwidth(20) modelwidth(6) nogaps wide ///
-	drop(*.rollnum *.minor 100.party 328.party )
+	drop(*.rollnum *.minor 100.party 328.party)
 estimates clear
 
 //Interesting that the uninsured districts tend to go more with Republican position, while physicians tend to go more Dem.

@@ -92,3 +92,22 @@ Functinal Form Notes:
 - Industry $: Some changes in MMA, 108th, and HEALTH Act, but not other models; again, dummy is not too useful (most = 1).
 */
 
+
+*** Interactions ***
+
+forvalues n = 1/6 {
+	local lab : label grp `n'
+	
+	qui logit agree_dem amt amtH01 amtBCBS amtAARP healthOpinion IP_voter ///
+		percSenior phys_perc unins_rate raceWhite raceHisp educHS medianIncome ///
+		partyLineVote i.party birthYear i.rollnum if grp == `n'
+	estimates store regular, title("Regular")
+	
+	qui logit agree_dem amt amtH01 amtBCBS amtAARP healthOpinion IP_voter ///
+		percSenior c.phys_perc##c.unins_rate raceWhite raceHisp educHS medianIncome ///
+		partyLineVote i.party birthYear i.rollnum if grp == `n'
+	estimates store interaction, title("Interactions")
+	
+	estimates table regular interaction, b(%5.3f) star title("`lab'")
+}
+

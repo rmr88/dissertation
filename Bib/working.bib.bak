@@ -20,6 +20,18 @@
   Url                      = {http://dx.doi.org/10.1111/lsq.12004}
 }
 
+@TechReport{Caughey2014,
+  Title                    = {Representation without Parties: Reconsidering the One-Party South},
+  Author                   = {Caughey, Devin},
+  Institution              = {Working Paper},
+  Year                     = {2014},
+
+  __markedentry            = {[Robbie:1]},
+  Owner                    = {Robbie},
+  Timestamp                = {2017.03.07},
+  Url                      = {http://caughey.mit.edu/sites/default/files/documents/Rep141111.pdf}
+}
+
 @Article{Ceaser2005,
   Title                    = {A New Measure of Party Strength},
   Author                   = {Ceaser, James W. and Saldin, Robert P.},
@@ -36,6 +48,23 @@
   Owner                    = {Robbie},
   Timestamp                = {2016.01.26},
   Url                      = {http://prq.sagepub.com/content/58/2/245.abstract}
+}
+
+@Article{Esterling2014,
+  Title                    = {Interest Groups and Health Policy Reform},
+  Author                   = {Kevin Esterling},
+  Journal                  = {Interest Groups \& Advocacy},
+  Year                     = {2014},
+
+  Month                    = {Oct},
+  Number                   = {3},
+  Pages                    = {326-330},
+  Volume                   = {3},
+
+  Abstract                 = {For managed care regulation, the authors find that the overall density of health groups relative to all groups reduces the number and stringency of Health Maintenance Organization (HMO) regulatory provisions, which indicates a tendency toward gridlock as group density increases, but that the presence of program advocates such as independent providers can help to break the gridlock.\n And as the program expanded, states came to rely more on these federally subsidized expenditures, and as governors came to rely on federal revenue from the program, it became harder and harder for the federal government to rein in spending on the program over the governors' objections. [...]the governors became adept at fostering program expansion both through lobbying Congress for eligibility expansion during the 1980s, as well as through skillfully exploiting loopholes in the program design through creative accounting that legally drew down federal money without state expenditures (through provider donations, intergovernmental transfers and the like), and through coverage expansion via expanded Section 1115 research and development waivers during the Clinton Administration.},
+  Owner                    = {Robbie},
+  Timestamp                = {2016.05.25},
+  Url                      = {http://search.proquest.com.proxy.lib.duke.edu/docview/1559412758/CFF61E4144CE4F1FPQ/7?accountid=10598}
 }
 
 @Article{Gulati2004,
@@ -114,7 +143,6 @@
   Pages                    = {955--962},
   Volume                   = {87},
 
-  __markedentry            = {},
   Abstract                 = { ABSTRACT Electoral competition is a concept that has played a central role in much of the state politics literature. One commonly used indicator of competition in the states is the Ranney index. We offer an alternative indicator of competition, one based on district-level outcomes of state legislative elections. After evaluating both indicators in terms of validity and reliability, the analysis suggests that the district-level indicator is both empirically and intuitively superior as a measure of electoral competition. The implications of this finding are discussed. },
   Doi                      = {10.2307/2938827},
   ISSN                     = {1537-5943},
@@ -177,7 +205,7 @@
   Publisher                = {Oxford: Oxford University Press},
   Year                     = {2011},
 
-  __markedentry            = {[Robbie:1]},
+  __markedentry            = {},
   Owner                    = {Robbie},
   Timestamp                = {2016.04.20},
   Url                      = {http://getitatduke.library.duke.edu/?sid=ar&iuid=179547&aulast=Morgan&aufirst=KJ&date=2011&stitle=The+Delegated+Welfare+State%3A+Medicare%2C+Markets%2C+and+the+Governance+of+Social+Policy&id=doi:10.1093%2Facprof%3Aoso%2F9780199730346.001.0001&}
@@ -211,7 +239,7 @@
   Pages                    = {1071--1087},
   Volume                   = {11},
 
-  __markedentry            = {[Robbie:1]},
+  __markedentry            = {},
   Abstract                 = { ABSTRACT President Barack Obama's two signature first-term legislative victories—the Affordable Care Act and the Dodd-Frank Act—are the law of the land, but the political battle over their entrenchment continues. The question now is whether these landmark reforms will be consolidated and create a new politics going forward. We develop an argument about the limits of policy feedback to illuminate the obstacles to durable liberal reform in the contemporary American state. We argue that political scientists have paid insufficient attention to the fragility of inherited policy commitments, and that the capacity of reforms to remake politics is contingent, conditional, and contested. Feedbacks are shaped not only by the internal attributes of policies, but also by the interaction between policy-specific characteristics, the strategic goals of officeholders and clientele groups, and the political forces arising from a contentious and uncertain political environment. },
   Doi                      = {10.1017/S1537592713002831},
   ISSN                     = {1541-0986},
@@ -247,7 +275,6 @@
   Year                     = {1976},
   Editor                   = {Herbert Jacob and Kenneth Vines},
 
-  __markedentry            = {},
   Owner                    = {Robbie},
   Timestamp                = {2016.01.26}
 }
@@ -315,7 +342,7 @@
   Pages                    = {111--127},
   Volume                   = {null},
 
-  __markedentry            = {[Robbie:1]},
+  __markedentry            = {},
   Abstract                 = { ABSTRACT This article analyzes the strategic use of public policy as a tool for reshaping public opinion. In the 1990s, “progressive revisionists” argued that, by reforming welfare, liberals could free the Democratic Party of a significant electoral liability, reduce the race-coding of poverty politics, and produce a public more willing to invest in anti-poverty efforts. Connecting this argument to recent scholarship on policy feedback, we pursue a quantitative case study of the potential for new policies to move public opinion. Our analysis reveals that welfare reform in the 1990s produced few changes in mass opinion. To explain this result, we propose a general framework for the analysis of mass feedback effects. After locating welfare as a “distant-visible” case in this framework, we advance four general propositions that shed light on our case-specific findings as well as the general conditions under which mass feedback effects should be viewed as more or less likely. },
   Doi                      = {10.1017/S0003055407070049},
   ISSN                     = {1537-5943},
@@ -375,5 +402,29 @@
   Publisher                = {[Wiley, Comparative Legislative Research Center]},
   Timestamp                = {2016.01.26},
   Url                      = {http://www.jstor.org/stable/440379}
+}
+
+@Article{Wiseman2006,
+  Title                    = {A Theory of Partisan Support and Entry Deterrence in Electoral Competition},
+  Author                   = {Alan E. Wiseman},
+  Journal                  = {Journal of Theoretical Politics},
+  Year                     = {2006},
+  Number                   = {2},
+  Pages                    = {123-158},
+  Volume                   = {18},
+
+  __markedentry            = {[Robbie:1]},
+  Abstract                 = { I develop a model of electoral competition with partisan campaign support. Voters’ utilities are defined over candidate locations and the amounts of party campaign support that they receive. Parties’ utilities are defined over the location of the winning candidate and how much support they dole out for their candidates. Analytical results identify cases in which parties will successfully pull the electorally induced preferences of their members away from their median voters’ ideal points and towards the party’s most favored policies. Equilibrium results yield several testable hypotheses. First, candidate policy positions and parties’ campaign contributions should be responsive to district partisan predisposition, independent of the policy preferences of a district’s median voter. Second, uncontested elections should occur more often in politically-lopsided districts than in districts where there are more even levels of political competition. Finally, there should be an inverse relationship between candidate policy extremity and partisan campaign support. },
+  Doi                      = {10.1177/0951629806061858},
+  Eprint                   = { 
+ http://dx.doi.org/10.1177/0951629806061858
+ 
+},
+  Owner                    = {Robbie},
+  Timestamp                = {2017.03.07},
+  Url                      = { 
+ http://dx.doi.org/10.1177/0951629806061858
+ 
+}
 }
 
